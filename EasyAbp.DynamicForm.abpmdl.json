@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "EasyAbp.DynamicForm.Domain.Shared": {
+      "path": "src/EasyAbp.DynamicForm.Domain.Shared/EasyAbp.DynamicForm.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.Domain": {
+      "path": "src/EasyAbp.DynamicForm.Domain/EasyAbp.DynamicForm.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.Application.Contracts": {
+      "path": "src/EasyAbp.DynamicForm.Application.Contracts/EasyAbp.DynamicForm.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.Application": {
+      "path": "src/EasyAbp.DynamicForm.Application/EasyAbp.DynamicForm.Application.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.EntityFrameworkCore": {
+      "path": "src/EasyAbp.DynamicForm.EntityFrameworkCore/EasyAbp.DynamicForm.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.MongoDB": {
+      "path": "src/EasyAbp.DynamicForm.MongoDB/EasyAbp.DynamicForm.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.HttpApi": {
+      "path": "src/EasyAbp.DynamicForm.HttpApi/EasyAbp.DynamicForm.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.HttpApi.Client": {
+      "path": "src/EasyAbp.DynamicForm.HttpApi.Client/EasyAbp.DynamicForm.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.TestBase": {
+      "path": "test/EasyAbp.DynamicForm.TestBase/EasyAbp.DynamicForm.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "EasyAbp.DynamicForm.EntityFrameworkCore.Tests": {
+      "path": "test/EasyAbp.DynamicForm.EntityFrameworkCore.Tests/EasyAbp.DynamicForm.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "EasyAbp.DynamicForm.MongoDB.Tests": {
+      "path": "test/EasyAbp.DynamicForm.MongoDB.Tests/EasyAbp.DynamicForm.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "EasyAbp.DynamicForm.Domain.Tests": {
+      "path": "test/EasyAbp.DynamicForm.Domain.Tests/EasyAbp.DynamicForm.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "EasyAbp.DynamicForm.Application.Tests": {
+      "path": "test/EasyAbp.DynamicForm.Application.Tests/EasyAbp.DynamicForm.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "EasyAbp.DynamicForm.HttpApi.Host": {
+      "path": "host/EasyAbp.DynamicForm.HttpApi.Host/EasyAbp.DynamicForm.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "EasyAbp.DynamicForm.Web": {
+      "path": "src/EasyAbp.DynamicForm.Web/EasyAbp.DynamicForm.Web.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/EasyAbp.DynamicForm.HttpApi.Client.ConsoleTestApp/EasyAbp.DynamicForm.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "EasyAbp.DynamicForm.Web.Host": {
+      "path": "host/EasyAbp.DynamicForm.Web.Host/EasyAbp.DynamicForm.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "EasyAbp.DynamicForm.AuthServer": {
+      "path": "host/EasyAbp.DynamicForm.AuthServer/EasyAbp.DynamicForm.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "EasyAbp.DynamicForm.Host.Shared": {
+      "path": "host/EasyAbp.DynamicForm.Host.Shared/EasyAbp.DynamicForm.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "EasyAbp.DynamicForm.Web.Unified": {
+      "path": "host/EasyAbp.DynamicForm.Web.Unified/EasyAbp.DynamicForm.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "EasyAbp.DynamicForm.Blazor": {
+      "path": "src/EasyAbp.DynamicForm.Blazor/EasyAbp.DynamicForm.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.Blazor.Host": {
+      "path": "host/EasyAbp.DynamicForm.Blazor.Host/EasyAbp.DynamicForm.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "EasyAbp.DynamicForm.Blazor.Server": {
+      "path": "src/EasyAbp.DynamicForm.Blazor.Server/EasyAbp.DynamicForm.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.Blazor.WebAssembly": {
+      "path": "src/EasyAbp.DynamicForm.Blazor.WebAssembly/EasyAbp.DynamicForm.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "EasyAbp.DynamicForm.Blazor.Server.Host": {
+      "path": "host/EasyAbp.DynamicForm.Blazor.Server.Host/EasyAbp.DynamicForm.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

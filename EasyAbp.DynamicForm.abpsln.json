@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "EasyAbp.DynamicForm": {
+      "path": "EasyAbp.DynamicForm.abpmdl.json"
+    }
+  }
+}

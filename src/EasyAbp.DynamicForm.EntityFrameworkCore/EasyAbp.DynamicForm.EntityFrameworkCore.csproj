@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+    <ProjectReference Include="..\EasyAbp.DynamicForm.Domain\EasyAbp.DynamicForm.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EasyAbp\DynamicForm" />
+  </ItemGroup>
+
+</Project>
