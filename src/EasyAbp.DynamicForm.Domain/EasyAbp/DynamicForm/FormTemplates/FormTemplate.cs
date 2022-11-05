@@ -4,6 +4,7 @@ using EasyAbp.DynamicForm.Forms;
 using EasyAbp.DynamicForm.Options;
 using EasyAbp.DynamicForm.Shared;
 using JetBrains.Annotations;
+using Volo.Abp;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Entities.Auditing;
 using Volo.Abp.MultiTenancy;
@@ -44,27 +45,32 @@ public class FormTemplate : FullAuditedAggregateRoot<Guid>, IMultiTenant
     {
     }
 
-    public FormTemplate(
+    internal FormTemplate(
         Guid id,
         Guid? tenantId,
         [NotNull] string formDefinitionName,
         [NotNull] string name,
         [CanBeNull] string customTag,
-        List<FormItemTemplate> formItemTemplates) : base(id)
+        List<FormItemTemplate> formItemTemplates = null) : base(id)
     {
         TenantId = tenantId;
-        FormDefinitionName = formDefinitionName;
-        Name = name;
+        FormDefinitionName = Check.NotNullOrWhiteSpace(formDefinitionName, nameof(formDefinitionName));
+        Name = Check.NotNullOrWhiteSpace(name, nameof(name));
         CustomTag = customTag;
-        FormItemTemplates = formItemTemplates;
+        FormItemTemplates = formItemTemplates ?? new List<FormItemTemplate>();
     }
 
-    public void AddOrUpdateFormItemTemplate(
+    internal void Update([NotNull] string name)
+    {
+        Name = Check.NotNullOrWhiteSpace(name, nameof(name));
+    }
+
+    internal void AddOrUpdateFormItemTemplate(
         [NotNull] string name,
         [CanBeNull] string tip,
         FormItemType type,
         bool optional,
-        FormItemTemplateRadioValues radioValues)
+        AvailableRadioValues radioValues)
     {
         var item = FormItemTemplates.Find(x => x.Name == name);
 
@@ -84,5 +90,5 @@ public class FormTemplate : FullAuditedAggregateRoot<Guid>, IMultiTenant
     public FormItemTemplate GetFormItemTemplate([NotNull] string name) =>
         FindFormItemTemplate(name) ?? throw new EntityNotFoundException(typeof(FormItemTemplate), new { Id, name });
 
-    public void RemoveFormItemTemplate([NotNull] string name) => FormItemTemplates.Remove(GetFormItemTemplate(name));
+    internal void RemoveFormItemTemplate([NotNull] string name) => FormItemTemplates.Remove(GetFormItemTemplate(name));
 }

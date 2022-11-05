@@ -13,5 +13,9 @@ public class FormItemDto : EntityDto
 
     public FormItemType Type { get; set; }
 
+    public bool Optional { get; set; }
+
+    public AvailableRadioValues RadioValues { get; set; }
+
     public string Value { get; set; }
 }

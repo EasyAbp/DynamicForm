@@ -27,5 +27,11 @@ public class DynamicFormMenuContributor : IMenuContributor
                 new ApplicationMenuItem(DynamicFormMenus.Form, l["Menu:Form"], "/DynamicForm/Forms/Form")
             );
         }
+        if (await context.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Default))
+        {
+            context.Menu.AddItem(
+                new ApplicationMenuItem(DynamicFormMenus.FormTemplate, l["Menu:FormTemplate"], "/DynamicForm/FormTemplates/FormTemplate")
+            );
+        }
     }
 }

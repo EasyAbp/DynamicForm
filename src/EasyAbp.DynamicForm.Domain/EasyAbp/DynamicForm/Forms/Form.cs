@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using EasyAbp.DynamicForm.Options;
+using EasyAbp.DynamicForm.Shared;
 using JetBrains.Annotations;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities;
@@ -49,16 +50,19 @@ public class Form : FullAuditedAggregateRoot<Guid>, IMultiTenant
         FormItems = formItems ?? new List<FormItem>();
     }
 
-    internal void UpdateFormItem([NotNull] string name, [CanBeNull] string value)
+    internal void CreateFormItem([NotNull] string name, IFormItemMetadata metadata, [CanBeNull] string value)
     {
-        var item = GetFormItem(name);
-
-        item.Update(value);
+        FormItems.Add(new FormItem(Id, name, metadata.Type, metadata.Optional, metadata.RadioValues, value));
     }
 
     internal void UpdateFormItem(FormItem item, [CanBeNull] string value)
     {
         item.Update(value);
+    }
+
+    internal void RemoveFormItem(FormItem item)
+    {
+        FormItems.Remove(item);
     }
 
     public FormItem FindFormItem([NotNull] string name) => FormItems.Find(x => x.Name == name);

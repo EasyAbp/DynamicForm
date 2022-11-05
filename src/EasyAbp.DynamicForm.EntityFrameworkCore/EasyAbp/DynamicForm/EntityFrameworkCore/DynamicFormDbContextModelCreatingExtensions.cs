@@ -1,4 +1,5 @@
-﻿using EasyAbp.DynamicForm.Forms;
+using EasyAbp.DynamicForm.FormTemplates;
+using EasyAbp.DynamicForm.Forms;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
@@ -12,34 +13,41 @@ public static class DynamicFormDbContextModelCreatingExtensions
     {
         Check.NotNull(builder, nameof(builder));
 
-        /* Configure all entities here. Example:
-
-        builder.Entity<Question>(b =>
-        {
-            //Configure table & schema name
-            b.ToTable(DynamicFormDbProperties.DbTablePrefix + "Questions", DynamicFormDbProperties.DbSchema);
-
-            b.ConfigureByConvention();
-
-            //Properties
-            b.Property(q => q.Title).IsRequired().HasMaxLength(QuestionConsts.MaxTitleLength);
-
-            //Relations
-            b.HasMany(question => question.Tags).WithOne().HasForeignKey(qt => qt.QuestionId);
-
-            //Indexes
-            b.HasIndex(q => q.CreationTime);
-        });
-        */
-
-
         builder.Entity<Form>(b =>
         {
             b.ToTable(DynamicFormDbProperties.DbTablePrefix + "Forms", DynamicFormDbProperties.DbSchema);
-            b.ConfigureByConvention(); 
-            
+            b.ConfigureByConvention();
 
             /* Configure more properties here */
+            b.HasIndex(x => x.FormTemplateId);
+        });
+
+        builder.Entity<FormItem>(b =>
+        {
+            b.ToTable(DynamicFormDbProperties.DbTablePrefix + "FormItems", DynamicFormDbProperties.DbSchema);
+            b.ConfigureByConvention();
+
+            /* Configure more properties here */
+            b.HasKey(x => new { x.FormId, x.Name });
+        });
+
+        builder.Entity<FormTemplate>(b =>
+        {
+            b.ToTable(DynamicFormDbProperties.DbTablePrefix + "FormTemplates", DynamicFormDbProperties.DbSchema);
+            b.ConfigureByConvention();
+
+            /* Configure more properties here */
+            b.HasIndex(x => x.FormDefinitionName);
+            b.HasIndex(x => x.CustomTag);
+        });
+
+        builder.Entity<FormItemTemplate>(b =>
+        {
+            b.ToTable(DynamicFormDbProperties.DbTablePrefix + "FormItemTemplates", DynamicFormDbProperties.DbSchema);
+            b.ConfigureByConvention();
+
+            /* Configure more properties here */
+            b.HasKey(x => new { x.FormTemplateId, x.Name });
         });
     }
 }

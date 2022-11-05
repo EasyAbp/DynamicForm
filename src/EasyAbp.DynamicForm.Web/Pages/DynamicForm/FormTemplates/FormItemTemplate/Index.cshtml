@@ -1,0 +1,52 @@
+@page
+@using EasyAbp.DynamicForm.Permissions
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormItemTemplate
+@using EasyAbp.DynamicForm.Localization
+@using EasyAbp.DynamicForm.Web.Menus
+@model IndexModel
+@inject IPageLayout PageLayout
+@inject IHtmlLocalizer<DynamicFormResource> L
+@inject IAuthorizationService Authorization
+@{
+    PageLayout.Content.Title = L["FormItemTemplate"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:FormTemplate"].Value);
+    PageLayout.Content.MenuItemName = DynamicFormMenus.FormTemplate;
+}
+
+@section scripts
+{
+    <abp-script src="/Pages/DynamicForm/FormTemplates/FormItemTemplate/index.js" />
+}
+@section styles
+{
+    <abp-style src="/Pages/DynamicForm/FormTemplates/FormItemTemplate/index.css"/>
+}
+
+<script>
+    let formTemplateId = '@Model.FormTemplateId'
+</script>
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["FormItemTemplate"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+			    @if (await Authorization.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Update))
+                {
+                <abp-button id="NewFormItemTemplateButton"
+                            text="@L["CreateFormItemTemplate"].Value"
+                            icon="plus"
+                            button-type="Primary" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="FormItemTemplateTable" class="nowrap"/>
+    </abp-card-body>
+</abp-card>

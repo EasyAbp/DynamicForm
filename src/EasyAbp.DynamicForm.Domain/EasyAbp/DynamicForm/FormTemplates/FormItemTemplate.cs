@@ -1,6 +1,7 @@
 ﻿using System;
 using EasyAbp.DynamicForm.Shared;
 using JetBrains.Annotations;
+using Volo.Abp;
 using Volo.Abp.Domain.Entities;
 
 namespace EasyAbp.DynamicForm.FormTemplates;
@@ -17,9 +18,9 @@ public class FormItemTemplate : Entity, IFormItemTemplate
 
     public virtual bool Optional { get; protected set; }
 
-    public virtual FormItemTemplateRadioValues RadioValues { get; protected set; }
+    public virtual AvailableRadioValues RadioValues { get; protected set; }
 
-    public FormItemTemplate()
+    protected FormItemTemplate()
     {
     }
 
@@ -29,10 +30,10 @@ public class FormItemTemplate : Entity, IFormItemTemplate
         [CanBeNull] string tip,
         FormItemType type,
         bool optional,
-        FormItemTemplateRadioValues radioValues)
+        AvailableRadioValues radioValues)
     {
         FormTemplateId = formTemplateId;
-        Name = name;
+        Name = Check.NotNullOrWhiteSpace(name, nameof(name));
         Tip = tip;
         Type = type;
         Optional = optional;
@@ -43,12 +44,12 @@ public class FormItemTemplate : Entity, IFormItemTemplate
         [CanBeNull] string tip,
         FormItemType type,
         bool optional,
-        FormItemTemplateRadioValues radioValues)
+        AvailableRadioValues radioValues)
     {
         Tip = tip;
         Type = type;
         Optional = optional;
-        RadioValues = radioValues ?? new FormItemTemplateRadioValues();
+        RadioValues = radioValues ?? new AvailableRadioValues();
     }
 
     public override object[] GetKeys()

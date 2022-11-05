@@ -35,18 +35,18 @@ public class EditModalModel : DynamicFormPageModel
 
         ViewModel = new EditFormViewModel
         {
-            FormItems = _jsonSerializer.Serialize(dto)
+            FormItems = _jsonSerializer.Serialize(dto.FormItems)
         };
     }
 
     public virtual async Task<IActionResult> OnPostAsync()
     {
-        var dto = new UpdateFormDto
-        {
-            FormItems = _jsonSerializer.Deserialize<List<UpdateFormItemDto>>(ViewModel.FormItems)
-        };
+        var items = _jsonSerializer.Deserialize<List<FormItemDto>>(ViewModel.FormItems);
 
-        await _service.UpdateAsync(Id, dto);
+        foreach (var item in items)
+        {
+            await _service.UpdateFormItemAsync(Id, item.Name, new UpdateFormItemDto { Value = item.Value });
+        }
 
         return NoContent();
     }

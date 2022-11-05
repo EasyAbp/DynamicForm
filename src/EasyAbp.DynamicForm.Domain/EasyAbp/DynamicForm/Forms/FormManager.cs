@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.FormTemplates;
+using EasyAbp.DynamicForm.Shared;
 using JetBrains.Annotations;
+using Volo.Abp;
 using Volo.Abp.Domain.Services;
 
 namespace EasyAbp.DynamicForm.Forms;
@@ -15,39 +17,68 @@ public class FormManager : DomainService
         FormRepository = formRepository;
     }
 
-    public virtual async Task<Form> CreateAsync(
-        [NotNull] string formDefinitionName, FormTemplate formTemplate, List<FormItem> formItems = null)
+    public virtual Task<Form> CreateAsync(FormTemplate formTemplate)
     {
-        formItems ??= new List<FormItem>();
-
-        foreach (var formItem in formItems)
-        {
-            await ValidateFormItemAsync(formTemplate, formItem.Name, formItem.Value);
-        }
-
-        return new Form(
+        return Task.FromResult(new Form(
             GuidGenerator.Create(),
             CurrentTenant.Id,
-            formDefinitionName,
+            formTemplate.FormDefinitionName,
             formTemplate.Id,
-            formTemplate.Name,
-            formItems);
+            formTemplate.Name));
     }
 
-    public virtual async Task UpdateFormItemAsync(
-        Form form, FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string value)
+    public virtual async Task<Form> CreateFormItemAsync(
+        Form form, [NotNull] string name, IFormItemMetadata metadata, [CanBeNull] string value)
     {
-        await ValidateFormItemAsync(formTemplate, name, value);
+        if (form.FindFormItem(name) is not null)
+        {
+            throw new BusinessException(DynamicFormErrorCodes.DuplicateFormItem);
+        }
 
+        await ValidateFormItemValueAsync(metadata, value);
+
+        form.CreateFormItem(name, metadata, value);
+
+        return form;
+    }
+
+    public virtual async Task<Form> UpdateFormItemAsync(Form form, [NotNull] string name, [CanBeNull] string value)
+    {
         var item = form.GetFormItem(name);
 
+        await ValidateFormItemValueAsync(item, value);
+
         form.UpdateFormItem(item, value);
+
+        return form;
     }
 
-    protected virtual Task ValidateFormItemAsync(
-        FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string value)
+    public virtual Task<Form> DeleteFormItemAsync(Form form, [NotNull] string name)
     {
-        // Todo: validate form item.
+        var item = form.GetFormItem(name);
+
+        form.RemoveFormItem(item);
+
+        return Task.FromResult(form);
+    }
+
+    protected virtual Task ValidateFormItemValueAsync(IFormItemMetadata metadata, [CanBeNull] string value)
+    {
+        switch (metadata.Type)
+        {
+            case FormItemType.Text:
+                break;
+            case FormItemType.Radio:
+                if (!metadata.RadioValues.Contains(value))
+                {
+                    throw new BusinessException(DynamicFormErrorCodes.InvalidFormItemValue);
+                }
+
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+
         return Task.CompletedTask;
     }
 }

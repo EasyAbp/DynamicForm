@@ -7,4 +7,5 @@ public class DynamicFormMenus
     //Add your menu items here...
 
     public const string Form = Prefix + ".Form";
+    public const string FormTemplate = Prefix + ".FormTemplate";
 }

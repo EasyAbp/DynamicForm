@@ -1,6 +1,9 @@
 {
   "culture": "en",
   "texts": {
+    "EasyAbp.DynamicForm:DuplicateFormItemTemplate": "Duplicate form item template.",
+    "EasyAbp.DynamicForm:DuplicateFormItem": "Duplicate form item.",
+    "EasyAbp.DynamicForm:InvalidFormItemValue": "Invalid form item value.",
     "Permission:Form": "Form",
     "Permission:Create": "Create",
     "Permission:Update": "Update",
@@ -16,6 +19,28 @@
     "EditForm": "Edit",
     "FormDeletionConfirmationMessage": "Are you sure to delete the form {0}?",
     "SuccessfullyDeleted": "Successfully deleted",
-    "TableFilter": "Table filter"
+    "TableFilter": "Table filter",
+    "Permission:FormTemplate": "Form template",
+    "Menu:FormTemplate": "Form template",
+    "FormTemplate": "Form template",
+    "FormTemplateFormDefinitionName": "Definition name",
+    "FormTemplateName": "Name",
+    "FormTemplateCustomTag": "Custom tag",
+    "FormTemplateFormItemTemplates": "Form items",
+    "CreateFormTemplate": "Create",
+    "EditFormTemplate": "Edit",
+    "FormTemplateDeletionConfirmationMessage": "Are you sure to delete the form template {0}?",
+    "FormItemTemplate": "Form item",
+    "FormItemTemplateName": "Name",
+    "FormItemTemplateTip": "Tip",
+    "FormItemTemplateType": "Type",
+    "FormItemTemplateOptional": "Optional",
+    "FormItemTemplateRadioValues": "Radio values",
+    "FormItemTemplateRadioValuesInfo": "Split available values of radio form item with commas.",
+    "FormItemType.Text": "Text",
+    "FormItemType.Radio": "Radio",
+    "CreateFormItemTemplate": "Create",
+    "EditFormItemTemplate": "Edit",
+    "FormItemTemplateDeletionConfirmationMessage": "Are you sure to delete the form item {0}?"
   }
 }

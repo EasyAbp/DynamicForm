@@ -1,6 +1,9 @@
 {
   "culture": "zh-Hant",
   "texts": {
+    "EasyAbp.DynamicForm:DuplicateFormItemTemplate": "表單項重複",
+    "EasyAbp.DynamicForm:DuplicateFormItem": "表單項重複",
+    "EasyAbp.DynamicForm:InvalidFormItemValue": "不正確的表單項值",
     "Permission:Form": "表單",
     "Permission:Create": "新建",
     "Permission:Update": "編輯",
@@ -16,6 +19,28 @@
     "EditForm": "編輯",
     "FormDeletionConfirmationMessage": "確認刪除表單 {0}?",
     "SuccessfullyDeleted": "刪除成功",
-    "TableFilter": "表格過濾器"
+    "TableFilter": "表格過濾器",
+    "Permission:FormTemplate": "表單模板",
+    "Menu:FormTemplate": "表單模板",
+    "FormTemplate": "表單模板",
+    "FormTemplateFormDefinitionName": "表單定義",
+    "FormTemplateName": "名稱",
+    "FormTemplateCustomTag": "自定義標籤",
+    "FormTemplateFormItemTemplates": "表單項",
+    "CreateFormTemplate": "新建",
+    "EditFormTemplate": "編輯",
+    "FormTemplateDeletionConfirmationMessage": "確認刪除表單模板 {0}?",
+    "FormItemTemplate": "表單項",
+    "FormItemTemplateName": "名稱",
+    "FormItemTemplateTip": "提示",
+    "FormItemTemplateType": "類型",
+    "FormItemTemplateOptional": "選填",
+    "FormItemTemplateRadioValues": "可選值",
+    "FormItemTemplateRadioValuesInfo": "僅當類型為“選項”時有效，使用半角逗號(,)隔離可用選項.",
+    "FormItemType.Text": "文本",
+    "FormItemType.Radio": "選項",
+    "CreateFormItemTemplate": "新建",
+    "EditFormItemTemplate": "編輯",
+    "FormItemTemplateDeletionConfirmationMessage": "確認刪除表單项 {0}?"
   }
 }

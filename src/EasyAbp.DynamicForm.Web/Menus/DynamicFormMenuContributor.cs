@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Localization;
 using EasyAbp.DynamicForm.Permissions;
 using Volo.Abp.UI.Navigation;
@@ -26,6 +26,12 @@ public class DynamicFormMenuContributor : IMenuContributor
         {
             context.Menu.AddItem(
                 new ApplicationMenuItem(DynamicFormMenus.Form, l["Menu:Form"], "/DynamicForm/Forms/Form")
+            );
+        }
+        if (await context.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Default))
+        {
+            context.Menu.AddItem(
+                new ApplicationMenuItem(DynamicFormMenus.FormTemplate, l["Menu:FormTemplate"], "/DynamicForm/FormTemplates/FormTemplate")
             );
         }
     }

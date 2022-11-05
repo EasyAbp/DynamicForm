@@ -14,6 +14,11 @@ public class DynamicFormPermissionDefinitionProvider : PermissionDefinitionProvi
         formPermission.AddChild(DynamicFormPermissions.Form.Create, L("Permission:Create"));
         formPermission.AddChild(DynamicFormPermissions.Form.Update, L("Permission:Update"));
         formPermission.AddChild(DynamicFormPermissions.Form.Delete, L("Permission:Delete"));
+
+        var formTemplatePermission = myGroup.AddPermission(DynamicFormPermissions.FormTemplate.Default, L("Permission:FormTemplate"));
+        formTemplatePermission.AddChild(DynamicFormPermissions.FormTemplate.Create, L("Permission:Create"));
+        formTemplatePermission.AddChild(DynamicFormPermissions.FormTemplate.Update, L("Permission:Update"));
+        formTemplatePermission.AddChild(DynamicFormPermissions.FormTemplate.Delete, L("Permission:Delete"));
     }
 
     private static LocalizableString L(string name)
