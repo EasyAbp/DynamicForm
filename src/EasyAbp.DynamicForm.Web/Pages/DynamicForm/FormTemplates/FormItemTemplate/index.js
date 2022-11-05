@@ -1,6 +1,6 @@
 $(function () {
 
-    var l = abp.localization.getResource('DynamicForm');
+    var l = abp.localization.getResource('EasyAbpDynamicForm');
 
     var service = easyAbp.dynamicForm.formTemplates.formTemplate;
     var createModal = new abp.ModalManager(abp.appPath + 'DynamicForm/FormTemplates/FormItemTemplate/CreateModal');
