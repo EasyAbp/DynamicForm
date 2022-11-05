@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using EasyAbp.DynamicForm.Forms;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -17,6 +18,7 @@ public class DynamicFormEntityFrameworkCoreModule : AbpModule
                 /* Add custom repositories here. Example:
                  * options.AddRepository<Question, EfCoreQuestionRepository>();
                  */
+            options.AddRepository<Form, FormRepository>();
         });
     }
 }

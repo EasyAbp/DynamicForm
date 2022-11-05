@@ -1,7 +1,21 @@
 {
   "culture": "zh-Hans",
   "texts": {
-    "MyAccount": "我的账户",
-    "SamplePageMessage": "DynamicForm模块的示例页面"
+    "Permission:Form": "表单",
+    "Permission:Create": "新建",
+    "Permission:Update": "编辑",
+    "Permission:Delete": "删除",
+    "Menu:DynamicForm": "动态表单",
+    "Menu:Form": "表单",
+    "Form": "表单",
+    "FormFormDefinitionName": "表单定义",
+    "FormFormTemplateId": "表单模板 ID",
+    "FormFormTemplateName": "表单模板名",
+    "FormFormItems": "表单项",
+    "CreateForm": "新建",
+    "EditForm": "编辑",
+    "FormDeletionConfirmationMessage": "确认删除表单 {0}?",
+    "SuccessfullyDeleted": "删除成功",
+    "TableFilter": "表格过滤器"
   }
 }

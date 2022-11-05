@@ -1,4 +1,4 @@
-﻿namespace EasyAbp.DynamicForm.Blazor.Server.Host.Menus;
+namespace EasyAbp.DynamicForm.Blazor.Server.Host.Menus;
 
 public class DynamicFormMenus
 {
@@ -6,4 +6,5 @@ public class DynamicFormMenus
 
     //Add your menu items here...
 
+    public const string Form = Prefix + ".Form";
 }

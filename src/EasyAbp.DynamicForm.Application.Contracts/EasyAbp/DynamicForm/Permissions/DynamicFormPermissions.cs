@@ -1,4 +1,4 @@
-﻿using Volo.Abp.Reflection;
+using Volo.Abp.Reflection;
 
 namespace EasyAbp.DynamicForm.Permissions;
 
@@ -9,5 +9,13 @@ public class DynamicFormPermissions
     public static string[] GetAll()
     {
         return ReflectionHelper.GetPublicConstantsRecursively(typeof(DynamicFormPermissions));
+    }
+
+    public class Form
+    {
+        public const string Default = GroupName + ".Form";
+        public const string Update = Default + ".Update";
+        public const string Create = Default + ".Create";
+        public const string Delete = Default + ".Delete";
     }
 }

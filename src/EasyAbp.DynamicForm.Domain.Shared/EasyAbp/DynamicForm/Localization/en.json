@@ -1,7 +1,21 @@
 {
   "culture": "en",
   "texts": {
-    "MyAccount":  "My account",
-    "SamplePageMessage": "A sample page for the DynamicForm module"
+    "Permission:Form": "Form",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Menu:DynamicForm": "Dynamic form",
+    "Menu:Form": "Form",
+    "Form": "Form",
+    "FormFormDefinitionName": "Definition name",
+    "FormFormTemplateId": "Form template ID",
+    "FormFormTemplateName": "Form template name",
+    "FormFormItems": "Form items",
+    "CreateForm": "Create",
+    "EditForm": "Edit",
+    "FormDeletionConfirmationMessage": "Are you sure to delete the form {0}?",
+    "SuccessfullyDeleted": "Successfully deleted",
+    "TableFilter": "Table filter"
   }
 }

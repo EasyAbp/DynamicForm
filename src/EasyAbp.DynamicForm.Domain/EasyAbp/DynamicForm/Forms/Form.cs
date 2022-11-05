@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Options;
-using EasyAbp.DynamicForm.Shared;
 using JetBrains.Annotations;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities;
@@ -51,25 +49,20 @@ public class Form : FullAuditedAggregateRoot<Guid>, IMultiTenant
         FormItems = formItems ?? new List<FormItem>();
     }
 
-    public void AddOrUpdateFormItem([NotNull] string name, FormItemType type, [CanBeNull] string value)
+    internal void UpdateFormItem([NotNull] string name, [CanBeNull] string value)
     {
-        var item = FormItems.Find(x => x.Name == name);
+        var item = GetFormItem(name);
 
-        if (item is null)
-        {
-            item = new FormItem(Id, name, type, value);
-            FormItems.Add(item);
-        }
-        else
-        {
-            item.Update(value);
-        }
+        item.Update(value);
+    }
+
+    internal void UpdateFormItem(FormItem item, [CanBeNull] string value)
+    {
+        item.Update(value);
     }
 
     public FormItem FindFormItem([NotNull] string name) => FormItems.Find(x => x.Name == name);
 
     public FormItem GetFormItem([NotNull] string name) =>
         FindFormItem(name) ?? throw new EntityNotFoundException(typeof(FormItem), new { Id, name });
-
-    public void RemoveFormItem([NotNull] string name) => FormItems.Remove(GetFormItem(name));
 }

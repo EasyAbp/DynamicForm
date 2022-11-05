@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EasyAbp.DynamicForm.Forms;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace EasyAbp.DynamicForm.EntityFrameworkCore;
 
@@ -29,5 +31,15 @@ public static class DynamicFormDbContextModelCreatingExtensions
             b.HasIndex(q => q.CreationTime);
         });
         */
+
+
+        builder.Entity<Form>(b =>
+        {
+            b.ToTable(DynamicFormDbProperties.DbTablePrefix + "Forms", DynamicFormDbProperties.DbSchema);
+            b.ConfigureByConvention(); 
+            
+
+            /* Configure more properties here */
+        });
     }
 }

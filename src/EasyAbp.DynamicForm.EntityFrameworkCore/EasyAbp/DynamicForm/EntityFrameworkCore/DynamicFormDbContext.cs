@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
+using EasyAbp.DynamicForm.Forms;
 
 namespace EasyAbp.DynamicForm.EntityFrameworkCore;
 
@@ -10,6 +11,7 @@ public class DynamicFormDbContext : AbpDbContext<DynamicFormDbContext>, IDynamic
     /* Add DbSet for each Aggregate Root here. Example:
      * public DbSet<Question> Questions { get; set; }
      */
+    public DbSet<Form> Forms { get; set; }
 
     public DynamicFormDbContext(DbContextOptions<DynamicFormDbContext> options)
         : base(options)

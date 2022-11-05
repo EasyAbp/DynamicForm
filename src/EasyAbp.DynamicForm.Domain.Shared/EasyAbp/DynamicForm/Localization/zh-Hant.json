@@ -1,7 +1,21 @@
 {
   "culture": "zh-Hant",
   "texts": {
-    "MyAccount": "我的賬戶",
-    "SamplePageMessage": "DynamicForm 模塊的示例頁面"
+    "Permission:Form": "表單",
+    "Permission:Create": "新建",
+    "Permission:Update": "編輯",
+    "Permission:Delete": "刪除",
+    "Menu:DynamicForm": "動態表單",
+    "Menu:Form": "表單",
+    "Form": "表單",
+    "FormFormDefinitionName": "表單定義",
+    "FormFormTemplateId": "表單模板 ID",
+    "FormFormTemplateName": "表單模板名",
+    "FormFormItems": "表單項",
+    "CreateForm": "新建",
+    "EditForm": "編輯",
+    "FormDeletionConfirmationMessage": "確認刪除表單 {0}?",
+    "SuccessfullyDeleted": "刪除成功",
+    "TableFilter": "表格過濾器"
   }
 }
