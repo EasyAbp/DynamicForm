@@ -6,5 +6,5 @@ namespace EasyAbp.DynamicForm.FormTemplates;
 public interface IFormItemTemplate : IFormItemMetadata
 {
     [CanBeNull]
-    string Tip { get; }
+    string InfoText { get; }
 }

@@ -34,7 +34,7 @@ public class CreateModalModel : DynamicFormPageModel
         var dto = new CreateFormItemTemplateDto
         {
             Name = ViewModel.Name,
-            Tip = ViewModel.Tip,
+            InfoText = ViewModel.InfoText,
             Type = ViewModel.Type,
             Optional = ViewModel.Optional,
             RadioValues = new AvailableRadioValues(ViewModel.RadioValues.Split(','))

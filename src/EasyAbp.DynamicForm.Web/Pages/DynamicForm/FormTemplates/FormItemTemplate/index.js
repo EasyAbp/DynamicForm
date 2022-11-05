@@ -59,7 +59,7 @@ $(function () {
                 data: "name"
             },
             {
-                title: l('FormItemTemplateTip'),
+                title: l('FormItemTemplateInfoText'),
                 data: "tip"
             },
             {

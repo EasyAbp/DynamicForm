@@ -8,7 +8,7 @@ public class CreateFormItemTemplateDto
 {
     public string Name { get; set; }
 
-    public string Tip { get; set; }
+    public string InfoText { get; set; }
 
     public FormItemType Type { get; set; }
 

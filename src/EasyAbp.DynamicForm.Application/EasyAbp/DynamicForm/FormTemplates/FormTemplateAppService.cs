@@ -61,7 +61,7 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         var formTemplate = await GetEntityByIdAsync(id);
 
         await _formTemplateManager.CreateFormItemAsync(
-            formTemplate, input.Name, input.Tip, input.Type, input.Optional, input.RadioValues);
+            formTemplate, input.Name, input.InfoText, input.Type, input.Optional, input.RadioValues);
 
         await _repository.UpdateAsync(formTemplate, true);
 
@@ -76,7 +76,7 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         var formTemplate = await GetEntityByIdAsync(id);
 
         await _formTemplateManager.UpdateFormItemAsync(
-            formTemplate, name, input.Tip, input.Type, input.Optional, input.RadioValues);
+            formTemplate, name, input.InfoText, input.Type, input.Optional, input.RadioValues);
 
         await _repository.UpdateAsync(formTemplate, true);
 
@@ -104,7 +104,7 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         foreach (var formItemTemplateInput in createInput.FormItemTemplates)
         {
             await _formTemplateManager.CreateFormItemAsync(entity, formItemTemplateInput.Name,
-                formItemTemplateInput.Tip, formItemTemplateInput.Type, formItemTemplateInput.Optional,
+                formItemTemplateInput.InfoText, formItemTemplateInput.Type, formItemTemplateInput.Optional,
                 formItemTemplateInput.RadioValues);
         }
 

@@ -32,7 +32,7 @@
     "FormTemplateDeletionConfirmationMessage": "确认删除表单模板 {0}?",
     "FormItemTemplate": "表单项",
     "FormItemTemplateName": "名称",
-    "FormItemTemplateTip": "提示",
+    "FormItemTemplateInfoText": "输入信息提示",
     "FormItemTemplateType": "类型",
     "FormItemTemplateOptional": "选填",
     "FormItemTemplateRadioValues": "可选值",

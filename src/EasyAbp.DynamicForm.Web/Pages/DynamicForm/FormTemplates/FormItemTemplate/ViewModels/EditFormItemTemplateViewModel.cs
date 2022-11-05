@@ -7,7 +7,7 @@ namespace EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormItemTempla
 public class EditFormItemTemplateViewModel
 {
     [Display(Name = "FormItemTemplateTip")]
-    public string Tip { get; set; }
+    public string InfoText { get; set; }
 
     [Required]
     [AbpRadioButton(Inline = true)]

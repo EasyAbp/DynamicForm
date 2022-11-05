@@ -12,7 +12,7 @@ public class FormItemTemplate : Entity, IFormItemTemplate
 
     public virtual string Name { get; protected set; }
 
-    public virtual string Tip { get; protected set; }
+    public virtual string InfoText { get; protected set; }
 
     public virtual FormItemType Type { get; protected set; }
 
@@ -27,26 +27,26 @@ public class FormItemTemplate : Entity, IFormItemTemplate
     internal FormItemTemplate(
         Guid formTemplateId,
         [NotNull] string name,
-        [CanBeNull] string tip,
+        [CanBeNull] string infoText,
         FormItemType type,
         bool optional,
         AvailableRadioValues radioValues)
     {
         FormTemplateId = formTemplateId;
         Name = Check.NotNullOrWhiteSpace(name, nameof(name));
-        Tip = tip;
+        InfoText = infoText;
         Type = type;
         Optional = optional;
         RadioValues = radioValues;
     }
 
     internal void Update(
-        [CanBeNull] string tip,
+        [CanBeNull] string infoText,
         FormItemType type,
         bool optional,
         AvailableRadioValues radioValues)
     {
-        Tip = tip;
+        InfoText = infoText;
         Type = type;
         Optional = optional;
         RadioValues = radioValues ?? new AvailableRadioValues();

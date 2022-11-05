@@ -39,7 +39,7 @@ public class FormTemplateManager : DomainService
     }
 
     public virtual Task<FormTemplate> CreateFormItemAsync(FormTemplate formTemplate, [NotNull] string name,
-        [CanBeNull] string tip, FormItemType type, bool optional, AvailableRadioValues radioValues)
+        [CanBeNull] string infoText, FormItemType type, bool optional, AvailableRadioValues radioValues)
     {
         var item = formTemplate.FindFormItemTemplate(name);
 
@@ -48,17 +48,17 @@ public class FormTemplateManager : DomainService
             throw new BusinessException(DynamicFormErrorCodes.DuplicateFormItemTemplate);
         }
 
-        formTemplate.AddOrUpdateFormItemTemplate(name, tip, type, optional, radioValues);
+        formTemplate.AddOrUpdateFormItemTemplate(name, infoText, type, optional, radioValues);
 
         return Task.FromResult(formTemplate);
     }
 
     public virtual Task<FormTemplate> UpdateFormItemAsync(FormTemplate formTemplate, [NotNull] string name,
-        [CanBeNull] string tip, FormItemType type, bool optional, AvailableRadioValues radioValues)
+        [CanBeNull] string infoText, FormItemType type, bool optional, AvailableRadioValues radioValues)
     {
         var item = formTemplate.GetFormItemTemplate(name);
 
-        formTemplate.AddOrUpdateFormItemTemplate(name, tip, type, optional, radioValues);
+        formTemplate.AddOrUpdateFormItemTemplate(name, infoText, type, optional, radioValues);
 
         return Task.FromResult(formTemplate);
     }

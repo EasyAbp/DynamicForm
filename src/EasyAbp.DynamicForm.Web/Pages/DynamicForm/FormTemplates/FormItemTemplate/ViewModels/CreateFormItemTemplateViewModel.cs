@@ -9,8 +9,8 @@ public class CreateFormItemTemplateViewModel
     [Display(Name = "FormItemTemplateName")]
     public string Name { get; set; }
 
-    [Display(Name = "FormItemTemplateTip")]
-    public string Tip { get; set; }
+    [Display(Name = "FormItemTemplateInfoText")]
+    public string InfoText { get; set; }
 
     [Required]
     [AbpRadioButton(Inline = true)]

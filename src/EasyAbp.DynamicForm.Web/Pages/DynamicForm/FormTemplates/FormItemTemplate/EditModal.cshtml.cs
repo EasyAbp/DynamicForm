@@ -38,7 +38,7 @@ public class EditModalModel : DynamicFormPageModel
 
         ViewModel = new EditFormItemTemplateViewModel
         {
-            Tip = item.Tip,
+            InfoText = item.InfoText,
             Type = item.Type,
             Optional = item.Optional,
             RadioValues = item.RadioValues.JoinAsString(",")
@@ -49,7 +49,7 @@ public class EditModalModel : DynamicFormPageModel
     {
         var dto = new UpdateFormItemTemplateDto
         {
-            Tip = ViewModel.Tip,
+            InfoText = ViewModel.InfoText,
             Type = ViewModel.Type,
             Optional = ViewModel.Optional,
             RadioValues = new AvailableRadioValues(ViewModel.RadioValues.Split(','))

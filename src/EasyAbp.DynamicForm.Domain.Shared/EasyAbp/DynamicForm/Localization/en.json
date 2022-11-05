@@ -32,7 +32,7 @@
     "FormTemplateDeletionConfirmationMessage": "Are you sure to delete the form template {0}?",
     "FormItemTemplate": "Form item",
     "FormItemTemplateName": "Name",
-    "FormItemTemplateTip": "Tip",
+    "FormItemTemplateInfoText": "Input info text",
     "FormItemTemplateType": "Type",
     "FormItemTemplateOptional": "Optional",
     "FormItemTemplateRadioValues": "Radio values",
