@@ -1,9 +1,8 @@
 ﻿using System;
-using EasyAbp.DynamicForm.Forms;
 using EasyAbp.DynamicForm.Shared;
 using Volo.Abp.Domain.Entities;
 
-namespace EasyAbp.DynamicForm.Options;
+namespace EasyAbp.DynamicForm.Forms;
 
 public class FormItem : Entity, IFormItem
 {
