@@ -26,4 +26,7 @@ public class CreateFormItemTemplateViewModel
     [Display(Name = "FormItemTemplateRadioValues")]
     [InputInfoText("FormItemTemplateRadioValuesInfo")]
     public string RadioValues { get; set; }
+
+    [Display(Name = "FormItemDisplayOrder")]
+    public int DisplayOrder { get; set; }
 }

@@ -20,6 +20,8 @@ public class FormItemTemplate : Entity, IFormItemTemplate
 
     public virtual AvailableRadioValues RadioValues { get; protected set; }
 
+    public virtual int DisplayOrder { get; protected set; }
+
     protected FormItemTemplate()
     {
     }
@@ -30,26 +32,30 @@ public class FormItemTemplate : Entity, IFormItemTemplate
         [CanBeNull] string infoText,
         FormItemType type,
         bool optional,
-        AvailableRadioValues radioValues)
+        AvailableRadioValues radioValues,
+        int displayOrder)
     {
         FormTemplateId = formTemplateId;
         Name = Check.NotNullOrWhiteSpace(name, nameof(name));
         InfoText = infoText;
         Type = type;
         Optional = optional;
-        RadioValues = radioValues;
+        RadioValues = radioValues ?? new AvailableRadioValues();
+        DisplayOrder = displayOrder;
     }
 
     internal void Update(
         [CanBeNull] string infoText,
         FormItemType type,
         bool optional,
-        AvailableRadioValues radioValues)
+        AvailableRadioValues radioValues,
+        int displayOrder)
     {
         InfoText = infoText;
         Type = type;
         Optional = optional;
         RadioValues = radioValues ?? new AvailableRadioValues();
+        DisplayOrder = displayOrder;
     }
 
     public override object[] GetKeys()

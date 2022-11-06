@@ -38,8 +38,9 @@ public class FormTemplateManager : DomainService
         return Task.FromResult(formTemplate);
     }
 
-    public virtual Task<FormTemplate> CreateFormItemAsync(FormTemplate formTemplate, [NotNull] string name,
-        [CanBeNull] string infoText, FormItemType type, bool optional, AvailableRadioValues radioValues)
+    public virtual Task<FormTemplate> CreateFormItemAsync(
+        FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, FormItemType type, bool optional,
+        AvailableRadioValues radioValues, int displayOrder)
     {
         var item = formTemplate.FindFormItemTemplate(name);
 
@@ -48,17 +49,18 @@ public class FormTemplateManager : DomainService
             throw new BusinessException(DynamicFormErrorCodes.DuplicateFormItemTemplate);
         }
 
-        formTemplate.AddOrUpdateFormItemTemplate(name, infoText, type, optional, radioValues);
+        formTemplate.AddOrUpdateFormItemTemplate(name, infoText, type, optional, radioValues, displayOrder);
 
         return Task.FromResult(formTemplate);
     }
 
-    public virtual Task<FormTemplate> UpdateFormItemAsync(FormTemplate formTemplate, [NotNull] string name,
-        [CanBeNull] string infoText, FormItemType type, bool optional, AvailableRadioValues radioValues)
+    public virtual Task<FormTemplate> UpdateFormItemAsync(
+        FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, FormItemType type, bool optional,
+        AvailableRadioValues radioValues, int displayOrder)
     {
         var item = formTemplate.GetFormItemTemplate(name);
 
-        formTemplate.AddOrUpdateFormItemTemplate(name, infoText, type, optional, radioValues);
+        formTemplate.AddOrUpdateFormItemTemplate(name, infoText, type, optional, radioValues, displayOrder);
 
         return Task.FromResult(formTemplate);
     }

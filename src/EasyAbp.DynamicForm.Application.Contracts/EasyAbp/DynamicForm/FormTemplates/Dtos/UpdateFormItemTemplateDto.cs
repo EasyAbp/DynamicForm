@@ -13,4 +13,6 @@ public class UpdateFormItemTemplateDto
     public bool Optional { get; set; }
 
     public AvailableRadioValues RadioValues { get; set; }
+
+    public int DisplayOrder { get; set; }
 }

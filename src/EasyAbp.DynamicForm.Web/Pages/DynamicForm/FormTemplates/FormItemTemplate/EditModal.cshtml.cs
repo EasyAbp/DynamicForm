@@ -41,7 +41,8 @@ public class EditModalModel : DynamicFormPageModel
             InfoText = item.InfoText,
             Type = item.Type,
             Optional = item.Optional,
-            RadioValues = item.RadioValues.JoinAsString(",")
+            RadioValues = item.RadioValues.JoinAsString(","),
+            DisplayOrder = item.DisplayOrder
         };
     }
 
@@ -52,7 +53,8 @@ public class EditModalModel : DynamicFormPageModel
             InfoText = ViewModel.InfoText,
             Type = ViewModel.Type,
             Optional = ViewModel.Optional,
-            RadioValues = new AvailableRadioValues(ViewModel.RadioValues.Split(','))
+            RadioValues = new AvailableRadioValues(ViewModel.RadioValues.Split(',')),
+            DisplayOrder = ViewModel.DisplayOrder
         };
 
         await _service.UpdateFormItemAsync(FormTemplateId, Name, dto);

@@ -60,8 +60,8 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
 
         var formTemplate = await GetEntityByIdAsync(id);
 
-        await _formTemplateManager.CreateFormItemAsync(
-            formTemplate, input.Name, input.InfoText, input.Type, input.Optional, input.RadioValues);
+        await _formTemplateManager.CreateFormItemAsync(formTemplate, input.Name, input.InfoText, input.Type,
+            input.Optional, input.RadioValues, input.DisplayOrder);
 
         await _repository.UpdateAsync(formTemplate, true);
 
@@ -76,7 +76,7 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         var formTemplate = await GetEntityByIdAsync(id);
 
         await _formTemplateManager.UpdateFormItemAsync(
-            formTemplate, name, input.InfoText, input.Type, input.Optional, input.RadioValues);
+            formTemplate, name, input.InfoText, input.Type, input.Optional, input.RadioValues, input.DisplayOrder);
 
         await _repository.UpdateAsync(formTemplate, true);
 
@@ -96,6 +96,20 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         return await MapToGetOutputDtoAsync(formTemplate);
     }
 
+    protected override Task<FormTemplateDto> MapToGetOutputDtoAsync(FormTemplate entity)
+    {
+        var dto = ObjectMapper.Map<FormTemplate, FormTemplateDto>(entity);
+
+        dto.FormItemTemplates.Sort((x, y) => x.DisplayOrder.CompareTo(y.DisplayOrder));
+
+        return Task.FromResult(dto);
+    }
+
+    protected override Task<FormTemplateDto> MapToGetListOutputDtoAsync(FormTemplate entity)
+    {
+        return MapToGetOutputDtoAsync(entity);
+    }
+
     protected override async Task<FormTemplate> MapToEntityAsync(CreateFormTemplateDto createInput)
     {
         var entity = await _formTemplateManager.CreateAsync(
@@ -105,7 +119,7 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         {
             await _formTemplateManager.CreateFormItemAsync(entity, formItemTemplateInput.Name,
                 formItemTemplateInput.InfoText, formItemTemplateInput.Type, formItemTemplateInput.Optional,
-                formItemTemplateInput.RadioValues);
+                formItemTemplateInput.RadioValues, formItemTemplateInput.DisplayOrder);
         }
 
         return entity;

@@ -37,6 +37,7 @@
     "FormItemTemplateOptional": "選填",
     "FormItemTemplateRadioValues": "可選值",
     "FormItemTemplateRadioValuesInfo": "僅當類型為“選項”時有效，使用半角逗號(,)隔離可用選項.",
+    "FormItemTemplateDisplayOrder": "顯示排序",
     "FormItemType.Text": "文本",
     "FormItemType.Radio": "選項",
     "CreateFormItemTemplate": "新建",

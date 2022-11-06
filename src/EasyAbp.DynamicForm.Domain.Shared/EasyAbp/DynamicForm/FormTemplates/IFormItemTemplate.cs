@@ -7,4 +7,6 @@ public interface IFormItemTemplate : IFormItemMetadata
 {
     [CanBeNull]
     string InfoText { get; }
+
+    int DisplayOrder { get; }
 }

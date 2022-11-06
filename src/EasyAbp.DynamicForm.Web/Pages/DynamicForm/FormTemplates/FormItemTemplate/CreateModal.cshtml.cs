@@ -37,7 +37,8 @@ public class CreateModalModel : DynamicFormPageModel
             InfoText = ViewModel.InfoText,
             Type = ViewModel.Type,
             Optional = ViewModel.Optional,
-            RadioValues = new AvailableRadioValues(ViewModel.RadioValues.Split(','))
+            RadioValues = new AvailableRadioValues(ViewModel.RadioValues.Split(',')),
+            DisplayOrder = ViewModel.DisplayOrder
         };
 
         await _service.CreateFormItemAsync(FormTemplateId, dto);

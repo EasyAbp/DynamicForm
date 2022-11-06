@@ -70,18 +70,19 @@ public class FormTemplate : FullAuditedAggregateRoot<Guid>, IMultiTenant
         [CanBeNull] string infoText,
         FormItemType type,
         bool optional,
-        AvailableRadioValues radioValues)
+        AvailableRadioValues radioValues,
+        int displayOrder)
     {
         var item = FormItemTemplates.Find(x => x.Name == name);
 
         if (item is null)
         {
-            item = new FormItemTemplate(Id, name, infoText, type, optional, radioValues);
+            item = new FormItemTemplate(Id, name, infoText, type, optional, radioValues, displayOrder);
             FormItemTemplates.Add(item);
         }
         else
         {
-            item.Update(infoText, type, optional, radioValues);
+            item.Update(infoText, type, optional, radioValues, displayOrder);
         }
     }
 

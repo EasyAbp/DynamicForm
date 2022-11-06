@@ -37,6 +37,7 @@
     "FormItemTemplateOptional": "Optional",
     "FormItemTemplateRadioValues": "Radio values",
     "FormItemTemplateRadioValuesInfo": "Split available values of radio form item with commas.",
+    "FormItemTemplateDisplayOrder": "Display order",
     "FormItemType.Text": "Text",
     "FormItemType.Radio": "Radio",
     "CreateFormItemTemplate": "Create",
