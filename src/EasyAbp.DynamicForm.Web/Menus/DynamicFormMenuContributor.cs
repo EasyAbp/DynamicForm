@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Localization;
 using EasyAbp.DynamicForm.Permissions;
@@ -19,20 +20,28 @@ public class DynamicFormMenuContributor : IMenuContributor
     {
         var l = context.GetLocalizer<DynamicFormResource>();
         //Add main menu items.
-        context.Menu.AddItem(new ApplicationMenuItem(DynamicFormMenus.Prefix, displayName: "DynamicForm",
-            "~/DynamicForm", icon: "fa fa-wpforms"));
+
+        var dynamicFormMenu = new ApplicationMenuItem(DynamicFormMenus.Prefix, displayName: l["Menu:DynamicForm"],
+            icon: "fa fa-wpforms");
 
         if (await context.IsGrantedAsync(DynamicFormPermissions.Form.Default))
         {
-            context.Menu.AddItem(
-                new ApplicationMenuItem(DynamicFormMenus.Form, l["Menu:Form"], "/DynamicForm/Forms/Form")
+            dynamicFormMenu.AddItem(
+                new ApplicationMenuItem(DynamicFormMenus.Form, l["Menu:Form"], "~/DynamicForm/Forms/Form")
             );
         }
+
         if (await context.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Default))
         {
-            context.Menu.AddItem(
-                new ApplicationMenuItem(DynamicFormMenus.FormTemplate, l["Menu:FormTemplate"], "/DynamicForm/FormTemplates/FormTemplate")
+            dynamicFormMenu.AddItem(
+                new ApplicationMenuItem(DynamicFormMenus.FormTemplate, l["Menu:FormTemplate"],
+                    "~/DynamicForm/FormTemplates/FormTemplate")
             );
+        }
+
+        if (dynamicFormMenu.Items.Any())
+        {
+            context.Menu.AddItem(dynamicFormMenu);
         }
     }
 }
