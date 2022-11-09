@@ -77,7 +77,7 @@ public class FormManager : DomainService
             throw new BusinessException(DynamicFormErrorCodes.FormItemValueIsRequired);
         }
 
-        if (!metadata.AvailableValues.Contains(value))
+        if (metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(value))
         {
             throw new BusinessException(DynamicFormErrorCodes.InvalidFormItemValue);
         }
