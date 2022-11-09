@@ -19,5 +19,7 @@ public class FormItemDto : EntityDto
 
     public AvailableValues AvailableValues { get; set; }
 
+    public int DisplayOrder { get; set; }
+
     public string Value { get; set; }
 }

@@ -21,6 +21,8 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
 
     public virtual AvailableValues AvailableValues { get; protected set; }
 
+    public virtual int DisplayOrder { get; protected set; }
+
     public virtual string Value { get; protected set; }
 
     protected FormItem()
@@ -34,6 +36,7 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
         bool optional,
         [CanBeNull] string configurations,
         AvailableValues values,
+        int displayOrder,
         [CanBeNull] string value)
     {
         FormId = formId;
@@ -42,6 +45,7 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
         Optional = optional;
         Configurations = configurations;
         AvailableValues = values;
+        DisplayOrder = displayOrder;
         Value = value;
     }
 

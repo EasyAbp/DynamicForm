@@ -22,26 +22,8 @@ public class DynamicFormMenuContributor : IMenuContributor
         //Add main menu items.
 
         var dynamicFormMenu = new ApplicationMenuItem(DynamicFormMenus.Prefix, displayName: l["Menu:DynamicForm"],
-            icon: "fa fa-wpforms");
+            "~/DynamicForm/FormTemplates/FormTemplate", icon: "fa fa-wpforms");
 
-        if (await context.IsGrantedAsync(DynamicFormPermissions.Form.Default))
-        {
-            dynamicFormMenu.AddItem(
-                new ApplicationMenuItem(DynamicFormMenus.Form, l["Menu:Form"], "~/DynamicForm/Forms/Form")
-            );
-        }
-
-        if (await context.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Default))
-        {
-            dynamicFormMenu.AddItem(
-                new ApplicationMenuItem(DynamicFormMenus.FormTemplate, l["Menu:FormTemplate"],
-                    "~/DynamicForm/FormTemplates/FormTemplate")
-            );
-        }
-
-        if (dynamicFormMenu.Items.Any())
-        {
-            context.Menu.AddItem(dynamicFormMenu);
-        }
+        context.Menu.AddItem(dynamicFormMenu);
     }
 }

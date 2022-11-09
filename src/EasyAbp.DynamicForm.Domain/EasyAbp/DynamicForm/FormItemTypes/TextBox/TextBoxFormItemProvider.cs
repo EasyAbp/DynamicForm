@@ -12,7 +12,7 @@ namespace EasyAbp.DynamicForm.FormItemTypes.TextBox;
 public class TextBoxFormItemProvider : IFormItemProvider, IScopedDependency
 {
     public static string Name { get; set; } = "TextBox";
-    public static string LocalizationItemKey { get; set; } = "TextBox";
+    public static string LocalizationItemKey { get; set; } = "FormItemType.TextBox";
 
     private readonly IJsonSerializer _jsonSerializer;
 

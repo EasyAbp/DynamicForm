@@ -13,6 +13,7 @@ using EasyAbp.DynamicForm.Blazor.Server.Host.Menus;
 using EasyAbp.DynamicForm.EntityFrameworkCore;
 using EasyAbp.DynamicForm.Localization;
 using EasyAbp.DynamicForm.MultiTenancy;
+using EasyAbp.DynamicForm.Options;
 using OpenIddict.Validation.AspNetCore;
 using Volo.Abp;
 using Volo.Abp.Account;
@@ -115,6 +116,13 @@ public class DynamicFormBlazorHostModule : AbpModule
         var configuration = context.Services.GetConfiguration();
 
         context.Services.ForwardIdentityAuthenticationForBearer(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
+
+        Configure<DynamicFormOptions>(options =>
+        {
+            options.AddOrUpdateFormDefinition(new FormDefinition("InternalForm", "Internal Form"));
+            options.AddTextBoxFormItemType();
+            options.AddOptionButtonsFormItemType();
+        });
 
         Configure<AbpDbContextOptions>(options =>
         {

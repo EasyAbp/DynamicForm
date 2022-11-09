@@ -5,8 +5,9 @@ namespace EasyAbp.DynamicForm.FormTemplates;
 
 public interface IFormItemTemplate : IFormItemMetadata
 {
+    /// <summary>
+    /// Info text (tips) for the form item.
+    /// </summary>
     [CanBeNull]
     string InfoText { get; }
-
-    int DisplayOrder { get; }
 }

@@ -13,7 +13,8 @@ public static class DynamicFormEntityTypeBuilderExtensions
         {
             b.Property(nameof(IHasAvailableValues.AvailableValues))
                 .HasConversion<AvailableValuesValueConverter>()
-                .HasColumnName(nameof(IHasAvailableValues.AvailableValues));
+                .HasColumnName(nameof(IHasAvailableValues.AvailableValues))
+                .Metadata.SetValueComparer(new AvailableValuesValueComparer());
         }
     }
 }

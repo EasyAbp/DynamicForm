@@ -24,8 +24,8 @@ public interface IFormItemMetadata : IHasAvailableValues
     [CanBeNull]
     string Configurations { get; }
 
-    /// <remarks>
-    /// Available radio values. It only affects when the from item type is `Radio`.
-    /// </remarks>
-    AvailableValues AvailableValues { get; }
+    /// <summary>
+    /// Display order of the form item collection.
+    /// </summary>
+    int DisplayOrder { get; }
 }

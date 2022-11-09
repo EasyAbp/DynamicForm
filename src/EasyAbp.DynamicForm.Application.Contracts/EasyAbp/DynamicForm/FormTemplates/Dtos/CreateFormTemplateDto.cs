@@ -12,5 +12,5 @@ public class CreateFormTemplateDto
 
     public string CustomTag { get; set; }
 
-    public List<CreateFormItemTemplateDto> FormItemTemplates { get; set; }
+    public List<CreateFormItemTemplateDto> FormItemTemplates { get; set; } = new();
 }

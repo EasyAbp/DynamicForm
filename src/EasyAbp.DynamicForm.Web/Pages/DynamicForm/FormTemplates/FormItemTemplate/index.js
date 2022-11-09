@@ -32,14 +32,14 @@ $(function () {
                         [
                             {
                                 text: l('Edit'),
-                                visible: abp.auth.isGranted('DynamicForm.FormTemplate.Update'),
+                                visible: abp.auth.isGranted('EasyAbp.DynamicForm.FormTemplate.Update'),
                                 action: function (data) {
                                     editModal.open({ formTemplateId: data.record.formTemplateId, name: data.record.name });
                                 }
                             },
                             {
                                 text: l('Delete'),
-                                visible: abp.auth.isGranted('DynamicForm.FormTemplate.Update'),
+                                visible: abp.auth.isGranted('EasyAbp.DynamicForm.FormTemplate.Update'),
                                 confirmMessage: function (data) {
                                     return l('FormItemTemplateDeletionConfirmationMessage', data.record.name);
                                 },
@@ -57,10 +57,6 @@ $(function () {
             {
                 title: l('FormItemTemplateName'),
                 data: "name"
-            },
-            {
-                title: l('FormItemTemplateInfoText'),
-                data: "tip"
             },
             {
                 title: l('FormItemTemplateType'),

@@ -71,4 +71,18 @@ public class FormAppService : CrudAppService<Form, FormDto, Guid, FormGetListInp
 
         return await MapToGetOutputDtoAsync(entity);
     }
+
+    protected override Task<FormDto> MapToGetOutputDtoAsync(Form entity)
+    {
+        var dto = ObjectMapper.Map<Form, FormDto>(entity);
+
+        dto.FormItems.Sort((x, y) => x.DisplayOrder.CompareTo(y.DisplayOrder));
+
+        return Task.FromResult(dto);
+    }
+
+    protected override Task<FormDto> MapToGetListOutputDtoAsync(Form entity)
+    {
+        return MapToGetOutputDtoAsync(entity);
+    }
 }

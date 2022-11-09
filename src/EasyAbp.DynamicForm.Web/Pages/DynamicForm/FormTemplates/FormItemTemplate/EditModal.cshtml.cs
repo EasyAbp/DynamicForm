@@ -8,6 +8,8 @@ using EasyAbp.DynamicForm.Shared;
 using EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormItemTemplate.ViewModels;
 using EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormTemplate.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormItemTemplate;
 
@@ -36,12 +38,14 @@ public class EditModalModel : DynamicFormPageModel
         var dto = await _service.GetAsync(FormTemplateId);
         var item = dto.FormItemTemplates.First(x => x.Name == Name);
 
+        var beautifiedConfigurations = JToken.Parse(item.Configurations).ToString(Formatting.Indented);
+
         ViewModel = new EditFormItemTemplateViewModel
         {
             InfoText = item.InfoText,
             Type = item.Type,
             Optional = item.Optional,
-            Configurations = item.Configurations,
+            Configurations = beautifiedConfigurations,
             AvailableValues = item.AvailableValues.JoinAsString(","),
             DisplayOrder = item.DisplayOrder
         };

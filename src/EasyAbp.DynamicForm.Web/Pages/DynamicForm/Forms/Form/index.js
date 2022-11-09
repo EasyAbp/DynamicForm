@@ -40,14 +40,14 @@ $(function () {
                         [
                             {
                                 text: l('Edit'),
-                                visible: abp.auth.isGranted('DynamicForm.Form.Update'),
+                                visible: abp.auth.isGranted('EasyAbp.DynamicForm.Form.Update'),
                                 action: function (data) {
                                     editModal.open({ id: data.record.id });
                                 }
                             },
                             {
                                 text: l('Delete'),
-                                visible: abp.auth.isGranted('DynamicForm.Form.Delete'),
+                                visible: abp.auth.isGranted('EasyAbp.DynamicForm.Form.Delete'),
                                 confirmMessage: function (data) {
                                     return l('FormDeletionConfirmationMessage', data.record.id);
                                 },
@@ -63,16 +63,20 @@ $(function () {
                 }
             },
             {
-                title: l('FormFormDefinitionName'), // todo: use display name
-                data: "formDefinitionName"
+                title: l('FormCreationTime'),
+                data: "creationTime"
             },
             {
-                title: l('FormFormTemplateId'),
-                data: "formTemplateId"
+                title: l('FormCreator'),
+                data: "creatorId"
             },
             {
                 title: l('FormFormTemplateName'),
                 data: "formTemplateName"
+            },
+            {
+                title: l('FormFormDefinitionName'), // todo: use display name
+                data: "formDefinitionName"
             },
         ]
     }));

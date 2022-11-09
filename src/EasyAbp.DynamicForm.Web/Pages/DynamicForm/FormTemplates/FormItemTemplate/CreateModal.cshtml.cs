@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.FormTemplates;
@@ -6,7 +7,9 @@ using EasyAbp.DynamicForm.FormTemplates.Dtos;
 using EasyAbp.DynamicForm.Shared;
 using EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormItemTemplate.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Volo.Abp.Json;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormItemTemplate;
 
@@ -19,26 +22,31 @@ public class CreateModalModel : DynamicFormPageModel
     [BindProperty(SupportsGet = true)]
     public CreateFormItemTemplateViewModel ViewModel { get; set; }
 
-    private readonly IFormTemplateAppService _service;
-    private readonly IJsonSerializer _jsonSerializer;
+    public List<SelectListItem> FormItemTypes { get; set; }
 
-    public CreateModalModel(
-        IFormTemplateAppService service,
-        IJsonSerializer jsonSerializer)
+    private readonly IFormTemplateAppService _service;
+
+    public CreateModalModel(IFormTemplateAppService service)
     {
         _service = service;
-        _jsonSerializer = jsonSerializer;
     }
 
     public virtual async Task OnGetAsync()
     {
         var baseInfo = await _service.GetBaseInfoAsync();
 
+        var configurationsJsonTemplate = baseInfo.FormItemTypeDefinitions.First(x => x.Name == ViewModel.Type)
+            .ConfigurationsJsonTemplate;
+
+        var beautifiedConfigurations = JToken.Parse(configurationsJsonTemplate).ToString(Formatting.Indented);
+
         ViewModel = new CreateFormItemTemplateViewModel
         {
-            Configurations =
-                _jsonSerializer.Serialize(baseInfo.FormItemTypeDefinitions.First(x => x.Name == ViewModel.Type))
+            Configurations = beautifiedConfigurations
         };
+
+        FormItemTypes = baseInfo.FormItemTypeDefinitions
+            .Select(x => new SelectListItem(L[x.LocalizationItemKey], x.Name)).ToList();
     }
 
     public virtual async Task<IActionResult> OnPostAsync()

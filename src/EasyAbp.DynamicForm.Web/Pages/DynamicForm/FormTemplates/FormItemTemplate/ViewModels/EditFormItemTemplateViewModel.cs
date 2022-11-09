@@ -8,26 +8,26 @@ public class EditFormItemTemplateViewModel
     [Display(Name = "FormItemTemplateTip")]
     public string InfoText { get; set; }
 
-    [Required]
-    [SelectItems("FormItemTypes")]
     [Display(Name = "FormItemTemplateType")]
+    [SelectItems("FormItemTypes")]
+    [Required]
     public string Type { get; set; }
 
     [Display(Name = "FormItemTemplateOptional")]
     public bool Optional { get; set; }
 
     [Display(Name = "FormItemTemplateConfigurations")]
-    [TextArea]
+    [TextArea(Rows = 5)]
     public string Configurations { get; set; }
 
     /// <summary>
     /// Split available values with commas.
     /// </summary>
     [Display(Name = "FormItemTemplateAvailableValues")]
-    [TextArea]
+    [TextArea(Rows = 5)]
     [InputInfoText("FormItemTemplateAvailableValuesInfo")]
     public string AvailableValues { get; set; }
 
-    [Display(Name = "FormItemDisplayOrder")]
+    [Display(Name = "FormItemTemplateDisplayOrder")]
     public int DisplayOrder { get; set; }
 }

@@ -5,11 +5,12 @@ namespace EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormTemplate.V
 
 public class CreateFormTemplateViewModel
 {
-    [SelectItems("FormDefinitionNames")]
     [Display(Name = "FormTemplateFormDefinitionName")]
+    [SelectItems("FormDefinitionNames")]
     public string FormDefinitionName { get; set; }
 
     [Display(Name = "FormTemplateName")]
+    [Required]
     public string Name { get; set; }
 
     [Display(Name = "FormTemplateCustomTag")]

@@ -40,6 +40,7 @@ $(function () {
                         [
                             {
                                 text: l('Form'),
+                                visible: abp.auth.isGranted('EasyAbp.DynamicForm.Form'),
                                 action: function (data) {
                                     document.location.href = document.location.origin + abp.appPath + 'DynamicForm/Forms/Form?formTemplateId=' + data.record.id;
                                 }
@@ -52,14 +53,14 @@ $(function () {
                             },
                             {
                                 text: l('Edit'),
-                                visible: abp.auth.isGranted('DynamicForm.FormTemplate.Update'),
+                                visible: abp.auth.isGranted('EasyAbp.DynamicForm.FormTemplate.Update'),
                                 action: function (data) {
                                     editModal.open({ id: data.record.id });
                                 }
                             },
                             {
                                 text: l('Delete'),
-                                visible: abp.auth.isGranted('DynamicForm.FormTemplate.Delete'),
+                                visible: abp.auth.isGranted('EasyAbp.DynamicForm.FormTemplate.Delete'),
                                 confirmMessage: function (data) {
                                     return l('FormTemplateDeletionConfirmationMessage', data.record.id);
                                 },

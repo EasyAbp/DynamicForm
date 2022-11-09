@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using EasyAbp.DynamicForm.EntityFrameworkCore;
 using EasyAbp.DynamicForm.MultiTenancy;
+using EasyAbp.DynamicForm.Options;
 using StackExchange.Redis;
 using Microsoft.OpenApi.Models;
 using Volo.Abp;
@@ -58,6 +59,13 @@ public class DynamicFormHttpApiHostModule : AbpModule
     {
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
+
+        Configure<DynamicFormOptions>(options =>
+        {
+            options.AddOrUpdateFormDefinition(new FormDefinition("InternalForm", "Internal Form"));
+            options.AddTextBoxFormItemType();
+            options.AddOptionButtonsFormItemType();
+        });
 
         Configure<AbpDbContextOptions>(options =>
         {

@@ -6,6 +6,8 @@ using EasyAbp.DynamicForm.Permissions;
 using EasyAbp.DynamicForm.FormTemplates.Dtos;
 using EasyAbp.DynamicForm.Options;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Json;
@@ -45,16 +47,24 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
             ;
     }
 
-    public virtual Task<DynamicFormBaseInfoDto> GetBaseInfoAsync()
+    public virtual async Task<DynamicFormBaseInfoDto> GetBaseInfoAsync()
     {
         var options = LazyServiceProvider.LazyGetRequiredService<IOptions<DynamicFormOptions>>();
 
-        var formItemTypeDefinitions = options.Value.GetFormItemTypeDefinitions().Select(x =>
+        var formItemTypeDefinitions = options.Value.GetFormItemTypeDefinitions();
+        var configurationJsonTemplates = new Dictionary<string, string>();
+
+        foreach (var definition in formItemTypeDefinitions)
+        {
+            configurationJsonTemplates[definition.Name] = await GetConfigurationJsonTemplateAsync(definition);
+        }
+
+        var formItemTypeDefinitionDtos = formItemTypeDefinitions.Select(x =>
             new FormItemTypeDefinitionDto
             {
                 Name = x.Name,
                 LocalizationItemKey = x.LocalizationItemKey,
-                ConfigurationsJsonTemplate = GetConfigurationJsonTemplate(x)
+                ConfigurationsJsonTemplate = configurationJsonTemplates[x.Name]
             }).ToList();
 
         var formDefinitions = options.Value.GetFormDefinitions().Select(x => new FormDefinitionDto
@@ -63,18 +73,21 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
             DisplayName = x.DisplayName
         }).ToList();
 
-        return Task.FromResult(new DynamicFormBaseInfoDto
+        return new DynamicFormBaseInfoDto
         {
-            FormItemTypeDefinitions = formItemTypeDefinitions,
+            FormItemTypeDefinitions = formItemTypeDefinitionDtos,
             FormDefinitions = formDefinitions
-        });
+        };
     }
 
-    protected virtual string GetConfigurationJsonTemplate(FormItemTypeDefinition formItemTypeDefinition)
+    protected virtual async Task<string> GetConfigurationJsonTemplateAsync(
+        FormItemTypeDefinition formItemTypeDefinition)
     {
-        return _jsonSerializer.Serialize(
-            ((IFormItemProvider)LazyServiceProvider.LazyGetRequiredService(formItemTypeDefinition.ProviderType))
-            .CreateFormItemConfigurationsObjectOrNullAsync());
+        var configurations =
+            await ((IFormItemProvider)LazyServiceProvider.LazyGetRequiredService(formItemTypeDefinition.ProviderType))
+                .CreateFormItemConfigurationsObjectOrNullAsync();
+
+        return configurations is null ? null : _jsonSerializer.Serialize(configurations);
     }
 
     public virtual async Task<FormTemplateDto> CreateFormItemAsync(Guid id, CreateFormItemTemplateDto input)
@@ -84,7 +97,7 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         var formTemplate = await GetEntityByIdAsync(id);
 
         await _formTemplateManager.CreateFormItemAsync(formTemplate, input.Name, input.InfoText, input.Type,
-            input.Optional, input.Configurations, input.AvailableValues, input.DisplayOrder);
+            input.Optional, MinifyConfigurations(input.Configurations), input.AvailableValues, input.DisplayOrder);
 
         await _repository.UpdateAsync(formTemplate, true);
 
@@ -99,11 +112,16 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         var formTemplate = await GetEntityByIdAsync(id);
 
         await _formTemplateManager.UpdateFormItemAsync(formTemplate, name, input.InfoText, input.Type, input.Optional,
-            input.Configurations, input.AvailableValues, input.DisplayOrder);
+            MinifyConfigurations(input.Configurations), input.AvailableValues, input.DisplayOrder);
 
         await _repository.UpdateAsync(formTemplate, true);
 
         return await MapToGetOutputDtoAsync(formTemplate);
+    }
+
+    protected virtual string MinifyConfigurations(string inputConfigurations)
+    {
+        return JToken.Parse(inputConfigurations).ToString(Formatting.None);
     }
 
     public virtual async Task<FormTemplateDto> DeleteFormItemAsync(Guid id, string name)
@@ -142,7 +160,7 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         {
             await _formTemplateManager.CreateFormItemAsync(entity, formItemTemplateInput.Name,
                 formItemTemplateInput.InfoText, formItemTemplateInput.Type, formItemTemplateInput.Optional,
-                formItemTemplateInput.Configurations, formItemTemplateInput.AvailableValues,
+                MinifyConfigurations(formItemTemplateInput.Configurations), formItemTemplateInput.AvailableValues,
                 formItemTemplateInput.DisplayOrder);
         }
 

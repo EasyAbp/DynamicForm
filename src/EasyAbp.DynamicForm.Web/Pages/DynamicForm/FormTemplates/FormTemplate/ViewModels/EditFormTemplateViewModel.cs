@@ -5,5 +5,6 @@ namespace EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormTemplate.V
 public class EditFormTemplateViewModel
 {
     [Display(Name = "FormTemplateName")]
+    [Required]
     public string Name { get; set; }
 }
