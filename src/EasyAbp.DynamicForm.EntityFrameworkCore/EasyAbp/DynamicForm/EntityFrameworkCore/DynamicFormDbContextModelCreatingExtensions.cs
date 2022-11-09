@@ -26,6 +26,7 @@ public static class DynamicFormDbContextModelCreatingExtensions
         {
             b.ToTable(DynamicFormDbProperties.DbTablePrefix + "FormItems", DynamicFormDbProperties.DbSchema);
             b.ConfigureByConvention();
+            b.TryConfigureAvailableValues();
 
             /* Configure more properties here */
             b.HasKey(x => new { x.FormId, x.Name });
@@ -45,6 +46,7 @@ public static class DynamicFormDbContextModelCreatingExtensions
         {
             b.ToTable(DynamicFormDbProperties.DbTablePrefix + "FormItemTemplates", DynamicFormDbProperties.DbSchema);
             b.ConfigureByConvention();
+            b.TryConfigureAvailableValues();
 
             /* Configure more properties here */
             b.HasKey(x => new { x.FormTemplateId, x.Name });

@@ -2,7 +2,7 @@
 
 namespace EasyAbp.DynamicForm.Shared;
 
-public interface IFormItemMetadata
+public interface IFormItemMetadata : IHasAvailableValues
 {
     [NotNull]
     string Name { get; }
