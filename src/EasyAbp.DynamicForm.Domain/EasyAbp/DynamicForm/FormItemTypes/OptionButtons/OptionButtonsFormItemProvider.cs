@@ -11,7 +11,7 @@ namespace EasyAbp.DynamicForm.FormItemTypes.OptionButtons;
 public class OptionButtonsFormItemProvider : IFormItemProvider, IScopedDependency
 {
     public static string Name { get; set; } = "OptionButtons";
-    public static string LocalizationItemKey { get; set; } = "OptionButtons";
+    public static string LocalizationItemKey { get; set; } = "FormItemType.OptionButtons";
     public static string SelectionSeparator { get; set; } = ",";
 
     private readonly IJsonSerializer _jsonSerializer;
@@ -36,15 +36,17 @@ public class OptionButtonsFormItemProvider : IFormItemProvider, IScopedDependenc
 
     public virtual Task ValidateFormItemValueAsync(IFormItemMetadata formItemMetadata, string value)
     {
-        var selections = value.Split(SelectionSeparator);
         var configurations = GetConfigurations(formItemMetadata);
+        var selections = configurations.IsMultiSelection ? value.Split(SelectionSeparator) : new[] { value };
 
-        if (configurations.MinSelection.HasValue && selections.Length < configurations.MinSelection)
+        if (configurations.IsMultiSelection && configurations.MinSelection.HasValue &&
+            selections.Length < configurations.MinSelection)
         {
             throw new BusinessException(DynamicFormErrorCodes.OptionButtonsInvalidOptionQuantitySelected);
         }
 
-        if (configurations.MaxSelection.HasValue && selections.Length > configurations.MaxSelection)
+        if (configurations.IsMultiSelection && configurations.MaxSelection.HasValue &&
+            selections.Length > configurations.MaxSelection)
         {
             throw new BusinessException(DynamicFormErrorCodes.OptionButtonsInvalidOptionQuantitySelected);
         }
