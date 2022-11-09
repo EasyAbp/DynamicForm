@@ -54,10 +54,10 @@ public class FormTemplateController : DynamicFormController, IFormTemplateAppSer
     }
 
     [HttpGet]
-    [Route("form-definition")]
-    public virtual Task<ListResultDto<FormDefinitionDto>> GetFormDefinitionListAsync()
+    [Route("base-info")]
+    public virtual Task<DynamicFormBaseInfoDto> GetBaseInfoAsync()
     {
-        return _service.GetFormDefinitionListAsync();
+        return _service.GetBaseInfoAsync();
     }
 
     [HttpPost]

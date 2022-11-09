@@ -65,25 +65,30 @@ public class FormTemplate : FullAuditedAggregateRoot<Guid>, IMultiTenant
         Name = Check.NotNullOrWhiteSpace(name, nameof(name));
     }
 
-    internal void AddOrUpdateFormItemTemplate(
+    internal FormItemTemplate AddOrUpdateFormItemTemplate(
         [NotNull] string name,
         [CanBeNull] string infoText,
-        FormItemType type,
+        [NotNull] string type,
         bool optional,
-        AvailableRadioValues radioValues,
+        [CanBeNull] string configurations,
+        AvailableValues availableValues,
         int displayOrder)
     {
         var item = FormItemTemplates.Find(x => x.Name == name);
 
         if (item is null)
         {
-            item = new FormItemTemplate(Id, name, infoText, type, optional, radioValues, displayOrder);
+            item = new FormItemTemplate(
+                Id, name, infoText, type, optional, configurations, availableValues, displayOrder);
+
             FormItemTemplates.Add(item);
         }
         else
         {
-            item.Update(infoText, type, optional, radioValues, displayOrder);
+            item.Update(infoText, type, optional, configurations, availableValues, displayOrder);
         }
+
+        return item;
     }
 
     public FormItemTemplate FindFormItemTemplate([NotNull] string name) => FormItemTemplates.Find(x => x.Name == name);

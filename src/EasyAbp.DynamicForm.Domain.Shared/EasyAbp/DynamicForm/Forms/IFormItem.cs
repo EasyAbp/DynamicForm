@@ -9,7 +9,8 @@ public interface IFormItem
     [NotNull]
     string Name { get; }
 
-    FormItemType Type { get; }
+    [NotNull]
+    string Type { get; }
 
     [CanBeNull]
     string Value { get; }

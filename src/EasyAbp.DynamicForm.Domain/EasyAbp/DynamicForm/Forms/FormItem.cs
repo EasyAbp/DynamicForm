@@ -13,11 +13,13 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
 
     public virtual string Name { get; protected set; }
 
-    public virtual FormItemType Type { get; protected set; }
+    public virtual string Type { get; protected set; }
 
     public virtual bool Optional { get; protected set; }
-    
-    public virtual AvailableRadioValues RadioValues { get; protected set; }
+
+    public virtual string Configurations { get; protected set; }
+
+    public virtual AvailableValues AvailableValues { get; protected set; }
 
     public virtual string Value { get; protected set; }
 
@@ -28,16 +30,18 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
     internal FormItem(
         Guid formId,
         [NotNull] string name,
-        FormItemType type,
+        [NotNull] string type,
         bool optional,
-        AvailableRadioValues radioValues,
+        [CanBeNull] string configurations,
+        AvailableValues values,
         [CanBeNull] string value)
     {
         FormId = formId;
         Name = Check.NotNullOrWhiteSpace(name, nameof(name));
-        Type = type;
+        Type = Check.NotNullOrWhiteSpace(type, nameof(type));
         Optional = optional;
-        RadioValues = radioValues;
+        Configurations = configurations;
+        AvailableValues = values;
         Value = value;
     }
 

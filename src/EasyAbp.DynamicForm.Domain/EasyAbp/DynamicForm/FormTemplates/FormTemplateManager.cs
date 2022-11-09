@@ -39,8 +39,8 @@ public class FormTemplateManager : DomainService
     }
 
     public virtual Task<FormTemplate> CreateFormItemAsync(
-        FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, FormItemType type, bool optional,
-        AvailableRadioValues radioValues, int displayOrder)
+        FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, [NotNull] string type,
+        bool optional, [CanBeNull] string configurations, AvailableValues availableValues, int displayOrder)
     {
         var item = formTemplate.FindFormItemTemplate(name);
 
@@ -49,18 +49,30 @@ public class FormTemplateManager : DomainService
             throw new BusinessException(DynamicFormErrorCodes.DuplicateFormItemTemplate);
         }
 
-        formTemplate.AddOrUpdateFormItemTemplate(name, infoText, type, optional, radioValues, displayOrder);
+        var formItemTemplate = formTemplate.AddOrUpdateFormItemTemplate(
+            name, infoText, type, optional, configurations, availableValues, displayOrder);
+        
+        var formItemProvider = (IFormItemProvider)LazyServiceProvider.LazyGetRequiredService(
+            Options.GetFormItemTypeDefinition(type).ProviderType);
+
+        formItemProvider.ValidateFormItemTemplateAsync(formItemTemplate);
 
         return Task.FromResult(formTemplate);
     }
 
     public virtual Task<FormTemplate> UpdateFormItemAsync(
-        FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, FormItemType type, bool optional,
-        AvailableRadioValues radioValues, int displayOrder)
+        FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, [NotNull] string type,
+        bool optional, string configurations, AvailableValues availableValues, int displayOrder)
     {
         var item = formTemplate.GetFormItemTemplate(name);
 
-        formTemplate.AddOrUpdateFormItemTemplate(name, infoText, type, optional, radioValues, displayOrder);
+        formTemplate.AddOrUpdateFormItemTemplate(
+            name, infoText, type, optional, configurations, availableValues, displayOrder);
+
+        var formItemProvider = (IFormItemProvider)LazyServiceProvider.LazyGetRequiredService(
+            Options.GetFormItemTypeDefinition(type).ProviderType);
+
+        formItemProvider.ValidateFormItemTemplateAsync(item);
 
         return Task.FromResult(formTemplate);
     }

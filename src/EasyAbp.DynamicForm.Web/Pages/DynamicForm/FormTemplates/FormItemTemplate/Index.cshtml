@@ -18,8 +18,9 @@
 
 @section scripts
 {
-    <abp-script src="/Pages/DynamicForm/FormTemplates/FormItemTemplate/index.js" />
+    <abp-script src="/Pages/DynamicForm/FormTemplates/FormItemTemplate/index.js"/>
 }
+
 @section styles
 {
     <abp-style src="/Pages/DynamicForm/FormTemplates/FormItemTemplate/index.css"/>
@@ -36,12 +37,17 @@
                 <abp-card-title>@L["FormItemTemplate"]</abp-card-title>
             </abp-column>
             <abp-column size-md="_6" class="text-end">
-			    @if (await Authorization.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Update))
+                @if (await Authorization.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Update))
                 {
-                <abp-button id="NewFormItemTemplateButton"
-                            text="@L["CreateFormItemTemplate"].Value"
-                            icon="plus"
-                            button-type="Primary" />
+                    <abp-dropdown>
+                        <abp-dropdown-button text="@L["CreateFormItemTemplate"].Value" icon="plus" button-type="Primary"/>
+                        <abp-dropdown-menu>
+                            @foreach (var formItemType in Model.FormItemTypes)
+                            {
+                                <abp-dropdown-item href="#" class="NewFormItemTemplateButton" form-item-type="@formItemType.Name">@L[formItemType.LocalizationItemKey]</abp-dropdown-item>
+                            }
+                        </abp-dropdown-menu>
+                    </abp-dropdown>
                 }
             </abp-column>
         </abp-row>

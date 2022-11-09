@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.FormTemplates.Dtos;
@@ -15,7 +16,7 @@ public class CreateModalModel : DynamicFormPageModel
     [BindProperty(SupportsGet = true)]
     public Guid FormTemplateId { get; set; }
 
-    [BindProperty]
+    [BindProperty(SupportsGet = true)]
     public CreateFormItemTemplateViewModel ViewModel { get; set; }
 
     private readonly IFormTemplateAppService _service;
@@ -29,6 +30,17 @@ public class CreateModalModel : DynamicFormPageModel
         _jsonSerializer = jsonSerializer;
     }
 
+    public virtual async Task OnGetAsync()
+    {
+        var baseInfo = await _service.GetBaseInfoAsync();
+
+        ViewModel = new CreateFormItemTemplateViewModel
+        {
+            Configurations =
+                _jsonSerializer.Serialize(baseInfo.FormItemTypeDefinitions.First(x => x.Name == ViewModel.Type))
+        };
+    }
+
     public virtual async Task<IActionResult> OnPostAsync()
     {
         var dto = new CreateFormItemTemplateDto
@@ -37,7 +49,8 @@ public class CreateModalModel : DynamicFormPageModel
             InfoText = ViewModel.InfoText,
             Type = ViewModel.Type,
             Optional = ViewModel.Optional,
-            RadioValues = new AvailableRadioValues(ViewModel.RadioValues.Split(',')),
+            Configurations = ViewModel.Configurations,
+            AvailableValues = new AvailableValues(ViewModel.AvailableValues.Split(',')),
             DisplayOrder = ViewModel.DisplayOrder
         };
 

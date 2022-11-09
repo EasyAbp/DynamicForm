@@ -1,14 +1,12 @@
-using System;
 using EasyAbp.DynamicForm.Shared;
 
-namespace EasyAbp.DynamicForm.FormTemplates.Dtos;
+namespace EasyAbp.DynamicForm.Web.Pages.DynamicForm.Forms.Form.ViewModels;
 
-[Serializable]
-public class CreateFormItemTemplateDto
+public class CreateFormItemDataModel
 {
     public string Name { get; set; }
 
-    public string InfoText { get; set; }
+    public string Value { get; set; }
 
     public string Type { get; set; }
 
@@ -17,6 +15,4 @@ public class CreateFormItemTemplateDto
     public string Configurations { get; set; }
 
     public AvailableValues AvailableValues { get; set; }
-
-    public int DisplayOrder { get; set; }
 }

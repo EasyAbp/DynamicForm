@@ -14,11 +14,13 @@ public class FormItemTemplate : Entity, IFormItemTemplate
 
     public virtual string InfoText { get; protected set; }
 
-    public virtual FormItemType Type { get; protected set; }
+    public virtual string Type { get; protected set; }
 
     public virtual bool Optional { get; protected set; }
 
-    public virtual AvailableRadioValues RadioValues { get; protected set; }
+    public virtual string Configurations { get; protected set; }
+
+    public virtual AvailableValues AvailableValues { get; protected set; }
 
     public virtual int DisplayOrder { get; protected set; }
 
@@ -30,31 +32,35 @@ public class FormItemTemplate : Entity, IFormItemTemplate
         Guid formTemplateId,
         [NotNull] string name,
         [CanBeNull] string infoText,
-        FormItemType type,
+        [NotNull] string type,
         bool optional,
-        AvailableRadioValues radioValues,
+        [CanBeNull] string configurations,
+        AvailableValues availableValues,
         int displayOrder)
     {
         FormTemplateId = formTemplateId;
         Name = Check.NotNullOrWhiteSpace(name, nameof(name));
         InfoText = infoText;
-        Type = type;
+        Type = Check.NotNullOrWhiteSpace(type, nameof(type));
         Optional = optional;
-        RadioValues = radioValues ?? new AvailableRadioValues();
+        Configurations = configurations;
+        AvailableValues = availableValues ?? new AvailableValues();
         DisplayOrder = displayOrder;
     }
 
     internal void Update(
         [CanBeNull] string infoText,
-        FormItemType type,
+        [NotNull] string type,
         bool optional,
-        AvailableRadioValues radioValues,
+        [CanBeNull] string configurations,
+        AvailableValues availableValues,
         int displayOrder)
     {
         InfoText = infoText;
-        Type = type;
+        Type = Check.NotNullOrWhiteSpace(type, nameof(type));
         Optional = optional;
-        RadioValues = radioValues ?? new AvailableRadioValues();
+        Configurations = configurations;
+        AvailableValues = availableValues ?? new AvailableValues();
         DisplayOrder = displayOrder;
     }
 

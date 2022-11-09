@@ -34,17 +34,17 @@ $(function () {
                                 text: l('Edit'),
                                 visible: abp.auth.isGranted('DynamicForm.FormTemplate.Update'),
                                 action: function (data) {
-                                    editModal.open({ id: data.record.id });
+                                    editModal.open({ formTemplateId: data.record.formTemplateId, name: data.record.name });
                                 }
                             },
                             {
                                 text: l('Delete'),
                                 visible: abp.auth.isGranted('DynamicForm.FormTemplate.Update'),
                                 confirmMessage: function (data) {
-                                    return l('FormItemTemplateDeletionConfirmationMessage', data.record.id);
+                                    return l('FormItemTemplateDeletionConfirmationMessage', data.record.name);
                                 },
                                 action: function (data) {
-                                    service.deleteFormItem(data.record.id)
+                                    service.deleteFormItem(data.record.formTemplateId, data.record.name)
                                         .then(function () {
                                             abp.notify.info(l('SuccessfullyDeleted'));
                                             dataTable.ajax.reload();
@@ -81,8 +81,8 @@ $(function () {
         dataTable.ajax.reload();
     });
 
-    $('#NewFormItemTemplateButton').click(function (e) {
+    $('.NewFormItemTemplateButton').click(function (e) {
         e.preventDefault();
-        createModal.open();
+        createModal.open({ formTemplateId: formTemplateId, "ViewModel.type": $(this).attr('form-item-type') });
     });
 });

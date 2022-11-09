@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.FormTemplates;
+using EasyAbp.DynamicForm.Options;
 using EasyAbp.DynamicForm.Shared;
 using JetBrains.Annotations;
+using Microsoft.Extensions.Options;
 using Volo.Abp;
 using Volo.Abp.Domain.Services;
 
@@ -11,10 +14,14 @@ namespace EasyAbp.DynamicForm.Forms;
 public class FormManager : DomainService
 {
     protected IFormRepository FormRepository { get; }
+    protected DynamicFormOptions Options { get; }
 
-    public FormManager(IFormRepository formRepository)
+    public FormManager(
+        IFormRepository formRepository,
+        IOptions<DynamicFormOptions> options)
     {
         FormRepository = formRepository;
+        Options = options.Value;
     }
 
     public virtual Task<Form> CreateAsync(FormTemplate formTemplate)
@@ -35,7 +42,7 @@ public class FormManager : DomainService
             throw new BusinessException(DynamicFormErrorCodes.DuplicateFormItem);
         }
 
-        await ValidateFormItemValueAsync(metadata, value);
+        await ValidateFormItemValueAsync(form, metadata, value);
 
         form.CreateFormItem(name, metadata, value);
 
@@ -46,7 +53,7 @@ public class FormManager : DomainService
     {
         var item = form.GetFormItem(name);
 
-        await ValidateFormItemValueAsync(item, value);
+        await ValidateFormItemValueAsync(form, item, value);
 
         form.UpdateFormItem(item, value);
 
@@ -62,23 +69,31 @@ public class FormManager : DomainService
         return Task.FromResult(form);
     }
 
-    protected virtual Task ValidateFormItemValueAsync(IFormItemMetadata metadata, [CanBeNull] string value)
+    protected virtual async Task ValidateFormItemValueAsync(Form form, IFormItemMetadata metadata,
+        [CanBeNull] string value)
     {
-        switch (metadata.Type)
+        if (!metadata.Optional && value.IsNullOrWhiteSpace())
         {
-            case FormItemType.Text:
-                break;
-            case FormItemType.Radio:
-                if (!metadata.RadioValues.Contains(value))
-                {
-                    throw new BusinessException(DynamicFormErrorCodes.InvalidFormItemValue);
-                }
-
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
+            throw new BusinessException(DynamicFormErrorCodes.FormItemValueIsRequired);
         }
 
-        return Task.CompletedTask;
+        if (!metadata.AvailableValues.Contains(value))
+        {
+            throw new BusinessException(DynamicFormErrorCodes.InvalidFormItemValue);
+        }
+
+        var formItemProvider =
+            (IFormItemProvider)LazyServiceProvider.LazyGetRequiredService(Options
+                .GetFormItemTypeDefinition(metadata.Type).ProviderType);
+
+        await formItemProvider.ValidateFormItemValueAsync(metadata, value);
+
+        var formDefinition = Options.GetFormDefinition(form.FormDefinitionName);
+
+        foreach (var validator in formDefinition.CustomFormItemValidatorTypes.Select(customValidatorType =>
+                     (ICustomFormItemValidator)LazyServiceProvider.LazyGetRequiredService(customValidatorType)))
+        {
+            await validator.ValidateValueAsync(metadata, value);
+        }
     }
 }

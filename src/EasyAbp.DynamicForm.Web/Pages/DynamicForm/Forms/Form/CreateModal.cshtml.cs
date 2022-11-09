@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EasyAbp.DynamicForm.Forms;
@@ -36,7 +37,15 @@ public class CreateModalModel : DynamicFormPageModel
         ViewModel = new CreateFormViewModel
         {
             FormTemplateId = formTemplateId,
-            FormItems = _jsonSerializer.Serialize(formTemplate.FormItemTemplates)
+            FormItems = _jsonSerializer.Serialize(formTemplate.FormItemTemplates.Select(x => new CreateFormItemDataModel
+            {
+                Name = x.Name,
+                Value = string.Empty,
+                Type = x.Type,
+                Optional = x.Optional,
+                Configurations = x.Configurations,
+                AvailableValues = x.AvailableValues
+            }))
         };
     }
 

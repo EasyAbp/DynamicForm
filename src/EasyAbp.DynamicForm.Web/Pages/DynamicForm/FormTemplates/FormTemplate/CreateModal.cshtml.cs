@@ -30,7 +30,9 @@ public class CreateModalModel : DynamicFormPageModel
 
     public virtual async Task OnGetAsync()
     {
-        FormDefinitionNames = (await _service.GetFormDefinitionListAsync()).Items
+        var baseInfo = await _service.GetBaseInfoAsync();
+
+        FormDefinitionNames = baseInfo.FormDefinitions
             .Select(x => new SelectListItem(x.DisplayName, x.Name)).ToList();
     }
 

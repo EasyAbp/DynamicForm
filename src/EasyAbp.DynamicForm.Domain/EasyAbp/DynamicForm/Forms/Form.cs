@@ -50,9 +50,14 @@ public class Form : FullAuditedAggregateRoot<Guid>, IMultiTenant
         FormItems = formItems ?? new List<FormItem>();
     }
 
-    internal void CreateFormItem([NotNull] string name, IFormItemMetadata metadata, [CanBeNull] string value)
+    internal FormItem CreateFormItem([NotNull] string name, IFormItemMetadata metadata, [CanBeNull] string value)
     {
-        FormItems.Add(new FormItem(Id, name, metadata.Type, metadata.Optional, metadata.RadioValues, value));
+        var item = new FormItem(Id, name, metadata.Type, metadata.Optional, metadata.Configurations,
+            metadata.AvailableValues, value);
+
+        FormItems.Add(item);
+
+        return item;
     }
 
     internal void UpdateFormItem(FormItem item, [CanBeNull] string value)

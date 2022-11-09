@@ -9,5 +9,4 @@ namespace EasyAbp.DynamicForm;
 )]
 public class DynamicFormDomainModule : AbpModule
 {
-
 }

@@ -11,11 +11,13 @@ public class FormItemDto : EntityDto
 
     public string Name { get; set; }
 
-    public FormItemType Type { get; set; }
+    public string Type { get; set; }
 
     public bool Optional { get; set; }
 
-    public AvailableRadioValues RadioValues { get; set; }
+    public string Configurations { get; set; }
+
+    public AvailableValues AvailableValues { get; set; }
 
     public string Value { get; set; }
 }
