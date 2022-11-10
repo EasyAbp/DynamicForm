@@ -1,6 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using EasyAbp.DynamicForm.FormItemTypes;
 using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Options;
 using EasyAbp.DynamicForm.Shared;
@@ -14,14 +14,20 @@ namespace EasyAbp.DynamicForm.Forms;
 public class FormManager : DomainService
 {
     protected IFormRepository FormRepository { get; }
-    protected DynamicFormOptions Options { get; }
+    protected DynamicFormOptions DynamicFormOptions { get; }
+    protected DynamicFormCoreOptions DynamicFormCoreOptions { get; }
+    protected IFormItemProviderResolver FormItemProviderResolver { get; }
 
     public FormManager(
         IFormRepository formRepository,
-        IOptions<DynamicFormOptions> options)
+        IOptions<DynamicFormOptions> dynamicFormOptions,
+        IOptions<DynamicFormCoreOptions> dynamicFormCoreOptions,
+        IFormItemProviderResolver formItemProviderResolver)
     {
         FormRepository = formRepository;
-        Options = options.Value;
+        FormItemProviderResolver = formItemProviderResolver;
+        DynamicFormOptions = dynamicFormOptions.Value;
+        DynamicFormCoreOptions = dynamicFormCoreOptions.Value;
     }
 
     public virtual Task<Form> CreateAsync(FormTemplate formTemplate)
@@ -72,23 +78,11 @@ public class FormManager : DomainService
     protected virtual async Task ValidateFormItemValueAsync(Form form, IFormItemMetadata metadata,
         [CanBeNull] string value)
     {
-        if (!metadata.Optional && value.IsNullOrWhiteSpace())
-        {
-            throw new BusinessException(DynamicFormErrorCodes.FormItemValueIsRequired);
-        }
+        var formItemProvider = FormItemProviderResolver.Resolve(metadata.Type);
 
-        if (metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(value))
-        {
-            throw new BusinessException(DynamicFormErrorCodes.InvalidFormItemValue);
-        }
+        await formItemProvider.ValidateValueAsync(metadata, value);
 
-        var formItemProvider =
-            (IFormItemProvider)LazyServiceProvider.LazyGetRequiredService(Options
-                .GetFormItemTypeDefinition(metadata.Type).ProviderType);
-
-        await formItemProvider.ValidateFormItemValueAsync(metadata, value);
-
-        var formDefinition = Options.GetFormDefinition(form.FormDefinitionName);
+        var formDefinition = DynamicFormOptions.GetFormDefinition(form.FormDefinitionName);
 
         foreach (var validator in formDefinition.CustomFormItemValidatorTypes.Select(customValidatorType =>
                      (ICustomFormItemValidator)LazyServiceProvider.LazyGetRequiredService(customValidatorType)))

@@ -120,6 +120,10 @@ public class DynamicFormBlazorHostModule : AbpModule
         Configure<DynamicFormOptions>(options =>
         {
             options.AddOrUpdateFormDefinition(new FormDefinition("InternalForm", "Internal Form"));
+        });
+
+        Configure<DynamicFormCoreOptions>(options =>
+        {
             options.AddTextBoxFormItemType();
             options.AddOptionButtonsFormItemType();
         });

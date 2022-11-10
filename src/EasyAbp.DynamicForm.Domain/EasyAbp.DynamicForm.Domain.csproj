@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="$(AbpVersion)" />
-    <ProjectReference Include="..\EasyAbp.DynamicForm.Domain.Shared\EasyAbp.DynamicForm.Domain.Shared.csproj" />
+    <ProjectReference Include="..\EasyAbp.DynamicForm.Domain.Core\EasyAbp.DynamicForm.Domain.Core.csproj" />
   </ItemGroup>
 
 </Project>

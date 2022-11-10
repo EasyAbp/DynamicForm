@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EasyAbp.DynamicForm.FormItemTypes;
 using EasyAbp.DynamicForm.Permissions;
 using EasyAbp.DynamicForm.FormTemplates.Dtos;
 using EasyAbp.DynamicForm.Options;
@@ -26,15 +27,18 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
     protected override string DeletePolicyName { get; set; } = DynamicFormPermissions.FormTemplate.Delete;
 
     private readonly IJsonSerializer _jsonSerializer;
+    private readonly IFormItemProviderResolver _formItemProviderResolver;
     private readonly FormTemplateManager _formTemplateManager;
     private readonly IFormTemplateRepository _repository;
 
     public FormTemplateAppService(
         IJsonSerializer jsonSerializer,
+        IFormItemProviderResolver formItemProviderResolver,
         FormTemplateManager formTemplateManager,
         IFormTemplateRepository repository) : base(repository)
     {
         _jsonSerializer = jsonSerializer;
+        _formItemProviderResolver = formItemProviderResolver;
         _formTemplateManager = formTemplateManager;
         _repository = repository;
     }
@@ -52,8 +56,9 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
     public virtual async Task<DynamicFormBaseInfoDto> GetBaseInfoAsync()
     {
         var options = LazyServiceProvider.LazyGetRequiredService<IOptions<DynamicFormOptions>>();
+        var coreOptions = LazyServiceProvider.LazyGetRequiredService<IOptions<DynamicFormCoreOptions>>();
 
-        var formItemTypeDefinitions = options.Value.GetFormItemTypeDefinitions();
+        var formItemTypeDefinitions = coreOptions.Value.GetFormItemTypeDefinitions();
         var configurationJsonTemplates = new Dictionary<string, string>();
 
         foreach (var definition in formItemTypeDefinitions)
@@ -85,9 +90,8 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
     protected virtual async Task<string> GetConfigurationJsonTemplateAsync(
         FormItemTypeDefinition formItemTypeDefinition)
     {
-        var configurations =
-            await ((IFormItemProvider)LazyServiceProvider.LazyGetRequiredService(formItemTypeDefinition.ProviderType))
-                .CreateFormItemConfigurationsObjectOrNullAsync();
+        var provider = _formItemProviderResolver.Resolve(formItemTypeDefinition.Name);
+        var configurations = await provider.CreateConfigurationsObjectOrNullAsync();
 
         return configurations is null ? null : _jsonSerializer.Serialize(configurations);
     }

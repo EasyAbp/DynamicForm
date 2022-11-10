@@ -3,27 +3,27 @@ using EasyAbp.DynamicForm.FormItemTypes.TextBox;
 
 namespace EasyAbp.DynamicForm.Options;
 
-public static class DynamicFormOptionsExtensions
+public static class DynamicFormCoreOptionsExtensions
 {
-    public static DynamicFormOptions AddTextBoxFormItemType(this DynamicFormOptions options)
+    public static DynamicFormCoreOptions AddTextBoxFormItemType(this DynamicFormCoreOptions coreOptions)
     {
-        options.AddOrUpdateFormItemTypeDefinition(new FormItemTypeDefinition(
+        coreOptions.AddOrUpdateFormItemTypeDefinition(new FormItemTypeDefinition(
             TextBoxFormItemProvider.Name,
             TextBoxFormItemProvider.LocalizationItemKey,
             typeof(TextBoxFormItemProvider)
         ));
 
-        return options;
+        return coreOptions;
     }
 
-    public static DynamicFormOptions AddOptionButtonsFormItemType(this DynamicFormOptions options)
+    public static DynamicFormCoreOptions AddOptionButtonsFormItemType(this DynamicFormCoreOptions coreOptions)
     {
-        options.AddOrUpdateFormItemTypeDefinition(new FormItemTypeDefinition(
+        coreOptions.AddOrUpdateFormItemTypeDefinition(new FormItemTypeDefinition(
             OptionButtonsFormItemProvider.Name,
             OptionButtonsFormItemProvider.LocalizationItemKey,
             typeof(OptionButtonsFormItemProvider)
         ));
 
-        return options;
+        return coreOptions;
     }
 }

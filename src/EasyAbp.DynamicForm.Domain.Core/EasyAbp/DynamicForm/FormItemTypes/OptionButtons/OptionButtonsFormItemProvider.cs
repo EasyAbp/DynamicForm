@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Shared;
@@ -21,40 +22,50 @@ public class OptionButtonsFormItemProvider : IFormItemProvider, IScopedDependenc
         _jsonSerializer = jsonSerializer;
     }
 
-    public virtual Task ValidateFormItemTemplateAsync(FormItemTemplate formItemTemplate)
+    public virtual Task ValidateTemplateAsync(IFormItemTemplate formItemTemplate)
     {
         var configurations = GetConfigurations(formItemTemplate);
 
         if (configurations.MinSelection.HasValue && configurations.MaxSelection.HasValue &&
             configurations.MinSelection > configurations.MaxSelection)
         {
-            throw new BusinessException(DynamicFormErrorCodes.OptionButtonsInvalidMaxSelection);
+            throw new BusinessException(DynamicFormCoreErrorCodes.OptionButtonsInvalidMaxSelection);
         }
 
         return Task.CompletedTask;
     }
 
-    public virtual Task ValidateFormItemValueAsync(IFormItemMetadata formItemMetadata, string value)
+    public virtual Task ValidateValueAsync(IFormItemMetadata formItemMetadata, string value)
     {
+        if (!formItemMetadata.Optional && value.IsNullOrWhiteSpace())
+        {
+            throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired);
+        }
+
+        if (formItemMetadata.AvailableValues.Any() && !formItemMetadata.AvailableValues.Contains(value))
+        {
+            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
+        }
+
         var configurations = GetConfigurations(formItemMetadata);
         var selections = configurations.IsMultiSelection ? value.Split(SelectionSeparator) : new[] { value };
 
         if (configurations.IsMultiSelection && configurations.MinSelection.HasValue &&
             selections.Length < configurations.MinSelection)
         {
-            throw new BusinessException(DynamicFormErrorCodes.OptionButtonsInvalidOptionQuantitySelected);
+            throw new BusinessException(DynamicFormCoreErrorCodes.OptionButtonsInvalidOptionQuantitySelected);
         }
 
         if (configurations.IsMultiSelection && configurations.MaxSelection.HasValue &&
             selections.Length > configurations.MaxSelection)
         {
-            throw new BusinessException(DynamicFormErrorCodes.OptionButtonsInvalidOptionQuantitySelected);
+            throw new BusinessException(DynamicFormCoreErrorCodes.OptionButtonsInvalidOptionQuantitySelected);
         }
 
         return Task.CompletedTask;
     }
 
-    public virtual Task<object> CreateFormItemConfigurationsObjectOrNullAsync()
+    public virtual Task<object> CreateConfigurationsObjectOrNullAsync()
     {
         return Task.FromResult<object>(new OptionButtonsFormItemConfigurations());
     }

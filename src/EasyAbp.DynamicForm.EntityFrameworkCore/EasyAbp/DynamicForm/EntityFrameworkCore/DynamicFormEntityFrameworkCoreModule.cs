@@ -8,6 +8,7 @@ namespace EasyAbp.DynamicForm.EntityFrameworkCore;
 
 [DependsOn(
     typeof(DynamicFormDomainModule),
+    typeof(DynamicFormEntityFrameworkCoreSharedModule),
     typeof(AbpEntityFrameworkCoreModule)
 )]
 public class DynamicFormEntityFrameworkCoreModule : AbpModule

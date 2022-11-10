@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using EasyAbp.DynamicForm.FormItemTypes;
 using EasyAbp.DynamicForm.Options;
 using EasyAbp.DynamicForm.Shared;
 using JetBrains.Annotations;
@@ -11,14 +12,20 @@ namespace EasyAbp.DynamicForm.FormTemplates;
 
 public class FormTemplateManager : DomainService
 {
-    protected DynamicFormOptions Options { get; }
+    protected DynamicFormOptions DynamicFormOptions { get; }
+    protected DynamicFormCoreOptions DynamicFormCoreOptions { get; }
+    private IFormItemProviderResolver FormItemProviderResolver { get; }
     protected IFormTemplateRepository FormTemplateRepository { get; }
 
     public FormTemplateManager(
-        IOptions<DynamicFormOptions> options,
+        IOptions<DynamicFormOptions> dynamicFormOptions,
+        IOptions<DynamicFormCoreOptions> dynamicFormCoreOptions,
+        IFormItemProviderResolver formItemProviderResolver,
         IFormTemplateRepository formTemplateRepository)
     {
-        Options = options.Value;
+        DynamicFormOptions = dynamicFormOptions.Value;
+        DynamicFormCoreOptions = dynamicFormCoreOptions.Value;
+        FormItemProviderResolver = formItemProviderResolver;
         FormTemplateRepository = formTemplateRepository;
     }
 
@@ -51,11 +58,10 @@ public class FormTemplateManager : DomainService
 
         var formItemTemplate = formTemplate.AddOrUpdateFormItemTemplate(
             name, infoText, type, optional, configurations, availableValues, displayOrder);
-        
-        var formItemProvider = (IFormItemProvider)LazyServiceProvider.LazyGetRequiredService(
-            Options.GetFormItemTypeDefinition(type).ProviderType);
 
-        formItemProvider.ValidateFormItemTemplateAsync(formItemTemplate);
+        var formItemProvider = FormItemProviderResolver.Resolve(type);
+
+        formItemProvider.ValidateTemplateAsync(formItemTemplate);
 
         return Task.FromResult(formTemplate);
     }
@@ -69,10 +75,9 @@ public class FormTemplateManager : DomainService
         formTemplate.AddOrUpdateFormItemTemplate(
             name, infoText, type, optional, configurations, availableValues, displayOrder);
 
-        var formItemProvider = (IFormItemProvider)LazyServiceProvider.LazyGetRequiredService(
-            Options.GetFormItemTypeDefinition(type).ProviderType);
+        var formItemProvider = FormItemProviderResolver.Resolve(type);
 
-        formItemProvider.ValidateFormItemTemplateAsync(item);
+        formItemProvider.ValidateTemplateAsync(item);
 
         return Task.FromResult(formTemplate);
     }
@@ -88,7 +93,7 @@ public class FormTemplateManager : DomainService
     {
         Check.NotNullOrWhiteSpace(formDefinitionName, nameof(formDefinitionName));
 
-        Options.GetFormDefinition(formDefinitionName);
+        DynamicFormOptions.GetFormDefinition(formDefinitionName);
 
         return Task.CompletedTask;
     }

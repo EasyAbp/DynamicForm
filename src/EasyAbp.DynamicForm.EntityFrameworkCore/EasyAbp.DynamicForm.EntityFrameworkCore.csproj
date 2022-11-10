@@ -10,10 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
     <ProjectReference Include="..\EasyAbp.DynamicForm.Domain\EasyAbp.DynamicForm.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="EasyAbp\DynamicForm" />
+    <ProjectReference Include="..\EasyAbp.DynamicForm.EntityFrameworkCore.Shared\EasyAbp.DynamicForm.EntityFrameworkCore.Shared.csproj" />
   </ItemGroup>
 
 </Project>

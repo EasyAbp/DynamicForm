@@ -5,7 +5,7 @@ namespace EasyAbp.DynamicForm;
 
 [DependsOn(
     typeof(AbpDddDomainModule),
-    typeof(DynamicFormDomainSharedModule)
+    typeof(DynamicFormDomainCoreModule)
 )]
 public class DynamicFormDomainModule : AbpModule
 {
