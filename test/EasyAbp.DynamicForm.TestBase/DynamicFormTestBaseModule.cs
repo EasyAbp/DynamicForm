@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using EasyAbp.DynamicForm.Options;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp;
 using Volo.Abp.Authorization;
 using Volo.Abp.Autofac;
@@ -13,12 +14,24 @@ namespace EasyAbp.DynamicForm;
     typeof(AbpTestBaseModule),
     typeof(AbpAuthorizationModule),
     typeof(DynamicFormDomainModule)
-    )]
+)]
 public class DynamicFormTestBaseModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         context.Services.AddAlwaysAllowAuthorization();
+
+        Configure<DynamicFormOptions>(options =>
+        {
+            options.AddOrUpdateFormDefinition(new FormDefinition(
+                DynamicFormTestConsts.TestFormDefinitionName, DynamicFormTestConsts.TestFormDefinitionDisplayName));
+        });
+
+        Configure<DynamicFormCoreOptions>(options =>
+        {
+            options.AddTextBoxFormItemType();
+            options.AddOptionButtonsFormItemType();
+        });
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)
