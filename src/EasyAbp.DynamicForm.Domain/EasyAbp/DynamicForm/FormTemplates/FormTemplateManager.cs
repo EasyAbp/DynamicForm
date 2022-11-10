@@ -30,12 +30,12 @@ public class FormTemplateManager : DomainService
     }
 
     public virtual async Task<FormTemplate> CreateAsync([NotNull] string formDefinitionName, [NotNull] string name,
-        [CanBeNull] string customTag, List<FormItemTemplate> formItemTemplates = null)
+        [CanBeNull] string customTag)
     {
         await ValidateFormDefinitionNameAsync(formDefinitionName);
 
         return new FormTemplate(
-            GuidGenerator.Create(), CurrentTenant.Id, formDefinitionName, name, customTag, formItemTemplates);
+            GuidGenerator.Create(), CurrentTenant.Id, formDefinitionName, name, customTag);
     }
 
     public virtual Task<FormTemplate> UpdateAsync(FormTemplate formTemplate, [NotNull] string name)
