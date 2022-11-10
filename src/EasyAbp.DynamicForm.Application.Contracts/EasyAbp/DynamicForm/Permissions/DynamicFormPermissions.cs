@@ -14,6 +14,7 @@ public class DynamicFormPermissions
     public class Form
     {
         public const string Default = GroupName + ".Form";
+        public const string Manage = Default + ".Manage";
         public const string Update = Default + ".Update";
         public const string Create = Default + ".Create";
         public const string Delete = Default + ".Delete";
@@ -22,6 +23,7 @@ public class DynamicFormPermissions
     public class FormTemplate
     {
         public const string Default = GroupName + ".FormTemplate";
+        public const string Manage = Default + ".Manage";
         public const string Update = Default + ".Update";
         public const string Create = Default + ".Create";
         public const string Delete = Default + ".Delete";

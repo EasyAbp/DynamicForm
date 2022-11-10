@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Permissions;
 using EasyAbp.DynamicForm.FormTemplates.Dtos;
 using EasyAbp.DynamicForm.Options;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -90,11 +92,93 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         return configurations is null ? null : _jsonSerializer.Serialize(configurations);
     }
 
+    public override async Task<FormTemplateDto> GetAsync(Guid id)
+    {
+        var entity = await GetEntityByIdAsync(id);
+
+        if (!await AuthorizationService.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Manage))
+        {
+            await AuthorizationService.CheckAsync(CreateFormTemplateOperationInfoModel(entity),
+                new OperationAuthorizationRequirement { Name = DynamicFormPermissions.FormTemplate.Default });
+        }
+
+        return await MapToGetOutputDtoAsync(entity);
+    }
+
+    public override async Task<PagedResultDto<FormTemplateDto>> GetListAsync(FormTemplateGetListInput input)
+    {
+        if (!await AuthorizationService.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Manage))
+        {
+            await AuthorizationService.CheckAsync(new FormTemplateOperationInfoModel
+                {
+                    FormDefinitionName = input.FormDefinitionName,
+                    Name = input.Name,
+                    CustomTag = input.CustomTag
+                },
+                new OperationAuthorizationRequirement { Name = DynamicFormPermissions.FormTemplate.Default });
+        }
+
+        var query = await CreateFilteredQueryAsync(input);
+
+        var totalCount = await AsyncExecuter.CountAsync(query);
+
+        query = ApplySorting(query, input);
+        query = ApplyPaging(query, input);
+
+        var entities = await AsyncExecuter.ToListAsync(query);
+        var entityDtos = await MapToGetListOutputDtosAsync(entities);
+
+        return new PagedResultDto<FormTemplateDto>(
+            totalCount,
+            entityDtos
+        );
+    }
+
+    [Authorize]
+    public override async Task<FormTemplateDto> CreateAsync(CreateFormTemplateDto input)
+    {
+        var entity = await MapToEntityAsync(input);
+
+        if (!await AuthorizationService.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Manage))
+        {
+            await AuthorizationService.CheckAsync(CreateFormTemplateOperationInfoModel(entity),
+                new OperationAuthorizationRequirement { Name = DynamicFormPermissions.FormTemplate.Create });
+        }
+
+        await Repository.InsertAsync(entity, autoSave: true);
+
+        return await MapToGetOutputDtoAsync(entity);
+    }
+
+    [Authorize]
+    public override async Task<FormTemplateDto> UpdateAsync(Guid id, UpdateFormTemplateDto input)
+    {
+        var entity = await GetEntityByIdAsync(id);
+
+        await CheckUpdatePermissionAsync(entity);
+
+        await MapToEntityAsync(input, entity);
+        await Repository.UpdateAsync(entity, autoSave: true);
+
+        return await MapToGetOutputDtoAsync(entity);
+    }
+
+    [Authorize]
+    public override async Task DeleteAsync(Guid id)
+    {
+        var entity = await GetEntityByIdAsync(id);
+
+        await AuthorizationService.CheckAsync(CreateFormTemplateOperationInfoModel(entity),
+            new OperationAuthorizationRequirement { Name = DynamicFormPermissions.FormTemplate.Delete });
+
+        await _repository.DeleteAsync(entity);
+    }
+
     public virtual async Task<FormTemplateDto> CreateFormItemAsync(Guid id, CreateFormItemTemplateDto input)
     {
-        await CheckUpdatePolicyAsync();
-
         var formTemplate = await GetEntityByIdAsync(id);
+
+        await CheckUpdatePermissionAsync(formTemplate);
 
         await _formTemplateManager.CreateFormItemAsync(formTemplate, input.Name, input.InfoText, input.Type,
             input.Optional, MinifyConfigurations(input.Configurations), input.AvailableValues, input.DisplayOrder);
@@ -107,9 +191,9 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
     public virtual async Task<FormTemplateDto> UpdateFormItemAsync(Guid id, string name,
         UpdateFormItemTemplateDto input)
     {
-        await CheckUpdatePolicyAsync();
-
         var formTemplate = await GetEntityByIdAsync(id);
+
+        await CheckUpdatePermissionAsync(formTemplate);
 
         await _formTemplateManager.UpdateFormItemAsync(formTemplate, name, input.InfoText, input.Type, input.Optional,
             MinifyConfigurations(input.Configurations), input.AvailableValues, input.DisplayOrder);
@@ -126,15 +210,34 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
 
     public virtual async Task<FormTemplateDto> DeleteFormItemAsync(Guid id, string name)
     {
-        await CheckUpdatePolicyAsync();
-
         var formTemplate = await GetEntityByIdAsync(id);
+
+        await CheckUpdatePermissionAsync(formTemplate);
 
         await _formTemplateManager.RemoveFormItemAsync(formTemplate, name);
 
         await _repository.UpdateAsync(formTemplate, true);
 
         return await MapToGetOutputDtoAsync(formTemplate);
+    }
+
+    protected virtual async Task CheckUpdatePermissionAsync(FormTemplate formTemplate)
+    {
+        if (!await AuthorizationService.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Manage))
+        {
+            await AuthorizationService.CheckAsync(CreateFormTemplateOperationInfoModel(formTemplate),
+                new OperationAuthorizationRequirement { Name = DynamicFormPermissions.FormTemplate.Update });
+        }
+    }
+
+    protected virtual FormTemplateOperationInfoModel CreateFormTemplateOperationInfoModel(FormTemplate formTemplate)
+    {
+        return new FormTemplateOperationInfoModel
+        {
+            FormDefinitionName = formTemplate.FormDefinitionName,
+            CustomTag = formTemplate.CustomTag,
+            FormTemplate = formTemplate
+        };
     }
 
     protected override Task<FormTemplateDto> MapToGetOutputDtoAsync(FormTemplate entity)

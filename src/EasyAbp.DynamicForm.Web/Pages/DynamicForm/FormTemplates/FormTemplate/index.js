@@ -40,7 +40,6 @@ $(function () {
                         [
                             {
                                 text: l('Form'),
-                                visible: abp.auth.isGranted('EasyAbp.DynamicForm.Form'),
                                 action: function (data) {
                                     document.location.href = document.location.origin + abp.appPath + 'DynamicForm/Forms/Form?formTemplateId=' + data.record.id;
                                 }

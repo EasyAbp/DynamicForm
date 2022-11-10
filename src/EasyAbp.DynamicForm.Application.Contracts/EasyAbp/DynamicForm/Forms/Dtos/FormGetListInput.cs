@@ -13,4 +13,5 @@ public class FormGetListInput : PagedAndSortedResultRequestDto
 
     public string FormTemplateName { get; set; }
 
+    public Guid? CreatorId { get; set; }
 }

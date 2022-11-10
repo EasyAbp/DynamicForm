@@ -11,6 +11,7 @@
     "EasyAbp.DynamicForm:OptionButtonsInvalidMaxSelection": "The max selection should be greater than the min selection.",
     "EasyAbp.DynamicForm:OptionButtonsInvalidOptionQuantitySelected": "Invalid form item option quantity selected.",
     "Permission:Form": "Form",
+    "Permission:Manage": "Manage",
     "Permission:Create": "Create",
     "Permission:Update": "Update",
     "Permission:Delete": "Delete",

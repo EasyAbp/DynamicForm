@@ -18,8 +18,9 @@
 
 @section scripts
 {
-    <abp-script src="/Pages/DynamicForm/Forms/Form/index.js" />
+    <abp-script src="/Pages/DynamicForm/Forms/Form/index.js"/>
 }
+
 @section styles
 {
     <abp-style src="/Pages/DynamicForm/Forms/Form/index.css"/>
@@ -36,24 +37,24 @@
                 <abp-card-title>@L["Form"]</abp-card-title>
             </abp-column>
             <abp-column size-md="_6" class="text-end">
-			    @if (await Authorization.IsGrantedAsync(DynamicFormPermissions.Form.Create))
-                {
                 <abp-button id="NewFormButton"
                             text="@L["CreateForm"].Value"
                             icon="plus"
-                            button-type="Primary" />
-                }
+                            button-type="Primary"/>
             </abp-column>
         </abp-row>
     </abp-card-header>
     <abp-card-body>
-        <abp-row class="mb-3">
-            <a abp-collapse-id="FormCollapse" class="text-secondary">@L["TableFilter"] </a>
-        </abp-row>
-        <abp-collapse-body id="FormCollapse">
-            <abp-dynamic-form abp-model="FormFilter" id="FormFilter" required-symbols="false"/>
-            <hr />
-        </abp-collapse-body>
-        <abp-table striped-rows="true" id="FormTable" class="nowrap"/>
+        @if (HttpContext.User.Identity is not null && HttpContext.User.Identity.IsAuthenticated)
+        {
+            <abp-row class="mb-3">
+                <a abp-collapse-id="FormCollapse" class="text-secondary">@L["TableFilter"] </a>
+            </abp-row>
+            <abp-collapse-body id="FormCollapse">
+                <abp-dynamic-form abp-model="FormFilter" id="FormFilter" required-symbols="false"/>
+                <hr/>
+            </abp-collapse-body>
+            <abp-table striped-rows="true" id="FormTable" class="nowrap"/>
+        }
     </abp-card-body>
 </abp-card>

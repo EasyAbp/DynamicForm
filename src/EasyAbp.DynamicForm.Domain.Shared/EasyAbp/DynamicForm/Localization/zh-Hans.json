@@ -11,6 +11,7 @@
     "EasyAbp.DynamicForm:OptionButtonsInvalidMaxSelection": "最大选择数量应小于最小选择数量",
     "EasyAbp.DynamicForm:OptionButtonsInvalidOptionQuantitySelected": "提交的表单项包含不正确的选项数量",
     "Permission:Form": "表单",
+    "Permission:Manage": "管理",
     "Permission:Create": "新建",
     "Permission:Update": "编辑",
     "Permission:Delete": "删除",
