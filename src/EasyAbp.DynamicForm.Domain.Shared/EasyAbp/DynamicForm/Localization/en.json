@@ -3,6 +3,7 @@
   "texts": {
     "EasyAbp.DynamicForm:DuplicateFormItemTemplate": "Duplicate form item template.",
     "EasyAbp.DynamicForm:DuplicateFormItem": "Duplicate form item.",
+    "EasyAbp.DynamicForm:MissingFormItem": "Missing required form item.",
     "EasyAbp.DynamicForm:InvalidFormItemValue": "Invalid form item value.",
     "EasyAbp.DynamicForm:FormItemValueIsRequired": "The form item value is required.",
     "EasyAbp.DynamicForm:TextBoxInvalidMaxLength": "The max length should be greater than the min length.",

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Permissions;
@@ -50,14 +51,8 @@ public class FormAppService : CrudAppService<Form, FormDto, Guid, FormGetListInp
     {
         var formTemplate = await _formTemplateRepository.GetAsync(createInput.FormTemplateId);
 
-        var entity = await _formManager.CreateAsync(formTemplate);
-
-        foreach (var inputFormItem in createInput.FormItems)
-        {
-            var metadata = formTemplate.FindFormItemTemplate(inputFormItem.Name);
-
-            await _formManager.CreateFormItemAsync(entity, inputFormItem.Name, metadata, inputFormItem.Value);
-        }
+        var entity = await _formManager.CreateAsync(formTemplate,
+            createInput.FormItems.Select(x => new FormItemCreationModel(x.Name, x.Value)));
 
         return entity;
     }

@@ -71,8 +71,8 @@ public class TextBoxFormItemProvider : IFormItemProvider, IScopedDependency
             throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidValueLength);
         }
 
-        if (value.IsNullOrWhiteSpace() && configurations.RegexPattern.IsNullOrWhiteSpace() &&
-            Regex.IsMatch(value!, configurations.RegexPattern!))
+        if (!value.IsNullOrWhiteSpace() && !configurations.RegexPattern.IsNullOrWhiteSpace() &&
+            !Regex.IsMatch(value!, configurations.RegexPattern!))
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
         }

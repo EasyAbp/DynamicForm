@@ -11,7 +11,7 @@ public class AvailableValuesValueConverter : ValueConverter<AvailableValues, str
 
     public AvailableValuesValueConverter() : base(
         v => v.JoinAsString(Separator),
-        v => new AvailableValues(v.Split(Separator, StringSplitOptions.None)))
+        v => new AvailableValues(v.Split(Separator, StringSplitOptions.RemoveEmptyEntries)))
     {
     }
 }

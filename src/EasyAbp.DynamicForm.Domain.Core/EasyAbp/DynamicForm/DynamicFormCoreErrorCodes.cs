@@ -2,6 +2,9 @@
 
 public static class DynamicFormCoreErrorCodes
 {
+    public const string DuplicateFormItemTemplate = "EasyAbp.DynamicForm:DuplicateFormItemTemplate";
+    public const string DuplicateFormItem = "EasyAbp.DynamicForm:DuplicateFormItem";
+    public const string MissingFormItem = "EasyAbp.DynamicForm:MissingFormItem";
     public const string InvalidFormItemValue = "EasyAbp.DynamicForm:InvalidFormItemValue";
     public const string FormItemValueIsRequired = "EasyAbp.DynamicForm:FormItemValueIsRequired";
     public const string TextBoxInvalidMaxLength = "EasyAbp.DynamicForm:TextBoxInvalidMaxLength";

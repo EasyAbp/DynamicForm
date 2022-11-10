@@ -42,13 +42,19 @@ public class OptionButtonsFormItemProvider : IFormItemProvider, IScopedDependenc
             throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired);
         }
 
-        if (formItemMetadata.AvailableValues.Any() && !formItemMetadata.AvailableValues.Contains(value))
+        value ??= string.Empty;
+
+        var configurations = GetConfigurations(formItemMetadata);
+
+        var selections = configurations.IsMultiSelection
+            ? value.Split(SelectionSeparator, StringSplitOptions.RemoveEmptyEntries)
+            : new[] { value };
+
+        if (selections.Any(selection =>
+                formItemMetadata.AvailableValues.Any() && !formItemMetadata.AvailableValues.Contains(selection)))
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
         }
-
-        var configurations = GetConfigurations(formItemMetadata);
-        var selections = configurations.IsMultiSelection ? value.Split(SelectionSeparator) : new[] { value };
 
         if (configurations.IsMultiSelection && configurations.MinSelection.HasValue &&
             selections.Length < configurations.MinSelection)

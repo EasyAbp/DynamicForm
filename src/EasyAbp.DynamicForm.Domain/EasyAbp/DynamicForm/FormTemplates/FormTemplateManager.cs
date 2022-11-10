@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using EasyAbp.DynamicForm.FormItemTypes;
+﻿using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Options;
 using EasyAbp.DynamicForm.Shared;
 using JetBrains.Annotations;
@@ -14,18 +12,18 @@ public class FormTemplateManager : DomainService
 {
     protected DynamicFormOptions DynamicFormOptions { get; }
     protected DynamicFormCoreOptions DynamicFormCoreOptions { get; }
-    private IFormItemProviderResolver FormItemProviderResolver { get; }
+    protected IDynamicFormValidator DynamicFormValidator { get; }
     protected IFormTemplateRepository FormTemplateRepository { get; }
 
     public FormTemplateManager(
         IOptions<DynamicFormOptions> dynamicFormOptions,
         IOptions<DynamicFormCoreOptions> dynamicFormCoreOptions,
-        IFormItemProviderResolver formItemProviderResolver,
+        IDynamicFormValidator dynamicFormValidator,
         IFormTemplateRepository formTemplateRepository)
     {
         DynamicFormOptions = dynamicFormOptions.Value;
         DynamicFormCoreOptions = dynamicFormCoreOptions.Value;
-        FormItemProviderResolver = formItemProviderResolver;
+        DynamicFormValidator = dynamicFormValidator;
         FormTemplateRepository = formTemplateRepository;
     }
 
@@ -45,41 +43,30 @@ public class FormTemplateManager : DomainService
         return Task.FromResult(formTemplate);
     }
 
-    public virtual Task<FormTemplate> CreateFormItemAsync(
+    public virtual async Task<FormTemplate> CreateFormItemAsync(
         FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, [NotNull] string type,
         bool optional, [CanBeNull] string configurations, AvailableValues availableValues, int displayOrder)
     {
-        var item = formTemplate.FindFormItemTemplate(name);
-
-        if (item is not null)
-        {
-            throw new BusinessException(DynamicFormErrorCodes.DuplicateFormItemTemplate);
-        }
-
-        var formItemTemplate = formTemplate.AddOrUpdateFormItemTemplate(
+        formTemplate.AddOrUpdateFormItemTemplate(
             name, infoText, type, optional, configurations, availableValues, displayOrder);
 
-        var formItemProvider = FormItemProviderResolver.Resolve(type);
+        await DynamicFormValidator.ValidateTemplatesAsync(formTemplate.FormItemTemplates);
 
-        formItemProvider.ValidateTemplateAsync(formItemTemplate);
-
-        return Task.FromResult(formTemplate);
+        return formTemplate;
     }
 
-    public virtual Task<FormTemplate> UpdateFormItemAsync(
+    public virtual async Task<FormTemplate> UpdateFormItemAsync(
         FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, [NotNull] string type,
         bool optional, string configurations, AvailableValues availableValues, int displayOrder)
     {
-        var item = formTemplate.GetFormItemTemplate(name);
+        formTemplate.GetFormItemTemplate(name);
 
         formTemplate.AddOrUpdateFormItemTemplate(
             name, infoText, type, optional, configurations, availableValues, displayOrder);
 
-        var formItemProvider = FormItemProviderResolver.Resolve(type);
+        await DynamicFormValidator.ValidateTemplatesAsync(formTemplate.FormItemTemplates);
 
-        formItemProvider.ValidateTemplateAsync(item);
-
-        return Task.FromResult(formTemplate);
+        return formTemplate;
     }
 
     public virtual Task<FormTemplate> RemoveFormItemAsync(FormTemplate formTemplate, [NotNull] string name)

@@ -3,6 +3,7 @@
   "texts": {
     "EasyAbp.DynamicForm:DuplicateFormItemTemplate": "表單項重複",
     "EasyAbp.DynamicForm:DuplicateFormItem": "表單項重複",
+    "EasyAbp.DynamicForm:MissingFormItem": "缺少必須的表單項",
     "EasyAbp.DynamicForm:InvalidFormItemValue": "不正確的表單項值",
     "EasyAbp.DynamicForm:FormItemValueIsRequired": "表單項的值不可為空",
     "EasyAbp.DynamicForm:TextBoxInvalidMaxLength": "最大長度應大於最小長度",

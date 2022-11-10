@@ -1,12 +1,11 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using EasyAbp.DynamicForm.FormItemTypes;
 using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Options;
 using EasyAbp.DynamicForm.Shared;
 using JetBrains.Annotations;
 using Microsoft.Extensions.Options;
-using Volo.Abp;
 using Volo.Abp.Domain.Services;
 
 namespace EasyAbp.DynamicForm.Forms;
@@ -16,39 +15,43 @@ public class FormManager : DomainService
     protected IFormRepository FormRepository { get; }
     protected DynamicFormOptions DynamicFormOptions { get; }
     protected DynamicFormCoreOptions DynamicFormCoreOptions { get; }
-    protected IFormItemProviderResolver FormItemProviderResolver { get; }
+    protected IDynamicFormValidator DynamicFormValidator { get; }
 
     public FormManager(
         IFormRepository formRepository,
         IOptions<DynamicFormOptions> dynamicFormOptions,
         IOptions<DynamicFormCoreOptions> dynamicFormCoreOptions,
-        IFormItemProviderResolver formItemProviderResolver)
+        IDynamicFormValidator dynamicFormValidator)
     {
         FormRepository = formRepository;
-        FormItemProviderResolver = formItemProviderResolver;
         DynamicFormOptions = dynamicFormOptions.Value;
+        DynamicFormValidator = dynamicFormValidator;
         DynamicFormCoreOptions = dynamicFormCoreOptions.Value;
     }
 
-    public virtual Task<Form> CreateAsync(FormTemplate formTemplate)
+    public virtual async Task<Form> CreateAsync(FormTemplate formTemplate, IEnumerable<IFormItem> formItems)
     {
-        return Task.FromResult(new Form(
-            GuidGenerator.Create(),
-            CurrentTenant.Id,
-            formTemplate.FormDefinitionName,
-            formTemplate.Id,
-            formTemplate.Name));
-    }
+        var listedFormItems = formItems.ToList();
 
-    public virtual async Task<Form> CreateFormItemAsync(
-        Form form, [NotNull] string name, IFormItemMetadata metadata, [CanBeNull] string value)
-    {
-        if (form.FindFormItem(name) is not null)
+        var form = new Form(GuidGenerator.Create(), CurrentTenant.Id, formTemplate.FormDefinitionName, formTemplate.Id,
+            formTemplate.Name);
+
+        await DynamicFormValidator.ValidateValuesAsync(formTemplate.FormItemTemplates, listedFormItems);
+
+        foreach (var formItemTemplate in formTemplate.FormItemTemplates)
         {
-            throw new BusinessException(DynamicFormErrorCodes.DuplicateFormItem);
+            var formItem = listedFormItems.First(x => x.Name == formItemTemplate.Name);
+
+            await CreateFormItemAsync(form, formItemTemplate.Name, formItemTemplate, formItem.Value);
         }
 
-        await ValidateFormItemValueAsync(form, metadata, value);
+        return form;
+    }
+
+    protected virtual async Task<Form> CreateFormItemAsync(
+        Form form, [NotNull] string name, IFormItemMetadata metadata, [CanBeNull] string value)
+    {
+        await CustomValidateFormItemValueAsync(form, metadata, value);
 
         form.CreateFormItem(name, metadata, value);
 
@@ -59,7 +62,7 @@ public class FormManager : DomainService
     {
         var item = form.GetFormItem(name);
 
-        await ValidateFormItemValueAsync(form, item, value);
+        await CustomValidateFormItemValueAsync(form, item, value);
 
         form.UpdateFormItem(item, value);
 
@@ -75,13 +78,9 @@ public class FormManager : DomainService
         return Task.FromResult(form);
     }
 
-    protected virtual async Task ValidateFormItemValueAsync(Form form, IFormItemMetadata metadata,
+    protected virtual async Task CustomValidateFormItemValueAsync(Form form, IFormItemMetadata metadata,
         [CanBeNull] string value)
     {
-        var formItemProvider = FormItemProviderResolver.Resolve(metadata.Type);
-
-        await formItemProvider.ValidateValueAsync(metadata, value);
-
         var formDefinition = DynamicFormOptions.GetFormDefinition(form.FormDefinitionName);
 
         foreach (var validator in formDefinition.CustomFormItemValidatorTypes.Select(customValidatorType =>
