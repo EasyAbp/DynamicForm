@@ -106,6 +106,20 @@ entities to support the dynamic forms feature.
     } 
     ```
 
+    ```csharp
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        // ...
+        builder.Entity<BookRentalFormItem>(b =>
+        {
+            b.ToTable(MyProjectConsts.DbTablePrefix + "BookRentalFormItems", MyProjectConsts.DbSchema);
+            b.TryConfigureAvailableValues(); // add this configuration.
+            b.ConfigureByConvention();
+            b.HasKey(x => new { x.BookRentalId, x.Name });
+        });
+    }
+    ```
+
 3. Validate when changing the form item templates.
     ```csharp
     await dynamicFormValidator.ValidateTemplatesAsync(bookRental.FormItems);
