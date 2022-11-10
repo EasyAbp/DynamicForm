@@ -20,6 +20,7 @@ public class BookRentalFormItem : Entity, IFormItemTemplate
     public int DisplayOrder { get; set; }
 
     public string InfoText { get; set; }
+
     public AvailableValues AvailableValues { get; set; }
 
     public override object[] GetKeys()

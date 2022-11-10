@@ -6,7 +6,6 @@ namespace EasyAbp.DynamicForm.BookRentalRequests;
 
 public class BookRentalRequest : AggregateRoot<Guid>
 {
-    private readonly Guid _renterUserId;
     public Guid BookRentalId { get; set; }
 
     public Guid RenterUserId { get; set; }
@@ -19,7 +18,7 @@ public class BookRentalRequest : AggregateRoot<Guid>
 
     public BookRentalRequest(Guid id, Guid bookRentalId, Guid renterUserId) : base(id)
     {
-        _renterUserId = renterUserId;
         BookRentalId = bookRentalId;
+        RenterUserId = renterUserId;
     }
 }
