@@ -184,7 +184,7 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
 
         await CheckUpdatePermissionAsync(formTemplate);
 
-        await _formTemplateManager.CreateFormItemAsync(formTemplate, input.Name, input.InfoText, input.Type,
+        await _formTemplateManager.AddFormItemAsync(formTemplate, input.Name, input.InfoText, input.Type,
             input.Optional, MinifyConfigurations(input.Configurations), input.AvailableValues, input.DisplayOrder);
 
         await _repository.UpdateAsync(formTemplate, true);
@@ -265,7 +265,7 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
 
         foreach (var formItemTemplateInput in createInput.FormItemTemplates)
         {
-            await _formTemplateManager.CreateFormItemAsync(entity, formItemTemplateInput.Name,
+            await _formTemplateManager.AddFormItemAsync(entity, formItemTemplateInput.Name,
                 formItemTemplateInput.InfoText, formItemTemplateInput.Type, formItemTemplateInput.Optional,
                 MinifyConfigurations(formItemTemplateInput.Configurations), formItemTemplateInput.AvailableValues,
                 formItemTemplateInput.DisplayOrder);

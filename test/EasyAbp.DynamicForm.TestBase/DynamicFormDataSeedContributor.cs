@@ -59,14 +59,14 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
         formItemTemplate1Configurations!.MaxLength = 10;
         formItemTemplate1Configurations!.RegexPattern = "^[A-Za-z\\s]*$"; // letters and spaces only
 
-        await _formTemplateManager.CreateFormItemAsync(
+        await _formTemplateManager.AddFormItemAsync(
             formTemplate1, "Name", "Your full name.", TextBoxFormItemProvider.Name, false,
             _jsonSerializer.Serialize(formItemTemplate1Configurations), null, 0);
 
         var formItemTemplate2Configurations =
             (TextBoxFormItemConfigurations)await textBoxFormItemProvider.CreateConfigurationsObjectOrNullAsync();
 
-        await _formTemplateManager.CreateFormItemAsync(
+        await _formTemplateManager.AddFormItemAsync(
             formTemplate1, "Dept", "Your department name.", TextBoxFormItemProvider.Name, true,
             _jsonSerializer.Serialize(formItemTemplate2Configurations), new AvailableValues { "Dept 1", "Dept 2" }, 1);
 
@@ -74,7 +74,7 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
             (OptionButtonsFormItemConfigurations)await optionButtonsFormItemProvider
                 .CreateConfigurationsObjectOrNullAsync();
 
-        await _formTemplateManager.CreateFormItemAsync(
+        await _formTemplateManager.AddFormItemAsync(
             formTemplate1, "Gender", "Your gender.", OptionButtonsFormItemProvider.Name, false,
             _jsonSerializer.Serialize(formItemTemplate3Configurations), new AvailableValues { "Male", "Female" }, 2);
 
@@ -86,7 +86,7 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
         formItemTemplate4Configurations!.MinSelection = 1;
         formItemTemplate4Configurations!.MaxSelection = 2;
 
-        await _formTemplateManager.CreateFormItemAsync(
+        await _formTemplateManager.AddFormItemAsync(
             formTemplate1, "Requirements", "Other requirements.", OptionButtonsFormItemProvider.Name, true,
             _jsonSerializer.Serialize(formItemTemplate4Configurations), new AvailableValues
             {

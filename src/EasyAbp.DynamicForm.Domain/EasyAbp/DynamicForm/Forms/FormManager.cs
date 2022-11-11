@@ -42,13 +42,13 @@ public class FormManager : DomainService
         {
             var formItem = listedFormItems.First(x => x.Name == formItemTemplate.Name);
 
-            await CreateFormItemAsync(form, formItemTemplate.Name, formItemTemplate, formItem.Value);
+            await AddFormItemAsync(form, formItemTemplate.Name, formItemTemplate, formItem.Value);
         }
 
         return form;
     }
 
-    protected virtual async Task<Form> CreateFormItemAsync(
+    protected virtual async Task<Form> AddFormItemAsync(
         Form form, [NotNull] string name, IFormItemMetadata metadata, [CanBeNull] string value)
     {
         await CustomValidateFormItemValueAsync(form, metadata, value);

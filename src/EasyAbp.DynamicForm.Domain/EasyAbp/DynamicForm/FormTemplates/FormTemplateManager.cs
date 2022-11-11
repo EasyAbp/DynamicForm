@@ -43,7 +43,7 @@ public class FormTemplateManager : DomainService
         return Task.FromResult(formTemplate);
     }
 
-    public virtual async Task<FormTemplate> CreateFormItemAsync(
+    public virtual async Task<FormTemplate> AddFormItemAsync(
         FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, [NotNull] string type,
         bool optional, [CanBeNull] string configurations, AvailableValues availableValues, int displayOrder)
     {

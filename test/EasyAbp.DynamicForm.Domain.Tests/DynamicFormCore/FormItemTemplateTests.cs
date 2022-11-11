@@ -74,7 +74,7 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
         configurations!.MinLength = 2;
         configurations!.MaxLength = 1; // should not be less than the min length
 
-        await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.CreateFormItemAsync(
+        await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
                 formTemplate, "Content", null, TextBoxFormItemProvider.Name, false,
                 _jsonSerializer.Serialize(configurations), null, 0),
             "The max length should be greater than the min length.");
@@ -82,7 +82,7 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
         configurations!.MaxLength = 3;
         configurations!.RegexPattern = "*****"; // invalid regex pattern
 
-        await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.CreateFormItemAsync(
+        await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
                 formTemplate, "Content", null, TextBoxFormItemProvider.Name, false,
                 _jsonSerializer.Serialize(configurations), null, 0),
             "Invalid regex pattern.");
@@ -100,7 +100,7 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
         configurations!.MinSelection = 2;
         configurations!.MaxSelection = 1; // should not be less than the min selection
 
-        await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.CreateFormItemAsync(
+        await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
                 formTemplate, "Content", null, OptionButtonsFormItemProvider.Name, false,
                 _jsonSerializer.Serialize(configurations), null, 0),
             "The max selection should be greater than the min selection.");
