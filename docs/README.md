@@ -75,6 +75,7 @@ entities to support the dynamic forms feature.
 1. Install only the following modules:
 
     * EasyAbp.DynamicForm.Domain.Core
+    * EasyAbp.DynamicForm.Domain.Shared
     * EasyAbp.DynamicForm.EntityFrameworkCore.Shared
 
 2. Make your entities contain the form item information.
