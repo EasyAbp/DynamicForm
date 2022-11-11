@@ -35,7 +35,7 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
         [NotNull] string type,
         bool optional,
         [CanBeNull] string configurations,
-        AvailableValues values,
+        AvailableValues availableValues,
         int displayOrder,
         [CanBeNull] string value)
     {
@@ -44,7 +44,7 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
         Type = Check.NotNullOrWhiteSpace(type, nameof(type));
         Optional = optional;
         Configurations = configurations;
-        AvailableValues = values;
+        AvailableValues = availableValues;
         DisplayOrder = displayOrder;
         Value = value;
     }

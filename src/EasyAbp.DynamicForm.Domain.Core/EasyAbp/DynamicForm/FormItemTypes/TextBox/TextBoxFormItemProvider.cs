@@ -10,21 +10,18 @@ using Volo.Abp.Json;
 
 namespace EasyAbp.DynamicForm.FormItemTypes.TextBox;
 
-public class TextBoxFormItemProvider : IFormItemProvider, IScopedDependency
+public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
 {
     public static string Name { get; set; } = "TextBox";
     public static string LocalizationItemKey { get; set; } = "FormItemType.TextBox";
 
-    private readonly IJsonSerializer _jsonSerializer;
-
-    public TextBoxFormItemProvider(IJsonSerializer jsonSerializer)
+    public TextBoxFormItemProvider(IJsonSerializer jsonSerializer) : base(jsonSerializer)
     {
-        _jsonSerializer = jsonSerializer;
     }
 
-    public virtual Task ValidateTemplateAsync(IFormItemTemplate formItemTemplate)
+    public override Task ValidateTemplateAsync(IFormItemTemplate formItemTemplate)
     {
-        var configurations = GetConfigurations(formItemTemplate);
+        var configurations = GetConfigurations<TextBoxFormItemConfigurations>(formItemTemplate);
 
         if (configurations.MinLength.HasValue && configurations.MaxLength.HasValue &&
             configurations.MinLength > configurations.MaxLength)
@@ -47,7 +44,7 @@ public class TextBoxFormItemProvider : IFormItemProvider, IScopedDependency
         return Task.CompletedTask;
     }
 
-    public virtual Task ValidateValueAsync(IFormItemMetadata formItemMetadata, string value)
+    public override Task ValidateValueAsync(IFormItemMetadata formItemMetadata, string value)
     {
         if (!formItemMetadata.Optional && value.IsNullOrWhiteSpace())
         {
@@ -59,7 +56,7 @@ public class TextBoxFormItemProvider : IFormItemProvider, IScopedDependency
             throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
         }
 
-        var configurations = GetConfigurations(formItemMetadata);
+        var configurations = GetConfigurations<TextBoxFormItemConfigurations>(formItemMetadata);
 
         if (configurations.MinLength.HasValue && value?.Length < configurations.MinLength)
         {
@@ -80,13 +77,8 @@ public class TextBoxFormItemProvider : IFormItemProvider, IScopedDependency
         return Task.CompletedTask;
     }
 
-    public virtual Task<object> CreateConfigurationsObjectOrNullAsync()
+    public override Task<object> CreateConfigurationsObjectOrNullAsync()
     {
         return Task.FromResult<object>(new TextBoxFormItemConfigurations());
-    }
-
-    protected virtual TextBoxFormItemConfigurations GetConfigurations(IFormItemMetadata formItemTemplate)
-    {
-        return _jsonSerializer.Deserialize<TextBoxFormItemConfigurations>(formItemTemplate.Configurations);
     }
 }

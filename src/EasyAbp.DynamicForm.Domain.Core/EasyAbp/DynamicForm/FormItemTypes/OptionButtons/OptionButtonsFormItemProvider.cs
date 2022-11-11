@@ -9,22 +9,19 @@ using Volo.Abp.Json;
 
 namespace EasyAbp.DynamicForm.FormItemTypes.OptionButtons;
 
-public class OptionButtonsFormItemProvider : IFormItemProvider, IScopedDependency
+public class OptionButtonsFormItemProvider : FormItemProviderBase, IScopedDependency
 {
     public static string Name { get; set; } = "OptionButtons";
     public static string LocalizationItemKey { get; set; } = "FormItemType.OptionButtons";
     public static string SelectionSeparator { get; set; } = ",";
 
-    private readonly IJsonSerializer _jsonSerializer;
-
-    public OptionButtonsFormItemProvider(IJsonSerializer jsonSerializer)
+    public OptionButtonsFormItemProvider(IJsonSerializer jsonSerializer) : base(jsonSerializer)
     {
-        _jsonSerializer = jsonSerializer;
     }
 
-    public virtual Task ValidateTemplateAsync(IFormItemTemplate formItemTemplate)
+    public override Task ValidateTemplateAsync(IFormItemTemplate formItemTemplate)
     {
-        var configurations = GetConfigurations(formItemTemplate);
+        var configurations = GetConfigurations<OptionButtonsFormItemConfigurations>(formItemTemplate);
 
         if (configurations.MinSelection.HasValue && configurations.MaxSelection.HasValue &&
             configurations.MinSelection > configurations.MaxSelection)
@@ -35,7 +32,7 @@ public class OptionButtonsFormItemProvider : IFormItemProvider, IScopedDependenc
         return Task.CompletedTask;
     }
 
-    public virtual Task ValidateValueAsync(IFormItemMetadata formItemMetadata, string value)
+    public override Task ValidateValueAsync(IFormItemMetadata formItemMetadata, string value)
     {
         if (!formItemMetadata.Optional && value.IsNullOrWhiteSpace())
         {
@@ -44,7 +41,7 @@ public class OptionButtonsFormItemProvider : IFormItemProvider, IScopedDependenc
 
         value ??= string.Empty;
 
-        var configurations = GetConfigurations(formItemMetadata);
+        var configurations = GetConfigurations<OptionButtonsFormItemConfigurations>(formItemMetadata);
 
         var selections = configurations.IsMultiSelection
             ? value.Split(SelectionSeparator, StringSplitOptions.RemoveEmptyEntries)
@@ -71,13 +68,8 @@ public class OptionButtonsFormItemProvider : IFormItemProvider, IScopedDependenc
         return Task.CompletedTask;
     }
 
-    public virtual Task<object> CreateConfigurationsObjectOrNullAsync()
+    public override Task<object> CreateConfigurationsObjectOrNullAsync()
     {
         return Task.FromResult<object>(new OptionButtonsFormItemConfigurations());
-    }
-
-    protected virtual OptionButtonsFormItemConfigurations GetConfigurations(IFormItemMetadata formItemTemplate)
-    {
-        return _jsonSerializer.Deserialize<OptionButtonsFormItemConfigurations>(formItemTemplate.Configurations);
     }
 }
