@@ -17,8 +17,4 @@
       <EmbeddedResource Include="..\..\EasyAbp.DynamicForm.abpmdl.json" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="EasyAbp\DynamicForm" />
-    </ItemGroup>
-
 </Project>
