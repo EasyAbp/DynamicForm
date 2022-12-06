@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Shared;
 using Volo.Abp;
 using Volo.Abp.DependencyInjection;
@@ -19,9 +18,9 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
     {
     }
 
-    public override Task ValidateTemplateAsync(IFormItemTemplate formItemTemplate)
+    public override Task ValidateTemplateAsync(IFormItemMetadata metadata)
     {
-        var configurations = GetConfigurations<TextBoxFormItemConfigurations>(formItemTemplate);
+        var configurations = GetConfigurations<TextBoxFormItemConfigurations>(metadata);
 
         if (configurations.MinLength.HasValue && configurations.MaxLength.HasValue &&
             configurations.MinLength > configurations.MaxLength)
@@ -44,19 +43,19 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
         return Task.CompletedTask;
     }
 
-    public override Task ValidateValueAsync(IFormItemMetadata formItemMetadata, string value)
+    public override Task ValidateValueAsync(IFormItemMetadata metadata, string value)
     {
-        if (!formItemMetadata.Optional && value.IsNullOrWhiteSpace())
+        if (!metadata.Optional && value.IsNullOrWhiteSpace())
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired);
         }
 
-        if (formItemMetadata.AvailableValues.Any() && !formItemMetadata.AvailableValues.Contains(value))
+        if (metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(value))
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
         }
 
-        var configurations = GetConfigurations<TextBoxFormItemConfigurations>(formItemMetadata);
+        var configurations = GetConfigurations<TextBoxFormItemConfigurations>(metadata);
 
         if (configurations.MinLength.HasValue && value?.Length < configurations.MinLength)
         {

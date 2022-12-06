@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Shared;
 using Volo.Abp.Json;
 
@@ -15,16 +14,16 @@ public abstract class FormItemProviderBase : IFormItemProvider
         JsonSerializer = jsonSerializer;
     }
 
-    public abstract Task ValidateTemplateAsync(IFormItemTemplate formItemTemplate);
+    public abstract Task ValidateTemplateAsync(IFormItemMetadata metadata);
 
-    public abstract Task ValidateValueAsync(IFormItemMetadata formItemMetadata, string value);
+    public abstract Task ValidateValueAsync(IFormItemMetadata metadata, string value);
 
     public abstract Task<object> CreateConfigurationsObjectOrNullAsync();
 
-    protected virtual TConfigurations GetConfigurations<TConfigurations>(IFormItemMetadata formItemTemplate)
+    protected virtual TConfigurations GetConfigurations<TConfigurations>(IFormItemMetadata metadata)
     {
-        return JsonSerializer.Deserialize<TConfigurations>(formItemTemplate.Configurations.IsNullOrWhiteSpace()
+        return JsonSerializer.Deserialize<TConfigurations>(metadata.Configurations.IsNullOrWhiteSpace()
             ? "{}"
-            : formItemTemplate.Configurations);
+            : metadata.Configurations);
     }
 }

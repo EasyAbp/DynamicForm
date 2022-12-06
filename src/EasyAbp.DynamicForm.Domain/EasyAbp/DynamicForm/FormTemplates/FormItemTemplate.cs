@@ -6,7 +6,7 @@ using Volo.Abp.Domain.Entities;
 
 namespace EasyAbp.DynamicForm.FormTemplates;
 
-public class FormItemTemplate : Entity, IFormItemTemplate
+public class FormItemTemplate : Entity, IFormItemMetadata
 {
     public virtual Guid FormTemplateId { get; protected set; }
 

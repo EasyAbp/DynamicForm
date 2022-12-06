@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.FormItemTypes;
 using EasyAbp.DynamicForm.Forms;
-using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Shared;
 using Volo.Abp;
 using Volo.Abp.DependencyInjection;
@@ -20,9 +18,9 @@ public class DynamicFormValidator : IDynamicFormValidator, ITransientDependency
         FormItemProviderResolver = formItemProviderResolver;
     }
 
-    public virtual async Task ValidateTemplatesAsync(IEnumerable<IFormItemTemplate> templates)
+    public virtual async Task ValidateTemplatesAsync(IEnumerable<IFormItemMetadata> metadataList)
     {
-        var listedTemplates = templates.ToList();
+        var listedTemplates = metadataList.ToList();
 
         if (listedTemplates.Count != listedTemplates.Select(x => x.Name).Distinct().Count())
         {
