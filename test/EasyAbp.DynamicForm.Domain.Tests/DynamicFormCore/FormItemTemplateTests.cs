@@ -45,11 +45,11 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
             BookRentalId = bookRental1.Id,
             Name = "Renter",
             Group = "MyGroup1",
+            InfoText = "Book renter.",
             Type = TextBoxFormItemProvider.Name,
             Optional = false,
             Configurations = _jsonSerializer.Serialize(formItemTemplate1Configurations),
             DisplayOrder = 0,
-            InfoText = "Book renter.",
             AvailableValues = null
         };
 

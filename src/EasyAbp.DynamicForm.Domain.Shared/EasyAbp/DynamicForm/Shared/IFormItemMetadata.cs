@@ -14,6 +14,12 @@ public interface IFormItemMetadata : IHasAvailableValues
     string Group { get; }
 
     /// <summary>
+    /// Info text (tips) for the form item.
+    /// </summary>
+    [CanBeNull]
+    string InfoText { get; }
+
+    /// <summary>
     /// Type name of the form item. Types should register in the DynamicFormOptions.
     /// </summary>
     [NotNull]

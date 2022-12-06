@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Shared;
 using Volo.Abp;
 using Volo.Abp.DependencyInjection;
@@ -19,9 +18,9 @@ public class OptionButtonsFormItemProvider : FormItemProviderBase, IScopedDepend
     {
     }
 
-    public override Task ValidateTemplateAsync(IFormItemTemplate formItemTemplate)
+    public override Task ValidateTemplateAsync(IFormItemMetadata metadata)
     {
-        var configurations = GetConfigurations<OptionButtonsFormItemConfigurations>(formItemTemplate);
+        var configurations = GetConfigurations<OptionButtonsFormItemConfigurations>(metadata);
 
         if (configurations.MinSelection.HasValue && configurations.MaxSelection.HasValue &&
             configurations.MinSelection > configurations.MaxSelection)
@@ -32,23 +31,23 @@ public class OptionButtonsFormItemProvider : FormItemProviderBase, IScopedDepend
         return Task.CompletedTask;
     }
 
-    public override Task ValidateValueAsync(IFormItemMetadata formItemMetadata, string value)
+    public override Task ValidateValueAsync(IFormItemMetadata metadata, string value)
     {
-        if (!formItemMetadata.Optional && value.IsNullOrWhiteSpace())
+        if (!metadata.Optional && value.IsNullOrWhiteSpace())
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired);
         }
 
         value ??= string.Empty;
 
-        var configurations = GetConfigurations<OptionButtonsFormItemConfigurations>(formItemMetadata);
+        var configurations = GetConfigurations<OptionButtonsFormItemConfigurations>(metadata);
 
         var selections = configurations.IsMultiSelection
             ? value.Split(SelectionSeparator, StringSplitOptions.RemoveEmptyEntries)
             : new[] { value };
 
         if (selections.Any(selection =>
-                formItemMetadata.AvailableValues.Any() && !formItemMetadata.AvailableValues.Contains(selection)))
+                metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(selection)))
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
         }

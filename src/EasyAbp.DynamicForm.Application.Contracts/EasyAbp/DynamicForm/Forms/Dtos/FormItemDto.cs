@@ -13,6 +13,8 @@ public class FormItemDto : EntityDto
 
     public string Group { get; set; }
 
+    public string InfoText { get; set; }
+
     public string Type { get; set; }
 
     public bool Optional { get; set; }

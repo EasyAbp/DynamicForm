@@ -1,5 +1,4 @@
 ﻿using System;
-using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Shared;
 using JetBrains.Annotations;
 using Volo.Abp;
@@ -14,6 +13,8 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
     public virtual string Name { get; protected set; }
 
     public virtual string Group { get; protected set; }
+
+    public virtual string InfoText { get; protected set; }
 
     public virtual string Type { get; protected set; }
 
@@ -35,6 +36,7 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
         Guid formId,
         [NotNull] string name,
         [CanBeNull] string group,
+        [CanBeNull] string infoText,
         [NotNull] string type,
         bool optional,
         [CanBeNull] string configurations,
@@ -45,6 +47,7 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
         FormId = formId;
         Name = Check.NotNullOrWhiteSpace(name, nameof(name));
         Group = group;
+        InfoText = infoText;
         Type = Check.NotNullOrWhiteSpace(type, nameof(type));
         Optional = optional;
         Configurations = configurations;
