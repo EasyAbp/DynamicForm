@@ -67,6 +67,7 @@ public class FormTemplate : FullAuditedAggregateRoot<Guid>, IMultiTenant
 
     internal FormItemTemplate AddOrUpdateFormItemTemplate(
         [NotNull] string name,
+        [CanBeNull] string group,
         [CanBeNull] string infoText,
         [NotNull] string type,
         bool optional,
@@ -79,13 +80,13 @@ public class FormTemplate : FullAuditedAggregateRoot<Guid>, IMultiTenant
         if (item is null)
         {
             item = new FormItemTemplate(
-                Id, name, infoText, type, optional, configurations, availableValues, displayOrder);
+                Id, name, group, infoText, type, optional, configurations, availableValues, displayOrder);
 
             FormItemTemplates.Add(item);
         }
         else
         {
-            item.Update(infoText, type, optional, configurations, availableValues, displayOrder);
+            item.Update(group, infoText, type, optional, configurations, availableValues, displayOrder);
         }
 
         return item;

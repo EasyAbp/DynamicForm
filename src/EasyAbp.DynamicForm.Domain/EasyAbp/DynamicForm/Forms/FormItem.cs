@@ -13,6 +13,8 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
 
     public virtual string Name { get; protected set; }
 
+    public virtual string Group { get; protected set; }
+
     public virtual string Type { get; protected set; }
 
     public virtual bool Optional { get; protected set; }
@@ -32,6 +34,7 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
     internal FormItem(
         Guid formId,
         [NotNull] string name,
+        [CanBeNull] string group,
         [NotNull] string type,
         bool optional,
         [CanBeNull] string configurations,
@@ -41,6 +44,7 @@ public class FormItem : Entity, IFormItem, IFormItemMetadata
     {
         FormId = formId;
         Name = Check.NotNullOrWhiteSpace(name, nameof(name));
+        Group = group;
         Type = Check.NotNullOrWhiteSpace(type, nameof(type));
         Optional = optional;
         Configurations = configurations;

@@ -44,6 +44,7 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
         {
             BookRentalId = bookRental1.Id,
             Name = "Renter",
+            Group = "MyGroup1",
             Type = TextBoxFormItemProvider.Name,
             Optional = false,
             Configurations = _jsonSerializer.Serialize(formItemTemplate1Configurations),
@@ -75,7 +76,7 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
         configurations!.MaxLength = 1; // should not be less than the min length
 
         await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
-                formTemplate, "Content", null, TextBoxFormItemProvider.Name, false,
+                formTemplate, "Content", "group1", null, TextBoxFormItemProvider.Name, false,
                 _jsonSerializer.Serialize(configurations), null, 0),
             "The max length should be greater than the min length.");
 
@@ -83,7 +84,7 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
         configurations!.RegexPattern = "*****"; // invalid regex pattern
 
         await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
-                formTemplate, "Content", null, TextBoxFormItemProvider.Name, false,
+                formTemplate, "Content", "group1", null, TextBoxFormItemProvider.Name, false,
                 _jsonSerializer.Serialize(configurations), null, 0),
             "Invalid regex pattern.");
     }
@@ -101,7 +102,7 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
         configurations!.MaxSelection = 1; // should not be less than the min selection
 
         await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
-                formTemplate, "Content", null, OptionButtonsFormItemProvider.Name, false,
+                formTemplate, "Content", "group1", null, OptionButtonsFormItemProvider.Name, false,
                 _jsonSerializer.Serialize(configurations), null, 0),
             "The max selection should be greater than the min selection.");
     }

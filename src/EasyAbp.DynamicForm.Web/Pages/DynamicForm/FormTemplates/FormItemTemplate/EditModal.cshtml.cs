@@ -42,6 +42,7 @@ public class EditModalModel : DynamicFormPageModel
 
         ViewModel = new EditFormItemTemplateViewModel
         {
+            Group = item.Group,
             InfoText = item.InfoText,
             Type = item.Type,
             Optional = item.Optional,
@@ -55,6 +56,7 @@ public class EditModalModel : DynamicFormPageModel
     {
         var dto = new UpdateFormItemTemplateDto
         {
+            Group = ViewModel.Group,
             InfoText = ViewModel.InfoText,
             Type = ViewModel.Type,
             Optional = ViewModel.Optional,

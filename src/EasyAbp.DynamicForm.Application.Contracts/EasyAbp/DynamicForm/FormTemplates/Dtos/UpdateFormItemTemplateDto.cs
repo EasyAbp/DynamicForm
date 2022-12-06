@@ -6,6 +6,8 @@ namespace EasyAbp.DynamicForm.FormTemplates.Dtos;
 [Serializable]
 public class UpdateFormItemTemplateDto
 {
+    public string Group { get; set; }
+
     public string InfoText { get; set; }
 
     public string Type { get; set; }

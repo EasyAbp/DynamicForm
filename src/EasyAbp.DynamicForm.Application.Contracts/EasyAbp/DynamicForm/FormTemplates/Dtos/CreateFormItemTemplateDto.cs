@@ -8,6 +8,8 @@ public class CreateFormItemTemplateDto
 {
     public string Name { get; set; }
 
+    public string Group { get; set; }
+
     public string InfoText { get; set; }
 
     public string Type { get; set; }

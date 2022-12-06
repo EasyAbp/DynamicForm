@@ -12,6 +12,8 @@ public class FormItemTemplate : Entity, IFormItemTemplate
 
     public virtual string Name { get; protected set; }
 
+    public virtual string Group { get; protected set; }
+
     public virtual string InfoText { get; protected set; }
 
     public virtual string Type { get; protected set; }
@@ -31,6 +33,7 @@ public class FormItemTemplate : Entity, IFormItemTemplate
     internal FormItemTemplate(
         Guid formTemplateId,
         [NotNull] string name,
+        [CanBeNull] string group,
         [CanBeNull] string infoText,
         [NotNull] string type,
         bool optional,
@@ -40,6 +43,7 @@ public class FormItemTemplate : Entity, IFormItemTemplate
     {
         FormTemplateId = formTemplateId;
         Name = Check.NotNullOrWhiteSpace(name, nameof(name));
+        Group = group;
         InfoText = infoText;
         Type = Check.NotNullOrWhiteSpace(type, nameof(type));
         Optional = optional;
@@ -49,6 +53,7 @@ public class FormItemTemplate : Entity, IFormItemTemplate
     }
 
     internal void Update(
+        [CanBeNull] string group,
         [CanBeNull] string infoText,
         [NotNull] string type,
         bool optional,
@@ -56,6 +61,7 @@ public class FormItemTemplate : Entity, IFormItemTemplate
         AvailableValues availableValues,
         int displayOrder)
     {
+        Group = group;
         InfoText = infoText;
         Type = Check.NotNullOrWhiteSpace(type, nameof(type));
         Optional = optional;

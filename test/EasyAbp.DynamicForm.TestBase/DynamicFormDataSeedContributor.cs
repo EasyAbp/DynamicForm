@@ -60,14 +60,14 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
         formItemTemplate1Configurations!.RegexPattern = "^[A-Za-z\\s]*$"; // letters and spaces only
 
         await _formTemplateManager.AddFormItemAsync(
-            formTemplate1, "Name", "Your full name.", TextBoxFormItemProvider.Name, false,
+            formTemplate1, "Name", "group1", "Your full name.", TextBoxFormItemProvider.Name, false,
             _jsonSerializer.Serialize(formItemTemplate1Configurations), null, 0);
 
         var formItemTemplate2Configurations =
             (TextBoxFormItemConfigurations)await textBoxFormItemProvider.CreateConfigurationsObjectOrNullAsync();
 
         await _formTemplateManager.AddFormItemAsync(
-            formTemplate1, "Dept", "Your department name.", TextBoxFormItemProvider.Name, true,
+            formTemplate1, "Dept", "group1", "Your department name.", TextBoxFormItemProvider.Name, true,
             _jsonSerializer.Serialize(formItemTemplate2Configurations), new AvailableValues { "Dept 1", "Dept 2" }, 1);
 
         var formItemTemplate3Configurations =
@@ -75,7 +75,7 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
                 .CreateConfigurationsObjectOrNullAsync();
 
         await _formTemplateManager.AddFormItemAsync(
-            formTemplate1, "Gender", "Your gender.", OptionButtonsFormItemProvider.Name, false,
+            formTemplate1, "Gender", "group1", "Your gender.", OptionButtonsFormItemProvider.Name, false,
             _jsonSerializer.Serialize(formItemTemplate3Configurations), new AvailableValues { "Male", "Female" }, 2);
 
         var formItemTemplate4Configurations =
@@ -87,7 +87,7 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
         formItemTemplate4Configurations!.MaxSelection = 2;
 
         await _formTemplateManager.AddFormItemAsync(
-            formTemplate1, "Requirements", "Other requirements.", OptionButtonsFormItemProvider.Name, true,
+            formTemplate1, "Requirements", "group1", "Other requirements.", OptionButtonsFormItemProvider.Name, true,
             _jsonSerializer.Serialize(formItemTemplate4Configurations), new AvailableValues
             {
                 "Use annual leave", "Urgent", "Remote standby"
