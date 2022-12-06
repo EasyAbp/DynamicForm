@@ -43,26 +43,26 @@ public class FormTemplateManager : DomainService
         return Task.FromResult(formTemplate);
     }
 
-    public virtual async Task<FormTemplate> AddFormItemAsync(
-        FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, [NotNull] string type,
-        bool optional, [CanBeNull] string configurations, AvailableValues availableValues, int displayOrder)
+    public virtual async Task<FormTemplate> AddFormItemAsync(FormTemplate formTemplate, [NotNull] string name,
+        [CanBeNull] string group, [CanBeNull] string infoText, [NotNull] string type, bool optional,
+        [CanBeNull] string configurations, AvailableValues availableValues, int displayOrder)
     {
         formTemplate.AddOrUpdateFormItemTemplate(
-            name, infoText, type, optional, configurations, availableValues, displayOrder);
+            name, group, infoText, type, optional, configurations, availableValues, displayOrder);
 
         await DynamicFormValidator.ValidateTemplatesAsync(formTemplate.FormItemTemplates);
 
         return formTemplate;
     }
 
-    public virtual async Task<FormTemplate> UpdateFormItemAsync(
-        FormTemplate formTemplate, [NotNull] string name, [CanBeNull] string infoText, [NotNull] string type,
-        bool optional, string configurations, AvailableValues availableValues, int displayOrder)
+    public virtual async Task<FormTemplate> UpdateFormItemAsync(FormTemplate formTemplate, [NotNull] string name,
+        [CanBeNull] string group, [CanBeNull] string infoText, [NotNull] string type, bool optional,
+        string configurations, AvailableValues availableValues, int displayOrder)
     {
         formTemplate.GetFormItemTemplate(name);
 
         formTemplate.AddOrUpdateFormItemTemplate(
-            name, infoText, type, optional, configurations, availableValues, displayOrder);
+            name, group, infoText, type, optional, configurations, availableValues, displayOrder);
 
         await DynamicFormValidator.ValidateTemplatesAsync(formTemplate.FormItemTemplates);
 

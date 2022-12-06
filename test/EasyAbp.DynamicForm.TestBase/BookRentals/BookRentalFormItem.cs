@@ -9,9 +9,11 @@ public class BookRentalFormItem : Entity, IFormItemTemplate
 {
     public Guid BookRentalId { get; set; }
 
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 
-    public string Type { get; set; }
+    public string Group { get; set; }
+
+    public string Type { get; set; } = null!;
 
     public bool Optional { get; set; }
 

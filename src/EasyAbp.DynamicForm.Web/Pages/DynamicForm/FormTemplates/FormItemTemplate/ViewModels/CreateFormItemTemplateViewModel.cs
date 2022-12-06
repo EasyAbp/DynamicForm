@@ -9,6 +9,9 @@ public class CreateFormItemTemplateViewModel
     [Required]
     public string Name { get; set; }
 
+    [Display(Name = "FormItemTemplateGroup")]
+    public string Group { get; set; }
+
     [Display(Name = "FormItemTemplateInfoText")]
     public string InfoText { get; set; }
 

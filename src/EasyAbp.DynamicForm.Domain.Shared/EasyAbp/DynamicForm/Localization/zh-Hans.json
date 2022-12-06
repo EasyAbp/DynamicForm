@@ -42,6 +42,7 @@
     "FormTemplateDeletionConfirmationMessage": "确认删除表单模板 {0}?",
     "FormItemTemplate": "表单项模板",
     "FormItemTemplateName": "名称",
+    "FormItemTemplateGroup": "组名",
     "FormItemTemplateInfoText": "输入信息提示",
     "FormItemTemplateType": "类型",
     "FormItemTemplateOptional": "选填",

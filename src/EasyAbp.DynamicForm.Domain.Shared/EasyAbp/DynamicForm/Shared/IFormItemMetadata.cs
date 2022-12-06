@@ -8,6 +8,12 @@ public interface IFormItemMetadata : IHasAvailableValues
     string Name { get; }
 
     /// <summary>
+    /// Front-end can group the form items with this group name.
+    /// </summary>
+    [CanBeNull]
+    string Group { get; }
+
+    /// <summary>
     /// Type name of the form item. Types should register in the DynamicFormOptions.
     /// </summary>
     [NotNull]

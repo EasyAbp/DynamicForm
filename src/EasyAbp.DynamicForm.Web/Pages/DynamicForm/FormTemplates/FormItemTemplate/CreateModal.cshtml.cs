@@ -54,6 +54,7 @@ public class CreateModalModel : DynamicFormPageModel
         var dto = new CreateFormItemTemplateDto
         {
             Name = ViewModel.Name,
+            Group = ViewModel.Group,
             InfoText = ViewModel.InfoText,
             Type = ViewModel.Type,
             Optional = ViewModel.Optional,

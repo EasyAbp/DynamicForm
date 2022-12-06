@@ -5,6 +5,9 @@ namespace EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormItemTempla
 
 public class EditFormItemTemplateViewModel
 {
+    [Display(Name = "FormItemTemplateGroup")]
+    public string Group { get; set; }
+
     [Display(Name = "FormItemTemplateTip")]
     public string InfoText { get; set; }
 

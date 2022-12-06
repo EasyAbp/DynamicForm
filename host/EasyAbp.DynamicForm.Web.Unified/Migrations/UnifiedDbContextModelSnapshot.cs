@@ -108,6 +108,9 @@ namespace EasyAbp.DynamicForm.Migrations
                     b.Property<int>("DisplayOrder")
                         .HasColumnType("int");
 
+                    b.Property<string>("Group")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("Optional")
                         .HasColumnType("bit");
 
@@ -139,6 +142,9 @@ namespace EasyAbp.DynamicForm.Migrations
 
                     b.Property<int>("DisplayOrder")
                         .HasColumnType("int");
+
+                    b.Property<string>("Group")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InfoText")
                         .HasColumnType("nvarchar(max)");

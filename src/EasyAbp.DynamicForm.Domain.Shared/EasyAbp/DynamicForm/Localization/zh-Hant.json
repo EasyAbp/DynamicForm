@@ -42,6 +42,7 @@
     "FormTemplateDeletionConfirmationMessage": "確認刪除表單模板 {0}?",
     "FormItemTemplate": "表單項模板",
     "FormItemTemplateName": "名稱",
+    "FormItemTemplateGroup": "組名",
     "FormItemTemplateInfoText": "輸入信息提示",
     "FormItemTemplateType": "類型",
     "FormItemTemplateOptional": "選填",
