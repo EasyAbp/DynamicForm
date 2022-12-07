@@ -25,13 +25,23 @@ public class UrlsFileBoxValueValidator : IFileBoxValueValidator, ITransientDepen
 
     public virtual Task ValidateAsync(IFormItemMetadata metadata, string value)
     {
+        // You can override this method if the value is not a URL collection.
+
         if (value.IsNullOrEmpty())
         {
             value = "[]";
         }
 
-        // You can override this method if the value is not a URL collection.
-        var urls = JsonSerializer.Deserialize<List<string>>(value);
+        List<string> urls;
+
+        try
+        {
+            urls = JsonSerializer.Deserialize<List<string>>(value);
+        }
+        catch
+        {
+            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
+        }
 
         if (!metadata.Optional && urls.IsNullOrEmpty())
         {
