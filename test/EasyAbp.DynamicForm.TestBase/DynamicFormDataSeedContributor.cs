@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using EasyAbp.DynamicForm.FormItemTypes;
+using EasyAbp.DynamicForm.FormItemTypes.FileBox;
 using EasyAbp.DynamicForm.FormItemTypes.OptionButtons;
 using EasyAbp.DynamicForm.FormItemTypes.TextBox;
 using EasyAbp.DynamicForm.FormTemplates;
@@ -46,6 +47,7 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
     {
         var textBoxFormItemProvider = _formItemProviderResolver.Resolve(TextBoxFormItemProvider.Name);
         var optionButtonsFormItemProvider = _formItemProviderResolver.Resolve(OptionButtonsFormItemProvider.Name);
+        var fileBoxFormItemProvider = _formItemProviderResolver.Resolve(FileBoxFormItemProvider.Name);
 
         var formTemplate1 = await _formTemplateManager.CreateAsync(DynamicFormTestConsts.TestFormDefinitionName,
             DynamicFormTestConsts.FormTemplate1Name, "my-custom-tag");
@@ -92,6 +94,18 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
             {
                 "Use annual leave", "Urgent", "Remote standby"
             }, 3);
+
+
+        var formItemTemplate5Configurations =
+            (FileBoxFormItemConfigurations)await fileBoxFormItemProvider
+                .CreateConfigurationsObjectOrNullAsync();
+
+        formItemTemplate5Configurations!.ProviderName = "EasyAbpFileManagement"; // module name
+        formItemTemplate5Configurations!.ProviderKey = "UserUpload"; // container name
+
+        await _formTemplateManager.AddFormItemAsync(
+            formTemplate1, "Images", "group1", "Images upload.", FileBoxFormItemProvider.Name, true,
+            _jsonSerializer.Serialize(formItemTemplate5Configurations), null, 4);
 
         await _formTemplateRepository.InsertAsync(formTemplate1, true);
     }

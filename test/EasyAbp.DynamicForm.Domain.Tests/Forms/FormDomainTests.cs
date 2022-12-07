@@ -22,20 +22,17 @@ public class FormDomainTests : DynamicFormDomainTestBase
     {
         await WithUnitOfWorkAsync(async () =>
         {
-            var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
-            var form = await _formManager.CreateAsync(formTemplate, new List<FormItemCreationModel>
-            {
-                new("Name", "John"),
-                new("Dept", "Dept 2"),
-                new("Gender", "Male"),
-                new("Requirements", "Use annual leave,Urgent"),
-            });
+            var creatingFormItems = FormItemTestHelper.CreateStandardFormItems();
 
-            form.FormItems.Count.ShouldBe(4);
-            form.FormItems.ShouldContain(x => x.Name == "Name" && x.Value == "John");
-            form.FormItems.ShouldContain(x => x.Name == "Dept" && x.Value == "Dept 2");
-            form.FormItems.ShouldContain(x => x.Name == "Gender" && x.Value == "Male");
-            form.FormItems.ShouldContain(x => x.Name == "Requirements" && x.Value == "Use annual leave,Urgent");
+            var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
+            var form = await _formManager.CreateAsync(formTemplate, creatingFormItems);
+
+            form.FormItems.Count.ShouldBe(creatingFormItems.Count);
+
+            foreach (var creatingFormItem in creatingFormItems)
+            {
+                form.FormItems.ShouldContain(x => x.Name == creatingFormItem.Name && x.Value == creatingFormItem.Value);
+            }
         });
     }
 }

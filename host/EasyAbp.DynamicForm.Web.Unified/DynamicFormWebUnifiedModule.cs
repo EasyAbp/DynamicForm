@@ -90,6 +90,7 @@ public class DynamicFormWebUnifiedModule : AbpModule
         {
             options.AddTextBoxFormItemType();
             options.AddOptionButtonsFormItemType();
+            options.AddFileBoxFormItemType();
         });
 
         Configure<AbpDbContextOptions>(options =>

@@ -12,4 +12,5 @@ public static class DynamicFormCoreErrorCodes
     public const string TextBoxInvalidValueLength = "EasyAbp.DynamicForm:TextBoxInvalidValueLength";
     public const string OptionButtonsInvalidMaxSelection = "EasyAbp.DynamicForm:OptionButtonsInvalidMaxSelection";
     public const string OptionButtonsInvalidOptionQuantitySelected = "EasyAbp.DynamicForm:OptionButtonsInvalidOptionQuantitySelected";
+    public const string FileBoxInvalidUrls = "EasyAbp.DynamicForm:FileBoxInvalidUrls";
 }
