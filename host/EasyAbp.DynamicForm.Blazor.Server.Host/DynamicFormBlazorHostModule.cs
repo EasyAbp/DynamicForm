@@ -125,6 +125,7 @@ public class DynamicFormBlazorHostModule : AbpModule
         {
             options.AddTextBoxFormItemType();
             options.AddOptionButtonsFormItemType();
+            options.AddFileBoxFormItemType();
         });
 
         Configure<AbpDbContextOptions>(options =>

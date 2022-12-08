@@ -50,7 +50,7 @@ public class FormItemTests : DynamicFormDomainTestBase
     {
         var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
 
-        var formItems = CreateStandardFormItems();
+        var formItems = FormItemTestHelper.CreateStandardFormItems();
 
         formItems.First(x => x.Name == "Name").Value = null; // "Name" is not optional
 
@@ -84,7 +84,7 @@ public class FormItemTests : DynamicFormDomainTestBase
     {
         var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
 
-        var formItems = CreateStandardFormItems();
+        var formItems = FormItemTestHelper.CreateStandardFormItems();
 
         formItems.First(x => x.Name == "Gender").Value = "Other"; // not in available values
 
@@ -115,14 +115,27 @@ public class FormItemTests : DynamicFormDomainTestBase
             formTemplate.FormItemTemplates, formItems), "The form item value is required.");
     }
 
-    private static List<FormItemCreationModel> CreateStandardFormItems()
+    [Fact]
+    public async Task Should_Validate_FileBox()
     {
-        return new List<FormItemCreationModel>
-        {
-            new("Name", "John"),
-            new("Dept", "Dept 2"),
-            new("Gender", "Male"),
-            new("Requirements", "Use annual leave,Urgent"),
-        };
+        var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
+
+        var formItems = FormItemTestHelper.CreateStandardFormItems();
+
+        formItems.First(x => x.Name == "Images").Value =
+            "[\"https://my-fake-site1.com/1.png\", \"ftp://my-fake-site1.com/2.png\"]"; // contains a ftp scheme
+
+        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems), "Invalid file URL format.");
+
+        formItems.First(x => x.Name == "Images").Value = null; // null value
+
+        await Should.NotThrowAsync(() =>
+            _dynamicFormValidator.ValidateValuesAsync(formTemplate.FormItemTemplates, formItems));
+
+        formItems.First(x => x.Name == "Images").Value = ""; // empty value
+
+        await Should.NotThrowAsync(() =>
+            _dynamicFormValidator.ValidateValuesAsync(formTemplate.FormItemTemplates, formItems));
     }
 }

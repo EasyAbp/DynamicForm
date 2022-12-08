@@ -31,6 +31,7 @@ public class DynamicFormTestBaseModule : AbpModule
         {
             options.AddTextBoxFormItemType();
             options.AddOptionButtonsFormItemType();
+            options.AddFileBoxFormItemType();
         });
     }
 

@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.BookRentals;
 using EasyAbp.DynamicForm.FormItemTypes;
+using EasyAbp.DynamicForm.FormItemTypes.FileBox;
 using EasyAbp.DynamicForm.FormItemTypes.OptionButtons;
 using EasyAbp.DynamicForm.FormItemTypes.TextBox;
 using EasyAbp.DynamicForm.FormTemplates;
@@ -105,6 +106,19 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
                 formTemplate, "Content", "group1", null, OptionButtonsFormItemProvider.Name, false,
                 _jsonSerializer.Serialize(configurations), null, 0),
             "The max selection should be greater than the min selection.");
+    }
+
+    [Fact]
+    public async Task Should_Validate_FileBox()
+    {
+        var formTemplate = await CreateFormTemplateAsync();
+        var provider = GetFormItemProvider(FileBoxFormItemProvider.Name);
+        var configurations = (FileBoxFormItemConfigurations)await provider.CreateConfigurationsObjectOrNullAsync();
+
+        configurations!.ProviderName = "EasyAbpFileManagement"; // module name
+        configurations!.ProviderKey = "UserUpload"; // container name
+
+        // This module doesn't validate the provider info. If you want it, implement it on the app side.
     }
 
     private async Task<FormTemplate> CreateFormTemplateAsync()

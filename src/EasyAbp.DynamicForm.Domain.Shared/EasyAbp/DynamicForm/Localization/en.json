@@ -11,6 +11,7 @@
     "EasyAbp.DynamicForm:TextBoxInvalidValueLength": "Invalid form item value length.",
     "EasyAbp.DynamicForm:OptionButtonsInvalidMaxSelection": "The max selection should be greater than the min selection.",
     "EasyAbp.DynamicForm:OptionButtonsInvalidOptionQuantitySelected": "Invalid form item option quantity selected.",
+    "EasyAbp.DynamicForm:FileBoxInvalidUrls": "Invalid file URL format.",
     "Permission:Form": "Form",
     "Permission:Manage": "Manage",
     "Permission:Create": "Create",
@@ -54,7 +55,7 @@
     "FormItemType.CheckBox": "Check box",
     "FormItemType.OptionButtons": "Option buttons",
     "FormItemType.DropdownListBox": "Drop-down list box",
-    "FormItemType.FileUpload": "File upload",
+    "FormItemType.FileBox": "File upload",
     "CreateFormItemTemplate": "Create",
     "EditFormItemTemplate": "Edit",
     "FormItemTemplateDeletionConfirmationMessage": "Are you sure to delete the form item {0}?"

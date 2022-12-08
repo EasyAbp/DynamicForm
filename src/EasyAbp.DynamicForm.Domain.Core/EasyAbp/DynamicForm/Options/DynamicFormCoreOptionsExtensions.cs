@@ -1,4 +1,5 @@
-﻿using EasyAbp.DynamicForm.FormItemTypes.OptionButtons;
+﻿using EasyAbp.DynamicForm.FormItemTypes.FileBox;
+using EasyAbp.DynamicForm.FormItemTypes.OptionButtons;
 using EasyAbp.DynamicForm.FormItemTypes.TextBox;
 
 namespace EasyAbp.DynamicForm.Options;
@@ -22,6 +23,17 @@ public static class DynamicFormCoreOptionsExtensions
             OptionButtonsFormItemProvider.Name,
             OptionButtonsFormItemProvider.LocalizationItemKey,
             typeof(OptionButtonsFormItemProvider)
+        ));
+
+        return coreOptions;
+    }
+
+    public static DynamicFormCoreOptions AddFileBoxFormItemType(this DynamicFormCoreOptions coreOptions)
+    {
+        coreOptions.AddOrUpdateFormItemTypeDefinition(new FormItemTypeDefinition(
+            FileBoxFormItemProvider.Name,
+            FileBoxFormItemProvider.LocalizationItemKey,
+            typeof(FileBoxFormItemProvider)
         ));
 
         return coreOptions;

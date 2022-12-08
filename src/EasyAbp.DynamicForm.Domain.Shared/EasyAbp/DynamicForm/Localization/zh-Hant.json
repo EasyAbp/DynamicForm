@@ -11,6 +11,7 @@
     "EasyAbp.DynamicForm:TextBoxInvalidValueLength": "提交的表單項值長度不正確",
     "EasyAbp.DynamicForm:OptionButtonsInvalidMaxSelection": "最大選擇數量應小於最小選擇數量",
     "EasyAbp.DynamicForm:OptionButtonsInvalidOptionQuantitySelected": "提交的表單項包含不正確的選項數量",
+    "EasyAbp.DynamicForm:FileBoxInvalidUrls": "不正確的文件地址格式",
     "Permission:Form": "表單",
     "Permission:Manage": "管理",
     "Permission:Create": "新建",
@@ -54,7 +55,7 @@
     "FormItemType.CheckBox": "勾選框",
     "FormItemType.OptionButtons": "單選按鈕",
     "FormItemType.DropdownListBox": "下拉列錶框",
-    "FormItemType.FileUpload": "文件上傳",
+    "FormItemType.FileBox": "文件上傳",
     "CreateFormItemTemplate": "新建",
     "EditFormItemTemplate": "編輯",
     "FormItemTemplateDeletionConfirmationMessage": "確認刪除表單项 {0}?"
