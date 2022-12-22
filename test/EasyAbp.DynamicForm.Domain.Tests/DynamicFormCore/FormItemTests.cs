@@ -57,6 +57,14 @@ public class FormItemTests : DynamicFormDomainTestBase
         await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
             formTemplate.FormItemTemplates, formItems), "The form item value is required.");
 
+        var textBoxFormItemTemplate = formTemplate.FormItemTemplates.First(x => x.Name == "Name");
+        textBoxFormItemTemplate.GetType().GetProperty("Optional")!.SetValue(textBoxFormItemTemplate, true);
+
+        await Should.NotThrowAsync(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems)); // "Name" is null but optional
+
+        textBoxFormItemTemplate.GetType().GetProperty("Optional")!.SetValue(textBoxFormItemTemplate, false);
+
         formItems.First(x => x.Name == "Name").Value = "A"; // too short
 
         await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
