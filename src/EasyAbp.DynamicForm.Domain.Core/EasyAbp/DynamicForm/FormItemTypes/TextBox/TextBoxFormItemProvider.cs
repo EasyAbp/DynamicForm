@@ -57,7 +57,7 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
 
         var configurations = GetConfigurations<TextBoxFormItemConfigurations>(metadata);
 
-        if (configurations.MinLength.HasValue && value?.Length < configurations.MinLength)
+        if (configurations.MinLength.HasValue && !value.IsNullOrEmpty() && value!.Length < configurations.MinLength)
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidValueLength);
         }
