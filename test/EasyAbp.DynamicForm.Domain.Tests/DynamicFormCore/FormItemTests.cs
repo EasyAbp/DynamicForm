@@ -25,11 +25,11 @@ public class FormItemTests : DynamicFormDomainTestBase
     {
         var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
             formTemplate.FormItemTemplates, new List<FormItemCreationModel>
             {
                 new("Name", "John")
-            }), "Missing required form item.");
+            }))).Code.ShouldBe("EasyAbp.DynamicForm:MissingFormItem");
     }
 
     [Fact]
@@ -37,12 +37,12 @@ public class FormItemTests : DynamicFormDomainTestBase
     {
         var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
             formTemplate.FormItemTemplates, new List<FormItemCreationModel>
             {
                 new("Name", "John"),
                 new("Name", "John")
-            }), "Duplicate form item.");
+            }))).Code.ShouldBe("EasyAbp.DynamicForm:DuplicateFormItem");
     }
 
     [Fact]
@@ -54,8 +54,8 @@ public class FormItemTests : DynamicFormDomainTestBase
 
         formItems.First(x => x.Name == "Name").Value = null; // "Name" is not optional
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "The form item value is required.");
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:FormItemValueIsRequired");
 
         var textBoxFormItemTemplate = formTemplate.FormItemTemplates.First(x => x.Name == "Name");
         textBoxFormItemTemplate.GetType().GetProperty("Optional")!.SetValue(textBoxFormItemTemplate, true);
@@ -67,24 +67,24 @@ public class FormItemTests : DynamicFormDomainTestBase
 
         formItems.First(x => x.Name == "Name").Value = "A"; // too short
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "Invalid form item value length.");
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:TextBoxInvalidValueLength");
 
         formItems.First(x => x.Name == "Name").Value = "Abcdefghijklmn"; // too long
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "Invalid form item value length.");
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:TextBoxInvalidValueLength");
 
         formItems.First(x => x.Name == "Name").Value = "John1"; // contains digital
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "Invalid form item value.");
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
 
         formItems.First(x => x.Name == "Name").Value = "John";
         formItems.First(x => x.Name == "Dept").Value = "Dept 3"; // not in available values
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "Invalid form item value.");
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
     }
 
     [Fact]
@@ -96,31 +96,34 @@ public class FormItemTests : DynamicFormDomainTestBase
 
         formItems.First(x => x.Name == "Gender").Value = "Other"; // not in available values
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "Invalid form item value length.");
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
 
         formItems.First(x => x.Name == "Gender").Value = "Male";
         formItems.First(x => x.Name == "Requirements").Value =
             "Use annual leave,Aha"; // "Aha" is not in available values
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "Invalid form item value length.");
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
 
+        formItems.First(x => x.Name == "Gender").Value = null; // "Gender" is not optional
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:FormItemValueIsRequired");
+
+        formItems.First(x => x.Name == "Gender").Value = "Male";
         formItems.First(x => x.Name == "Requirements").Value = null; // min selection is 1
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "Invalid form item option quantity selected.");
+        (await Should.ThrowAsync<BusinessException>(() =>
+                _dynamicFormValidator.ValidateValuesAsync(formTemplate.FormItemTemplates, formItems)))
+            .Code.ShouldBe("EasyAbp.DynamicForm:OptionButtonsInvalidOptionQuantitySelected");
 
         formItems.First(x => x.Name == "Requirements").Value =
             "Use annual leave,Urgent,Remote standby"; // max selection is 2
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "Invalid form item option quantity selected.");
-
-        formItems.First(x => x.Name == "Requirements").Value = null; // "Requirements" is not optional
-
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "The form item value is required.");
+        (await Should.ThrowAsync<BusinessException>(() =>
+                _dynamicFormValidator.ValidateValuesAsync(formTemplate.FormItemTemplates, formItems)))
+            .Code.ShouldBe("EasyAbp.DynamicForm:OptionButtonsInvalidOptionQuantitySelected");
     }
 
     [Fact]
@@ -133,8 +136,8 @@ public class FormItemTests : DynamicFormDomainTestBase
         formItems.First(x => x.Name == "Images").Value =
             "[\"https://my-fake-site1.com/1.png\", \"ftp://my-fake-site1.com/2.png\"]"; // contains a ftp scheme
 
-        await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, formItems), "Invalid file URL format.");
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:FileBoxInvalidUrls");
 
         formItems.First(x => x.Name == "Images").Value = null; // null value
 
