@@ -25,7 +25,8 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
         if (configurations.MinLength.HasValue && configurations.MaxLength.HasValue &&
             configurations.MinLength > configurations.MaxLength)
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidMaxLength);
+            throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidMaxLength)
+                .WithData("item", metadata.Name);
         }
 
         if (!configurations.RegexPattern.IsNullOrWhiteSpace())
@@ -36,7 +37,8 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
             }
             catch
             {
-                throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidRegexPattern);
+                throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidRegexPattern)
+                    .WithData("item", metadata.Name);
             }
         }
 
@@ -47,30 +49,32 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
     {
         if (!metadata.Optional && value.IsNullOrWhiteSpace())
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired);
+            throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired)
+                .WithData("item", metadata.Name);
         }
 
         if (metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(value))
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
+            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue)
+                .WithData("item", metadata.Name);
         }
 
         var configurations = GetConfigurations<TextBoxFormItemConfigurations>(metadata);
 
-        if (configurations.MinLength.HasValue && !value.IsNullOrEmpty() && value!.Length < configurations.MinLength)
+        if (configurations.MinLength.HasValue && !value.IsNullOrEmpty() && value!.Length < configurations.MinLength ||
+            (configurations.MaxLength.HasValue && value?.Length > configurations.MaxLength))
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidValueLength);
-        }
-
-        if (configurations.MaxLength.HasValue && value?.Length > configurations.MaxLength)
-        {
-            throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidValueLength);
+            throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidValueLength)
+                .WithData("item", metadata.Name)
+                .WithData("min", configurations.MinLength)
+                .WithData("max", configurations.MaxLength);
         }
 
         if (!value.IsNullOrWhiteSpace() && !configurations.RegexPattern.IsNullOrWhiteSpace() &&
             !Regex.IsMatch(value!, configurations.RegexPattern!))
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
+            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue)
+                .WithData("item", metadata.Name);
         }
 
         return Task.CompletedTask;
