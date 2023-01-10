@@ -54,9 +54,8 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
             AvailableValues = null
         };
 
-        await Should.ThrowAsync<BusinessException>(
-            () => _dynamicFormValidator.ValidateTemplatesAsync(new[] { item }),
-            "The max length should be greater than the min length.");
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateTemplatesAsync(new[] { item })))
+            .Code.ShouldBe("EasyAbp.DynamicForm:TextBoxInvalidMaxLength");
 
         formItemTemplate1Configurations!.MaxLength = 3; // Fixed!
         item.Configurations = _jsonSerializer.Serialize(formItemTemplate1Configurations);
@@ -76,18 +75,18 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
         configurations!.MinLength = 2;
         configurations!.MaxLength = 1; // should not be less than the min length
 
-        await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
+        (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
                 formTemplate, "Content", "group1", null, TextBoxFormItemProvider.Name, false,
-                _jsonSerializer.Serialize(configurations), null, 0),
-            "The max length should be greater than the min length.");
+                _jsonSerializer.Serialize(configurations), null, 0)))
+            .Code.ShouldBe("EasyAbp.DynamicForm:TextBoxInvalidMaxLength");
 
         configurations!.MaxLength = 3;
         configurations!.RegexPattern = "*****"; // invalid regex pattern
 
-        await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
+        (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
                 formTemplate, "Content", "group1", null, TextBoxFormItemProvider.Name, false,
-                _jsonSerializer.Serialize(configurations), null, 0),
-            "Invalid regex pattern.");
+                _jsonSerializer.Serialize(configurations), null, 0)))
+            .Code.ShouldBe("EasyAbp.DynamicForm:TextBoxInvalidRegexPattern");
     }
 
     [Fact]
@@ -102,10 +101,10 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
         configurations!.MinSelection = 2;
         configurations!.MaxSelection = 1; // should not be less than the min selection
 
-        await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
+        (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
                 formTemplate, "Content", "group1", null, OptionButtonsFormItemProvider.Name, false,
-                _jsonSerializer.Serialize(configurations), null, 0),
-            "The max selection should be greater than the min selection.");
+                _jsonSerializer.Serialize(configurations), null, 0)))
+            .Code.ShouldBe("EasyAbp.DynamicForm:OptionButtonsInvalidMaxSelection");
     }
 
     [Fact]
