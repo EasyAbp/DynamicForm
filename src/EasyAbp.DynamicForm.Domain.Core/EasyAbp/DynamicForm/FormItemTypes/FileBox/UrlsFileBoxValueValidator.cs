@@ -40,19 +40,22 @@ public class UrlsFileBoxValueValidator : IFileBoxValueValidator, ITransientDepen
         }
         catch
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
+            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue)
+                .WithData("item", metadata.Name);
         }
 
         if (!metadata.Optional && urls.IsNullOrEmpty())
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired);
+            throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired)
+                .WithData("item", metadata.Name);
         }
 
         foreach (var url in urls)
         {
             if (!Uri.TryCreate(url, UriKind.Absolute, out var uri) || !ValidUriSchemes.Contains(uri.Scheme))
             {
-                throw new BusinessException(DynamicFormCoreErrorCodes.FileBoxInvalidUrls);
+                throw new BusinessException(DynamicFormCoreErrorCodes.FileBoxInvalidUrls)
+                    .WithData("item", metadata.Name);
             }
         }
 

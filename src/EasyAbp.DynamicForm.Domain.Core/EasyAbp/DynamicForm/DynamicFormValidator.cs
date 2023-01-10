@@ -51,7 +51,8 @@ public class DynamicFormValidator : IDynamicFormValidator, ITransientDependency
 
             if (formItem is null)
             {
-                throw new BusinessException(DynamicFormCoreErrorCodes.MissingFormItem);
+                throw new BusinessException(DynamicFormCoreErrorCodes.MissingFormItem)
+                    .WithData("item", metadata.Name);
             }
 
             var provider = FormItemProviderResolver.Resolve(metadata.Type);

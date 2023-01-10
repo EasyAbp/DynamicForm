@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Localization;
+using EasyAbp.DynamicForm.Permissions;
 using Volo.Abp.UI.Navigation;
 
 namespace EasyAbp.DynamicForm.Web.Menus;
@@ -19,9 +20,10 @@ public class DynamicFormMenuContributor : IMenuContributor
         var l = context.GetLocalizer<DynamicFormResource>();
         //Add main menu items.
 
-        var dynamicFormMenu = new ApplicationMenuItem(DynamicFormMenus.Prefix, displayName: l["Menu:DynamicForm"],
-            "~/DynamicForm/FormTemplates/FormTemplate", icon: "fa fa-wpforms");
-
-        context.Menu.AddItem(dynamicFormMenu);
+        if (await context.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Default))
+        {
+            context.Menu.AddItem(new ApplicationMenuItem(DynamicFormMenus.Prefix, displayName: l["Menu:DynamicForm"],
+                "~/DynamicForm/FormTemplates/FormTemplate", icon: "fa fa-wpforms"));
+        }
     }
 }

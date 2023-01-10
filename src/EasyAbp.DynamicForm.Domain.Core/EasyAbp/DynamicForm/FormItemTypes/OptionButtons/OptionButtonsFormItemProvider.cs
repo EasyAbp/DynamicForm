@@ -25,7 +25,8 @@ public class OptionButtonsFormItemProvider : FormItemProviderBase, IScopedDepend
         if (configurations.MinSelection.HasValue && configurations.MaxSelection.HasValue &&
             configurations.MinSelection > configurations.MaxSelection)
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.OptionButtonsInvalidMaxSelection);
+            throw new BusinessException(DynamicFormCoreErrorCodes.OptionButtonsInvalidMaxSelection)
+                .WithData("item", metadata.Name);
         }
 
         return Task.CompletedTask;
@@ -35,7 +36,8 @@ public class OptionButtonsFormItemProvider : FormItemProviderBase, IScopedDepend
     {
         if (!metadata.Optional && value.IsNullOrWhiteSpace())
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired);
+            throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired)
+                .WithData("item", metadata.Name);
         }
 
         value ??= string.Empty;
@@ -49,19 +51,19 @@ public class OptionButtonsFormItemProvider : FormItemProviderBase, IScopedDepend
         if (selections.Any(selection =>
                 metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(selection)))
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue);
+            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue)
+                .WithData("item", metadata.Name);
         }
 
         if (configurations.IsMultiSelection && configurations.MinSelection.HasValue &&
-            selections.Length < configurations.MinSelection)
+            selections.Length < configurations.MinSelection ||
+            (configurations.IsMultiSelection && configurations.MaxSelection.HasValue &&
+             selections.Length > configurations.MaxSelection))
         {
-            throw new BusinessException(DynamicFormCoreErrorCodes.OptionButtonsInvalidOptionQuantitySelected);
-        }
-
-        if (configurations.IsMultiSelection && configurations.MaxSelection.HasValue &&
-            selections.Length > configurations.MaxSelection)
-        {
-            throw new BusinessException(DynamicFormCoreErrorCodes.OptionButtonsInvalidOptionQuantitySelected);
+            throw new BusinessException(DynamicFormCoreErrorCodes.OptionButtonsInvalidOptionQuantitySelected)
+                .WithData("item", metadata.Name)
+                .WithData("min", configurations.MinSelection)
+                .WithData("max", configurations.MaxSelection);
         }
 
         return Task.CompletedTask;
