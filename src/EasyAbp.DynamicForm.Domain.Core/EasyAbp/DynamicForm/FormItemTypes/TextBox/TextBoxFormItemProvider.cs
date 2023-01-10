@@ -66,8 +66,8 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidValueLength)
                 .WithData("item", metadata.Name)
-                .WithData("min", configurations.MinLength)
-                .WithData("max", configurations.MaxLength);
+                .WithData("min", configurations.MinLength ?? 0)
+                .WithData("max", configurations.MaxLength.HasValue ? configurations.MaxLength.Value : "∞");
         }
 
         if (!value.IsNullOrWhiteSpace() && !configurations.RegexPattern.IsNullOrWhiteSpace() &&
