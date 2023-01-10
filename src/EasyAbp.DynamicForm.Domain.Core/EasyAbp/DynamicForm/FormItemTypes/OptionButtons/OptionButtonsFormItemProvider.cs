@@ -62,8 +62,8 @@ public class OptionButtonsFormItemProvider : FormItemProviderBase, IScopedDepend
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.OptionButtonsInvalidOptionQuantitySelected)
                 .WithData("item", metadata.Name)
-                .WithData("min", configurations.MinSelection)
-                .WithData("max", configurations.MaxSelection);
+                .WithData("min", configurations.MinSelection ?? 0)
+                .WithData("max", configurations.MaxSelection.HasValue ? configurations.MaxSelection.Value : "∞");
         }
 
         return Task.CompletedTask;
