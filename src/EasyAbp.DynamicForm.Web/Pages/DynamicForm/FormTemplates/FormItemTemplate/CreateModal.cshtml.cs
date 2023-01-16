@@ -60,7 +60,8 @@ public class CreateModalModel : DynamicFormPageModel
             Optional = ViewModel.Optional,
             Configurations = ViewModel.Configurations,
             AvailableValues = new AvailableValues(ViewModel.AvailableValues.Split(',')),
-            DisplayOrder = ViewModel.DisplayOrder
+            DisplayOrder = ViewModel.DisplayOrder,
+            Disabled = ViewModel.Disabled
         };
 
         await _service.CreateFormItemAsync(FormTemplateId, dto);

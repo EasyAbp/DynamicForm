@@ -8,12 +8,13 @@ public class EditFormItemTemplateViewModel
     [Display(Name = "FormItemTemplateGroup")]
     public string Group { get; set; }
 
-    [Display(Name = "FormItemTemplateTip")]
+    [Display(Name = "FormItemTemplateInfoText")]
     public string InfoText { get; set; }
 
     [Display(Name = "FormItemTemplateType")]
     [SelectItems("FormItemTypes")]
     [Required]
+    [ReadOnlyInput]
     public string Type { get; set; }
 
     [Display(Name = "FormItemTemplateOptional")]
@@ -27,10 +28,12 @@ public class EditFormItemTemplateViewModel
     /// Split available values with commas.
     /// </summary>
     [Display(Name = "FormItemTemplateAvailableValues")]
-    [TextArea(Rows = 5)]
     [InputInfoText("FormItemTemplateAvailableValuesInfo")]
     public string AvailableValues { get; set; }
 
     [Display(Name = "FormItemTemplateDisplayOrder")]
     public int DisplayOrder { get; set; }
+
+    [Display(Name = "FormItemTemplateDisabled")]
+    public bool Disabled { get; set; }
 }

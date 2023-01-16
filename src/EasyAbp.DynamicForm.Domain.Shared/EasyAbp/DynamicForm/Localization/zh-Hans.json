@@ -51,6 +51,7 @@
     "FormItemTemplateAvailableValues": "可选值",
     "FormItemTemplateAvailableValuesInfo": "使用半角逗号(,)隔离可用值.",
     "FormItemTemplateDisplayOrder": "显示排序",
+    "FormItemTemplateDisabled": "停用",
     "FormItemType.TextBox": "文本框",
     "FormItemType.CheckBox": "勾选框",
     "FormItemType.OptionButtons": "单选按钮",
