@@ -51,6 +51,7 @@
     "FormItemTemplateAvailableValues": "Radio values",
     "FormItemTemplateAvailableValuesInfo": "Split available values with commas.",
     "FormItemTemplateDisplayOrder": "Display order",
+    "FormItemTemplateDisabled": "Disabled",
     "FormItemType.TextBox": "Text box",
     "FormItemType.CheckBox": "Check box",
     "FormItemType.OptionButtons": "Option buttons",

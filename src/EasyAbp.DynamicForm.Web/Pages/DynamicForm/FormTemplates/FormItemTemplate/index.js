@@ -66,6 +66,10 @@ $(function () {
                 title: l('FormItemTemplateOptional'),
                 data: "optional"
             },
+            {
+                title: l('FormItemTemplateDisabled'),
+                data: "disabled"
+            },
         ]
     }));
 

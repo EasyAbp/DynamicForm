@@ -39,6 +39,9 @@ namespace EasyAbp.DynamicForm.Blazor.Server.Host.Migrations
                     b.Property<string>("Configurations")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Disabled")
+                        .HasColumnType("bit");
+
                     b.Property<int>("DisplayOrder")
                         .HasColumnType("int");
 

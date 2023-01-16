@@ -7,6 +7,7 @@ using EasyAbp.DynamicForm.FormTemplates.Dtos;
 using EasyAbp.DynamicForm.Shared;
 using EasyAbp.DynamicForm.Web.Pages.DynamicForm.FormTemplates.FormItemTemplate.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -25,6 +26,8 @@ public class EditModalModel : DynamicFormPageModel
     [BindProperty]
     public EditFormItemTemplateViewModel ViewModel { get; set; }
 
+    public List<SelectListItem> FormItemTypes { get; set; }
+
     private readonly IFormTemplateAppService _service;
 
     public EditModalModel(IFormTemplateAppService service)
@@ -37,6 +40,11 @@ public class EditModalModel : DynamicFormPageModel
         var dto = await _service.GetAsync(FormTemplateId);
         var item = dto.FormItemTemplates.First(x => x.Name == Name);
 
+        var baseInfo = await _service.GetBaseInfoAsync();
+
+        FormItemTypes = baseInfo.FormItemTypeDefinitions
+            .Select(x => new SelectListItem(L[x.LocalizationItemKey], x.Name)).ToList();
+
         var beautifiedConfigurations = JToken.Parse(item.Configurations).ToString(Formatting.Indented);
 
         ViewModel = new EditFormItemTemplateViewModel
@@ -47,7 +55,8 @@ public class EditModalModel : DynamicFormPageModel
             Optional = item.Optional,
             Configurations = beautifiedConfigurations,
             AvailableValues = item.AvailableValues.JoinAsString(","),
-            DisplayOrder = item.DisplayOrder
+            DisplayOrder = item.DisplayOrder,
+            Disabled = item.Disabled
         };
     }
 
@@ -61,7 +70,8 @@ public class EditModalModel : DynamicFormPageModel
             Optional = ViewModel.Optional,
             Configurations = ViewModel.Configurations,
             AvailableValues = new AvailableValues(ViewModel.AvailableValues.Split(',')),
-            DisplayOrder = ViewModel.DisplayOrder
+            DisplayOrder = ViewModel.DisplayOrder,
+            Disabled = ViewModel.Disabled
         };
 
         await _service.UpdateFormItemAsync(FormTemplateId, Name, dto);

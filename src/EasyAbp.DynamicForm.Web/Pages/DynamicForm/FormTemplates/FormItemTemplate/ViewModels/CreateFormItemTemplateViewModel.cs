@@ -18,6 +18,7 @@ public class CreateFormItemTemplateViewModel
     [Display(Name = "FormItemTemplateType")]
     [SelectItems("FormItemTypes")]
     [Required]
+    [ReadOnlyInput]
     public string Type { get; set; }
 
     [Display(Name = "FormItemTemplateOptional")]
@@ -36,4 +37,7 @@ public class CreateFormItemTemplateViewModel
 
     [Display(Name = "FormItemTemplateDisplayOrder")]
     public int DisplayOrder { get; set; }
+
+    [Display(Name = "FormItemTemplateDisabled")]
+    public bool Disabled { get; set; }
 }
