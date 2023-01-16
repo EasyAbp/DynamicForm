@@ -24,4 +24,6 @@ public class FormItemTemplateDto : EntityDto
     public AvailableValues AvailableValues { get; set; }
 
     public int DisplayOrder { get; set; }
+
+    public bool Disabled { get; set; }
 }

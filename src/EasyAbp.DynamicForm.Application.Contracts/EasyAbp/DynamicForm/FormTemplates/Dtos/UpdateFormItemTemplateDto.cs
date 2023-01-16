@@ -19,4 +19,6 @@ public class UpdateFormItemTemplateDto
     public AvailableValues AvailableValues { get; set; }
 
     public int DisplayOrder { get; set; }
+
+    public bool Disabled { get; set; }
 }

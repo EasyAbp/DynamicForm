@@ -185,7 +185,8 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         await CheckUpdatePermissionAsync(formTemplate);
 
         await _formTemplateManager.AddFormItemAsync(formTemplate, input.Name, input.Group, input.InfoText, input.Type,
-            input.Optional, MinifyConfigurations(input.Configurations), input.AvailableValues, input.DisplayOrder);
+            input.Optional, MinifyConfigurations(input.Configurations), input.AvailableValues, input.DisplayOrder,
+            input.Disabled);
 
         await _repository.UpdateAsync(formTemplate, true);
 
@@ -200,7 +201,8 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         await CheckUpdatePermissionAsync(formTemplate);
 
         await _formTemplateManager.UpdateFormItemAsync(formTemplate, name, input.Group, input.InfoText, input.Type,
-            input.Optional, MinifyConfigurations(input.Configurations), input.AvailableValues, input.DisplayOrder);
+            input.Optional, MinifyConfigurations(input.Configurations), input.AvailableValues, input.DisplayOrder,
+            input.Disabled);
 
         await _repository.UpdateAsync(formTemplate, true);
 
@@ -268,7 +270,8 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
             await _formTemplateManager.AddFormItemAsync(entity, formItemTemplateInput.Name,
                 formItemTemplateInput.Group, formItemTemplateInput.InfoText, formItemTemplateInput.Type,
                 formItemTemplateInput.Optional, MinifyConfigurations(formItemTemplateInput.Configurations),
-                formItemTemplateInput.AvailableValues, formItemTemplateInput.DisplayOrder);
+                formItemTemplateInput.AvailableValues, formItemTemplateInput.DisplayOrder,
+                formItemTemplateInput.Disabled);
         }
 
         return entity;

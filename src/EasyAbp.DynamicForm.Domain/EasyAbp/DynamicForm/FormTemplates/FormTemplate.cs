@@ -72,20 +72,21 @@ public class FormTemplate : FullAuditedAggregateRoot<Guid>, IMultiTenant
         bool optional,
         [CanBeNull] string configurations,
         AvailableValues availableValues,
-        int displayOrder)
+        int displayOrder,
+        bool disabled)
     {
         var item = FormItemTemplates.Find(x => x.Name == name);
 
         if (item is null)
         {
             item = new FormItemTemplate(
-                Id, name, group, infoText, type, optional, configurations, availableValues, displayOrder);
+                Id, name, group, infoText, type, optional, configurations, availableValues, displayOrder, disabled);
 
             FormItemTemplates.Add(item);
         }
         else
         {
-            item.Update(group, infoText, type, optional, configurations, availableValues, displayOrder);
+            item.Update(group, infoText, type, optional, configurations, availableValues, displayOrder, disabled);
         }
 
         return item;

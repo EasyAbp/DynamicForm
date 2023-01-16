@@ -45,10 +45,10 @@ public class FormTemplateManager : DomainService
 
     public virtual async Task<FormTemplate> AddFormItemAsync(FormTemplate formTemplate, [NotNull] string name,
         [CanBeNull] string group, [CanBeNull] string infoText, [NotNull] string type, bool optional,
-        [CanBeNull] string configurations, AvailableValues availableValues, int displayOrder)
+        [CanBeNull] string configurations, AvailableValues availableValues, int displayOrder, bool disabled)
     {
         formTemplate.AddOrUpdateFormItemTemplate(
-            name, group, infoText, type, optional, configurations, availableValues, displayOrder);
+            name, group, infoText, type, optional, configurations, availableValues, displayOrder, disabled);
 
         await DynamicFormValidator.ValidateTemplatesAsync(formTemplate.FormItemTemplates);
 
@@ -57,12 +57,12 @@ public class FormTemplateManager : DomainService
 
     public virtual async Task<FormTemplate> UpdateFormItemAsync(FormTemplate formTemplate, [NotNull] string name,
         [CanBeNull] string group, [CanBeNull] string infoText, [NotNull] string type, bool optional,
-        string configurations, AvailableValues availableValues, int displayOrder)
+        string configurations, AvailableValues availableValues, int displayOrder, bool disabled)
     {
         formTemplate.GetFormItemTemplate(name);
 
         formTemplate.AddOrUpdateFormItemTemplate(
-            name, group, infoText, type, optional, configurations, availableValues, displayOrder);
+            name, group, infoText, type, optional, configurations, availableValues, displayOrder, disabled);
 
         await DynamicFormValidator.ValidateTemplatesAsync(formTemplate.FormItemTemplates);
 

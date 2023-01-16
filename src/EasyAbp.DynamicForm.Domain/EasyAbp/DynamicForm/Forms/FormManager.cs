@@ -38,7 +38,7 @@ public class FormManager : DomainService
 
         await DynamicFormValidator.ValidateValuesAsync(formTemplate.FormItemTemplates, listedFormItems);
 
-        foreach (var formItemTemplate in formTemplate.FormItemTemplates)
+        foreach (var formItemTemplate in formTemplate.FormItemTemplates.Where(x => !x.Disabled))
         {
             var formItem = listedFormItems.First(x => x.Name == formItemTemplate.Name);
 
