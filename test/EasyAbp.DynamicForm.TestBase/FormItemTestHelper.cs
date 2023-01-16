@@ -10,6 +10,7 @@ public static class FormItemTestHelper
         return new List<FormItemCreationModel>
         {
             new("Name", "John"),
+            new("DisabledTextBox", ""), // this item is NOT optional, but disabled
             new("Dept", "Dept 2"),
             new("Gender", "Male"),
             new("Requirements", "Use annual leave,Urgent"),

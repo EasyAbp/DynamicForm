@@ -6,7 +6,7 @@ using Volo.Abp.Domain.Entities;
 
 namespace EasyAbp.DynamicForm.FormTemplates;
 
-public class FormItemTemplate : Entity, IFormItemMetadata
+public class FormItemTemplate : Entity, IFormItemTemplate
 {
     public virtual Guid FormTemplateId { get; protected set; }
 
@@ -26,6 +26,8 @@ public class FormItemTemplate : Entity, IFormItemMetadata
 
     public virtual int DisplayOrder { get; protected set; }
 
+    public bool Disabled { get; protected set; }
+
     protected FormItemTemplate()
     {
     }
@@ -39,7 +41,8 @@ public class FormItemTemplate : Entity, IFormItemMetadata
         bool optional,
         [CanBeNull] string configurations,
         AvailableValues availableValues,
-        int displayOrder)
+        int displayOrder,
+        bool disabled)
     {
         FormTemplateId = formTemplateId;
         Name = Check.NotNullOrWhiteSpace(name, nameof(name));
@@ -50,6 +53,7 @@ public class FormItemTemplate : Entity, IFormItemMetadata
         Configurations = configurations;
         AvailableValues = availableValues ?? new AvailableValues();
         DisplayOrder = displayOrder;
+        Disabled = disabled;
     }
 
     internal void Update(
@@ -59,7 +63,8 @@ public class FormItemTemplate : Entity, IFormItemMetadata
         bool optional,
         [CanBeNull] string configurations,
         AvailableValues availableValues,
-        int displayOrder)
+        int displayOrder,
+        bool disabled)
     {
         Group = group;
         InfoText = infoText;
@@ -68,6 +73,7 @@ public class FormItemTemplate : Entity, IFormItemMetadata
         Configurations = configurations;
         AvailableValues = availableValues ?? new AvailableValues();
         DisplayOrder = displayOrder;
+        Disabled = disabled;
     }
 
     public override object[] GetKeys()

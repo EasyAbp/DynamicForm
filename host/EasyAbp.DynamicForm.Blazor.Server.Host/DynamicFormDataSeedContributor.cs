@@ -60,14 +60,15 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
 
         await _formTemplateManager.AddFormItemAsync(
             formTemplate1, "Name", "group1", "Your full name.", TextBoxFormItemProvider.Name, false,
-            _jsonSerializer.Serialize(formItemTemplate1Configurations), null, 0);
+            _jsonSerializer.Serialize(formItemTemplate1Configurations), null, 0, false);
 
         var formItemTemplate2Configurations =
             (TextBoxFormItemConfigurations)await textBoxFormItemProvider.CreateConfigurationsObjectOrNullAsync();
 
         await _formTemplateManager.AddFormItemAsync(
             formTemplate1, "Dept", "group1", "Your department name.", TextBoxFormItemProvider.Name, true,
-            _jsonSerializer.Serialize(formItemTemplate2Configurations), new AvailableValues { "Dept 1", "Dept 2" }, 1);
+            _jsonSerializer.Serialize(formItemTemplate2Configurations), new AvailableValues { "Dept 1", "Dept 2" }, 1,
+            false);
 
         var formItemTemplate3Configurations =
             (OptionButtonsFormItemConfigurations)await optionButtonsFormItemProvider
@@ -75,7 +76,8 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
 
         await _formTemplateManager.AddFormItemAsync(
             formTemplate1, "Gender", "group1", "Your gender.", OptionButtonsFormItemProvider.Name, false,
-            _jsonSerializer.Serialize(formItemTemplate3Configurations), new AvailableValues { "Male", "Female" }, 2);
+            _jsonSerializer.Serialize(formItemTemplate3Configurations), new AvailableValues { "Male", "Female" }, 2,
+            false);
 
         var formItemTemplate4Configurations =
             (OptionButtonsFormItemConfigurations)await optionButtonsFormItemProvider
@@ -90,7 +92,7 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
             _jsonSerializer.Serialize(formItemTemplate4Configurations), new AvailableValues
             {
                 "Use annual leave", "Urgent", "Remote standby"
-            }, 3);
+            }, 3, false);
 
 
         var formItemTemplate5Configurations =
@@ -102,7 +104,7 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
 
         await _formTemplateManager.AddFormItemAsync(
             formTemplate1, "Images", "group1", "Images upload.", FileBoxFormItemProvider.Name, true,
-            _jsonSerializer.Serialize(formItemTemplate5Configurations), null, 4);
+            _jsonSerializer.Serialize(formItemTemplate5Configurations), null, 4, false);
 
         await _formTemplateRepository.InsertAsync(formTemplate1, true);
     }

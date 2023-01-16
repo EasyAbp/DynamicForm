@@ -21,6 +21,23 @@ public class FormItemTests : DynamicFormDomainTestBase
     }
 
     [Fact]
+    public async Task Should_Pass_Validation()
+    {
+        var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
+
+        await Should.NotThrowAsync(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, new List<FormItemCreationModel>
+            {
+                new("Name", "John"),
+                new("DisabledTextBox", ""), // this item is NOT optional, but disabled
+                new("Dept", "Dept 1"),
+                new("Gender", "Male"),
+                new("Requirements", "Urgent"),
+                new("Images", "[]"),
+            }));
+    }
+
+    [Fact]
     public async Task Should_Validate_Quantity()
     {
         var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
