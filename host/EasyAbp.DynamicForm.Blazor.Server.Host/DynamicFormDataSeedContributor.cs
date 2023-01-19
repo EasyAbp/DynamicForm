@@ -7,6 +7,7 @@ using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Shared;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
+using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Json;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.Uow;
@@ -45,6 +46,11 @@ public class DynamicFormDataSeedContributor : IDataSeedContributor, ITransientDe
 
     private async Task SeedFormTemplatesAsync()
     {
+        if (await _formTemplateRepository.AnyAsync())
+        {
+            return;
+        }
+
         var textBoxFormItemProvider = _formItemProviderResolver.Resolve(TextBoxFormItemProvider.Name);
         var optionButtonsFormItemProvider = _formItemProviderResolver.Resolve(OptionButtonsFormItemProvider.Name);
         var fileBoxFormItemProvider = _formItemProviderResolver.Resolve(FileBoxFormItemProvider.Name);
