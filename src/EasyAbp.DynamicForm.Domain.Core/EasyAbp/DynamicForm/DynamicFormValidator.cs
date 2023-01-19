@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.FormItemTypes;
 using EasyAbp.DynamicForm.Forms;
-using EasyAbp.DynamicForm.FormTemplates;
 using EasyAbp.DynamicForm.Shared;
 using Volo.Abp;
 using Volo.Abp.DependencyInjection;
@@ -37,7 +36,7 @@ public class DynamicFormValidator : IDynamicFormValidator, ITransientDependency
     }
 
     public virtual async Task ValidateValuesAsync(
-        IEnumerable<IFormItemTemplate> metadataList, IEnumerable<IFormItem> formItems)
+        IEnumerable<IFormItemMetadata> metadataList, IEnumerable<IFormItem> formItems)
     {
         var listedFormItems = formItems.ToList();
 

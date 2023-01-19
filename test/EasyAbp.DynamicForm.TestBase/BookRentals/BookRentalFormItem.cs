@@ -22,6 +22,8 @@ public class BookRentalFormItem : Entity, IFormItemMetadata
 
     public int DisplayOrder { get; set; }
 
+    public bool Disabled { get; set; }
+
     public AvailableValues AvailableValues { get; set; }
 
     public override object[] GetKeys()

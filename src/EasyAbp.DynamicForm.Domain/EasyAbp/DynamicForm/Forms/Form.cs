@@ -53,7 +53,7 @@ public class Form : FullAuditedAggregateRoot<Guid>, IMultiTenant
     internal FormItem CreateFormItem([NotNull] string name, IFormItemMetadata metadata, [CanBeNull] string value)
     {
         var item = new FormItem(Id, name, metadata.Group, metadata.InfoText, metadata.Type, metadata.Optional,
-            metadata.Configurations, metadata.AvailableValues, metadata.DisplayOrder, value);
+            metadata.Configurations, metadata.AvailableValues, metadata.DisplayOrder, metadata.Disabled, value);
 
         FormItems.Add(item);
 

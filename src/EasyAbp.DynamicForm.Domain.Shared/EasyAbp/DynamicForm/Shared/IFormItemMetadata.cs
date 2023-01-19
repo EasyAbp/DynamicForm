@@ -40,4 +40,9 @@ public interface IFormItemMetadata : IHasAvailableValues
     /// Display order of the form item collection.
     /// </summary>
     int DisplayOrder { get; }
+
+    /// <summary>
+    /// Disabled form items should not be validated and not show in UI.
+    /// </summary>
+    bool Disabled { get; }
 }
