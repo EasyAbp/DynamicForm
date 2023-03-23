@@ -4,6 +4,9 @@ namespace EasyAbp.DynamicForm.Shared;
 
 public interface IFormItemMetadata : IHasAvailableValues
 {
+    /// <summary>
+    /// Name of the form item, which should be unique in the form.
+    /// </summary>
     [NotNull]
     string Name { get; }
 
