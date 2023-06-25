@@ -47,13 +47,15 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
 
     public override Task ValidateValueAsync(IFormItemMetadata metadata, string value)
     {
-        if (!metadata.Optional && value.IsNullOrWhiteSpace())
+        var isEmptyValue = value.IsNullOrWhiteSpace();
+
+        if (!metadata.Optional && isEmptyValue)
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired)
                 .WithData("item", metadata.Name);
         }
 
-        if (metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(value))
+        if (!isEmptyValue && metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(value))
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue)
                 .WithData("item", metadata.Name);

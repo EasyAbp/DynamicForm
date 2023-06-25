@@ -34,19 +34,26 @@ public class OptionButtonsFormItemProvider : FormItemProviderBase, IScopedDepend
 
     public override Task ValidateValueAsync(IFormItemMetadata metadata, string value)
     {
-        if (!metadata.Optional && value.IsNullOrWhiteSpace())
+        var isEmptyValue = value.IsNullOrWhiteSpace();
+
+        if (!metadata.Optional && isEmptyValue)
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.FormItemValueIsRequired)
                 .WithData("item", metadata.Name);
         }
 
-        value ??= string.Empty;
+        if (isEmptyValue)
+        {
+            value = string.Empty;
+        }
 
         var configurations = GetConfigurations<OptionButtonsFormItemConfigurations>(metadata);
 
         var selections = configurations.IsMultiSelection
             ? value.Split(SelectionSeparator, StringSplitOptions.RemoveEmptyEntries)
-            : new[] { value };
+            : isEmptyValue
+                ? Array.Empty<string>()
+                : new[] { value };
 
         if (selections.Any(selection =>
                 metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(selection)))
