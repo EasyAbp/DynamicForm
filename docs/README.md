@@ -87,7 +87,7 @@ entities to support the dynamic forms feature.
         public List<BookRentalFormItem> FormItems { get; set; } = new();
     }
     
-    public class BookRentalFormItem : Entity, IFormItemTemplate
+    public class BookRentalFormItem : Entity, IFormItemMetadata
     {
         // properties...
     } 

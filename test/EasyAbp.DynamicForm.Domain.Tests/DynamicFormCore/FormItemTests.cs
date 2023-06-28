@@ -26,7 +26,7 @@ public class FormItemTests : DynamicFormDomainTestBase
         var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
 
         await Should.NotThrowAsync(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, new List<FormItemCreationModel>
+            formTemplate.FormItemTemplates, new List<CreateUpdateFormItemModel>
             {
                 new("Name", "John"),
                 new("DisabledTextBox", ""), // this item is NOT optional, but disabled
@@ -43,7 +43,7 @@ public class FormItemTests : DynamicFormDomainTestBase
         var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
 
         (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, new List<FormItemCreationModel>
+            formTemplate.FormItemTemplates, new List<CreateUpdateFormItemModel>
             {
                 new("Name", "John")
             }))).Code.ShouldBe("EasyAbp.DynamicForm:MissingFormItem");
@@ -55,7 +55,7 @@ public class FormItemTests : DynamicFormDomainTestBase
         var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
 
         (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
-            formTemplate.FormItemTemplates, new List<FormItemCreationModel>
+            formTemplate.FormItemTemplates, new List<CreateUpdateFormItemModel>
             {
                 new("Name", "John"),
                 new("Name", "John")
