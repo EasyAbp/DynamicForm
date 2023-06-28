@@ -58,13 +58,15 @@ public class FormManager : DomainService
         return form;
     }
 
-    public virtual async Task<Form> UpdateFormItemAsync(Form form, [NotNull] string name, [CanBeNull] string value)
+    public virtual async Task<Form> UpdateFormItemAsync(Form form, [NotNull] CreateUpdateFormItemModel model)
     {
-        var item = form.GetFormItem(name);
+        var item = form.GetFormItem(model.Name);
 
-        await CustomValidateFormItemValueAsync(form, item, value);
+        await DynamicFormValidator.ValidateValuesAsync(new[] { item }, new[] { model });
 
-        form.UpdateFormItem(item, value);
+        await CustomValidateFormItemValueAsync(form, item, model.Value);
+
+        form.UpdateFormItem(item, model.Value);
 
         return form;
     }

@@ -51,7 +51,7 @@ public class FormAppService : CrudAppService<Form, FormDto, Guid, FormGetListInp
         var formTemplate = await _formTemplateRepository.GetAsync(createInput.FormTemplateId);
 
         var entity = await _formManager.CreateAsync(formTemplate,
-            createInput.FormItems.Select(x => new FormItemCreationModel(x.Name, x.Value)));
+            createInput.FormItems.Select(x => new CreateUpdateFormItemModel(x.Name, x.Value)));
 
         return entity;
     }
@@ -124,7 +124,7 @@ public class FormAppService : CrudAppService<Form, FormDto, Guid, FormGetListInp
                 new OperationAuthorizationRequirement { Name = DynamicFormPermissions.Form.Update });
         }
 
-        await _formManager.UpdateFormItemAsync(entity, name, input.Value);
+        await _formManager.UpdateFormItemAsync(entity, new CreateUpdateFormItemModel(name, input.Value));
 
         await _repository.UpdateAsync(entity, true);
 

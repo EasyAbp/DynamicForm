@@ -5,9 +5,9 @@ namespace EasyAbp.DynamicForm;
 
 public static class FormItemTestHelper
 {
-    public static List<FormItemCreationModel> CreateStandardFormItems()
+    public static List<CreateUpdateFormItemModel> CreateStandardFormItems()
     {
-        return new List<FormItemCreationModel>
+        return new List<CreateUpdateFormItemModel>
         {
             new("Name", "John"),
             new("DisabledTextBox", ""), // this item is NOT optional, but disabled
