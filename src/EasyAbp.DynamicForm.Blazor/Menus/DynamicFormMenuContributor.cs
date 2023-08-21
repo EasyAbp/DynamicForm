@@ -19,9 +19,9 @@ public class DynamicFormMenuContributor : IMenuContributor
         var l = context.GetLocalizer<DynamicFormResource>();
         //Add main menu items.
 
-        var dynamicFormMenu = new ApplicationMenuItem(DynamicFormMenus.Prefix, displayName: l["Menu:DynamicForm"],
-            "/DynamicForm/FormTemplates/FormTemplate", icon: "fa fa-wpforms");
+        var dynamicFormMenu = new ApplicationMenuItem(DynamicFormMenus.Prefix,
+            displayName: l["Menu:DynamicForm"], "/DynamicForm/FormTemplates/FormTemplate", icon: "fa fa-wpforms");
 
-        context.Menu.AddItem(dynamicFormMenu);
+        context.Menu.GetAdministration().AddItem(dynamicFormMenu);
     }
 }

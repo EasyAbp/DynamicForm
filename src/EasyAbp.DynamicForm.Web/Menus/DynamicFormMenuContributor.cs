@@ -22,8 +22,8 @@ public class DynamicFormMenuContributor : IMenuContributor
 
         if (await context.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Default))
         {
-            context.Menu.AddItem(new ApplicationMenuItem(DynamicFormMenus.Prefix, displayName: l["Menu:DynamicForm"],
-                "~/DynamicForm/FormTemplates/FormTemplate", icon: "fa fa-wpforms"));
+            context.Menu.GetAdministration().AddItem(new ApplicationMenuItem(DynamicFormMenus.Prefix,
+                displayName: l["Menu:DynamicForm"], "~/DynamicForm/FormTemplates/FormTemplate", icon: "fa fa-wpforms"));
         }
     }
 }
