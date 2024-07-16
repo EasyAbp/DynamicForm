@@ -1,20 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="..\..\common.props" />
+  <Import Project="..\..\common.props" />
 
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
-        <RootNamespace />
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <RootNamespace />
+  </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Volo.Abp.VirtualFileSystem" Version="$(AbpVersion)" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.VirtualFileSystem" Version="$(AbpVersion)" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="..\..\EasyAbp.DynamicForm.abpmdl.json" />
-      <EmbeddedResource Include="..\..\EasyAbp.DynamicForm.abpmdl.json" />
-    </ItemGroup>
+  <ItemGroup>
+    <None Remove="..\..\EasyAbp.DynamicForm.abpmdl" />
+    <Content Include="..\..\EasyAbp.DynamicForm.abpmdl">
+      <Pack>true</Pack>
+      <PackagePath>content\</PackagePath>
+    </Content>
+    <None Remove="..\..\**\*.abppkg*" />
+    <Content Include="..\..\**\*.abppkg*">
+      <Pack>true</Pack>
+      <PackagePath>content\</PackagePath>
+    </Content>
+  </ItemGroup>
 
 </Project>
