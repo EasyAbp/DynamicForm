@@ -86,13 +86,6 @@ public class DynamicFormWebUnifiedModule : AbpModule
             options.AddOrUpdateFormDefinition(new FormDefinition("InternalForm", "Internal Form"));
         });
 
-        Configure<DynamicFormCoreOptions>(options =>
-        {
-            options.AddTextBoxFormItemType();
-            options.AddOptionButtonsFormItemType();
-            options.AddFileBoxFormItemType();
-        });
-
         Configure<AbpDbContextOptions>(options =>
         {
             options.UseSqlServer();

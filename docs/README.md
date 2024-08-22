@@ -39,13 +39,6 @@ An ABP module helps users to define and use dynamic forms at runtime.
     {
         options.AddOrUpdateFormDefinition(new FormDefinition("InternalForm", "Internal Form"));
     });
-    
-    Configure<DynamicFormCoreOptions>(options =>
-    {
-        options.AddTextBoxFormItemType();
-        options.AddOptionButtonsFormItemType();
-        // Add any type you want, including your custom types....
-    });
     ```
 
 2. (Optional) Create a custom `FormTemplateOperationAuthorizationHandler` to determine who can create/read/update/delete

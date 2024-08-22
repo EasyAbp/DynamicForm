@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Shared;
+using Volo.Abp.DependencyInjection;
 using Volo.Abp.Json;
 
 namespace EasyAbp.DynamicForm.FormItemTypes;
 
 public abstract class FormItemProviderBase : IFormItemProvider
 {
-    protected IJsonSerializer JsonSerializer { get; }
+    public IAbpLazyServiceProvider LazyServiceProvider { get; set; }
 
-    public FormItemProviderBase(IJsonSerializer jsonSerializer)
-    {
-        JsonSerializer = jsonSerializer;
-    }
+    protected IJsonSerializer JsonSerializer => LazyServiceProvider.LazyGetRequiredService<IJsonSerializer>();
 
     public abstract Task ValidateTemplateAsync(IFormItemMetadata metadata);
 

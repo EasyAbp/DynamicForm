@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Json;
+﻿using EasyAbp.DynamicForm.Options;
+using Volo.Abp.Json;
 using Volo.Abp.Modularity;
 
 namespace EasyAbp.DynamicForm;
@@ -9,4 +10,8 @@ namespace EasyAbp.DynamicForm;
 )]
 public class DynamicFormDomainCoreModule : AbpModule
 {
+    public override void ConfigureServices(ServiceConfigurationContext context)
+    {
+        Configure<DynamicFormCoreOptions>(options => { options.AddBuiltInFormItemTypes(); });
+    }
 }

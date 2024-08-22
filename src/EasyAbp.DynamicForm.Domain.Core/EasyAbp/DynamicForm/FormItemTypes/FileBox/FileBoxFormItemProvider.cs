@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Shared;
 using Volo.Abp.DependencyInjection;
-using Volo.Abp.Json;
 
 namespace EasyAbp.DynamicForm.FormItemTypes.FileBox;
 
@@ -13,9 +12,7 @@ public class FileBoxFormItemProvider : FormItemProviderBase, IScopedDependency
 
     protected IEnumerable<IFileBoxValueValidator> ValueValidators { get; }
 
-    public FileBoxFormItemProvider(
-        IJsonSerializer jsonSerializer,
-        IEnumerable<IFileBoxValueValidator> valueValidators) : base(jsonSerializer)
+    public FileBoxFormItemProvider(IEnumerable<IFileBoxValueValidator> valueValidators)
     {
         ValueValidators = valueValidators;
     }

@@ -2,10 +2,15 @@
 using System.Threading.Tasks;
 using EasyAbp.DynamicForm.BookRentals;
 using EasyAbp.DynamicForm.FormItemTypes;
+using EasyAbp.DynamicForm.FormItemTypes.ColorPicker;
 using EasyAbp.DynamicForm.FormItemTypes.FileBox;
+using EasyAbp.DynamicForm.FormItemTypes.NumberBox;
 using EasyAbp.DynamicForm.FormItemTypes.OptionButtons;
 using EasyAbp.DynamicForm.FormItemTypes.TextBox;
+using EasyAbp.DynamicForm.FormItemTypes.TimePicker;
+using EasyAbp.DynamicForm.FormItemTypes.Toggle;
 using EasyAbp.DynamicForm.FormTemplates;
+using EasyAbp.DynamicForm.Shared;
 using Shouldly;
 using Volo.Abp;
 using Volo.Abp.Json;
@@ -86,7 +91,107 @@ public class FormItemTemplateTests : DynamicFormDomainTestBase
         (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
                 formTemplate, "Content", "group1", null, TextBoxFormItemProvider.Name, false,
                 _jsonSerializer.Serialize(configurations), null, 0, false)))
-            .Code.ShouldBe("EasyAbp.DynamicForm:TextBoxInvalidRegexPattern");
+            .Code.ShouldBe("EasyAbp.DynamicForm:InvalidRegexPattern");
+    }
+
+    [Fact]
+    public async Task Should_Validate_NumberBox()
+    {
+        var formTemplate = await CreateFormTemplateAsync();
+        var provider = GetFormItemProvider(NumberBoxFormItemProvider.Name);
+        var configurations = (NumberBoxFormItemConfigurations)await provider.CreateConfigurationsObjectOrNullAsync();
+
+        configurations!.MinValue = 2;
+        configurations!.MaxValue = 1; // should not be less than the min value
+
+        (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
+                formTemplate, "Content", "group1", null, NumberBoxFormItemProvider.Name, false,
+                _jsonSerializer.Serialize(configurations), null, 0, false)))
+            .Code.ShouldBe("EasyAbp.DynamicForm:NumberBoxInvalidMaxValue");
+
+        configurations!.MaxValue = 3;
+
+        await Should.NotThrowAsync(() => _formTemplateManager.AddFormItemAsync(
+            formTemplate, "Content", "group1", null, NumberBoxFormItemProvider.Name, false,
+            _jsonSerializer.Serialize(configurations), null, 0, false));
+
+        (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
+                formTemplate, "Content", "group1", null, NumberBoxFormItemProvider.Name, false,
+                _jsonSerializer.Serialize(configurations), ["abc"], 0, false))) // abc is not a numeric value
+            .Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
+    }
+
+    [Fact]
+    public async Task Should_Validate_Toggle()
+    {
+        var formTemplate = await CreateFormTemplateAsync();
+        var provider = GetFormItemProvider(ToggleFormItemProvider.Name);
+        var configurations = (ToggleFormItemConfigurations)await provider.CreateConfigurationsObjectOrNullAsync();
+
+        const bool optional = true; // cannot be optional.
+
+        (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
+                formTemplate, "Content", "group1", null, ToggleFormItemProvider.Name, optional,
+                _jsonSerializer.Serialize(configurations!), null, 0, false)))
+            .Code.ShouldBe("EasyAbp.DynamicForm:ToggleIsOptional");
+
+        AvailableValues availableValues = ["abc"]; // valid available values: true, false.
+
+        (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
+                formTemplate, "Content", "group1", null, ToggleFormItemProvider.Name, false,
+                _jsonSerializer.Serialize(configurations!), availableValues, 0, false))) // abc is not a numeric value
+            .Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
+
+        await Should.NotThrowAsync(() => _formTemplateManager.AddFormItemAsync(
+            formTemplate, "Content", "group1", null, ToggleFormItemProvider.Name, false,
+            _jsonSerializer.Serialize(configurations!), null, 0, false));
+    }
+
+    [Fact]
+    public async Task Should_Validate_TimePicker()
+    {
+        var formTemplate = await CreateFormTemplateAsync();
+        var provider = GetFormItemProvider(TimePickerFormItemProvider.Name);
+        var configurations = (TimePickerFormItemConfigurations)await provider.CreateConfigurationsObjectOrNullAsync();
+
+        AvailableValues availableValues = ["abc"]; // invalid date time value
+
+        (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
+                formTemplate, "Content", "group1", null, TimePickerFormItemProvider.Name, false,
+                _jsonSerializer.Serialize(configurations!), availableValues, 0, false))) // abc is not a numeric value
+            .Code.ShouldBe("EasyAbp.DynamicForm:TimePickerInvalidDateTime");
+
+        await Should.NotThrowAsync(() => _formTemplateManager.AddFormItemAsync(
+            formTemplate, "Content", "group1", null, TimePickerFormItemProvider.Name, false,
+            _jsonSerializer.Serialize(configurations!), null, 0, false));
+    }
+
+    [Fact]
+    public async Task Should_Validate_ColorPicker()
+    {
+        var formTemplate = await CreateFormTemplateAsync();
+        var provider = GetFormItemProvider(ColorPickerFormItemProvider.Name);
+        var configurations = (ColorPickerFormItemConfigurations)await provider.CreateConfigurationsObjectOrNullAsync();
+
+        AvailableValues availableValues = ["abc"]; // invalid color value
+
+        (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
+                formTemplate, "Content", "group1", null, ColorPickerFormItemProvider.Name, false,
+                _jsonSerializer.Serialize(configurations!), availableValues, 0, false))) // abc is not a numeric value
+            .Code.ShouldBe("EasyAbp.DynamicForm:ColorPickerInvalidHexValue");
+
+        configurations!.RegexPattern = "*****"; // invalid regex pattern
+
+        (await Should.ThrowAsync<BusinessException>(() => _formTemplateManager.AddFormItemAsync(
+                formTemplate, "Content", "group1", null, ColorPickerFormItemProvider.Name, false,
+                _jsonSerializer.Serialize(configurations!), null, 0, false))) // abc is not a numeric value
+            .Code.ShouldBe("EasyAbp.DynamicForm:InvalidRegexPattern");
+
+        configurations!.RegexPattern = null;
+
+        await Should.NotThrowAsync(() => _formTemplateManager.AddFormItemAsync(
+            formTemplate, "Content", "group1", null, ColorPickerFormItemProvider.Name, false,
+            _jsonSerializer.Serialize(configurations!), null, 0, false));
     }
 
     [Fact]
