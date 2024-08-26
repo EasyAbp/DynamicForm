@@ -34,6 +34,10 @@ public class FormItemTests : DynamicFormDomainTestBase
                 new("Gender", "Male"),
                 new("Requirements", "Urgent"),
                 new("Images", "[]"),
+                new("Score", "100"),
+                new("VIP", "false"),
+                new("Birthday", "2024-08-21"),
+                new("Color", "#FFAABBCC")
             }));
     }
 
@@ -102,6 +106,155 @@ public class FormItemTests : DynamicFormDomainTestBase
 
         (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
             formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
+    }
+
+    [Fact]
+    public async Task Should_Validate_NumberBox()
+    {
+        var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
+
+        var formItems = FormItemTestHelper.CreateStandardFormItems();
+
+        formItems.First(x => x.Name == "Score").Value = null; // "Score" is not optional
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:FormItemValueIsRequired");
+
+        var numberBoxFormItemTemplate = formTemplate.FormItemTemplates.First(x => x.Name == "Score");
+        numberBoxFormItemTemplate.GetType().GetProperty("Optional")!.SetValue(numberBoxFormItemTemplate, true);
+
+        await Should.NotThrowAsync(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems)); // "Score" is null but optional
+
+        numberBoxFormItemTemplate.GetType().GetProperty("Optional")!.SetValue(numberBoxFormItemTemplate, false);
+
+        formItems.First(x => x.Name == "Score").Value = "9"; // too small
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:NumberBoxInvalidValue");
+
+        formItems.First(x => x.Name == "Score").Value = "999"; // too large
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:NumberBoxInvalidValue");
+
+        formItems.First(x => x.Name == "Score").Value = "100.111"; // decimal places > 2
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:NumberBoxInvalidValue");
+
+        formItems.First(x => x.Name == "Score").Value = "101"; // not in available values
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
+
+        formItems.First(x => x.Name == "Score").Value = "100.11";
+
+        await Should.NotThrowAsync(() =>
+            _dynamicFormValidator.ValidateValuesAsync(formTemplate.FormItemTemplates, formItems));
+    }
+
+    [Fact]
+    public async Task Should_Validate_Toggle()
+    {
+        var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
+
+        var formItems = FormItemTestHelper.CreateStandardFormItems();
+
+        formItems.First(x => x.Name == "VIP").Value = null; // "VIP" is not optional
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:FormItemValueIsRequired");
+
+        formItems.First(x => x.Name == "VIP").Value = "abc"; // not bool value
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
+
+        formItems.First(x => x.Name == "VIP").Value = "true"; // not in available values
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
+
+        formItems.First(x => x.Name == "VIP").Value = "false";
+
+        await Should.NotThrowAsync(() =>
+            _dynamicFormValidator.ValidateValuesAsync(formTemplate.FormItemTemplates, formItems));
+    }
+
+    [Fact]
+    public async Task Should_Validate_TimePicker()
+    {
+        var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
+
+        var formItems = FormItemTestHelper.CreateStandardFormItems();
+
+        formItems.First(x => x.Name == "Birthday").Value = null; // "Birthday" is not optional
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:FormItemValueIsRequired");
+
+        var timePickerFormItemTemplate = formTemplate.FormItemTemplates.First(x => x.Name == "Birthday");
+        timePickerFormItemTemplate.GetType().GetProperty("Optional")!.SetValue(timePickerFormItemTemplate, true);
+
+        await Should.NotThrowAsync(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems)); // "Birthday" is null but optional
+
+        formItems.First(x => x.Name == "Birthday").Value = "abc"; // invalid date time value
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:TimePickerInvalidDateTime");
+
+        formItems.First(x => x.Name == "Birthday").Value = "2024-08-20"; // not in available values
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
+
+        formItems.First(x => x.Name == "Birthday").Value = "2024-08-21";
+
+        await Should.NotThrowAsync(() =>
+            _dynamicFormValidator.ValidateValuesAsync(formTemplate.FormItemTemplates, formItems));
+    }
+
+    [Fact]
+    public async Task Should_Validate_ColorPicker()
+    {
+        var formTemplate = await _formTemplateRepository.GetAsync(DynamicFormTestConsts.FormTemplate1Id);
+
+        var formItems = FormItemTestHelper.CreateStandardFormItems();
+
+        formItems.First(x => x.Name == "Color").Value = null; // "Color" is not optional
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:FormItemValueIsRequired");
+
+        var colorPickerFormItemTemplate = formTemplate.FormItemTemplates.First(x => x.Name == "Color");
+        colorPickerFormItemTemplate.GetType().GetProperty("Optional")!.SetValue(colorPickerFormItemTemplate, true);
+
+        await Should.NotThrowAsync(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems)); // "Color" is null but optional
+
+        formItems.First(x => x.Name == "Color").Value = "abc"; // invalid HEX value
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+                formTemplate.FormItemTemplates, formItems))).Code
+            .ShouldBe("EasyAbp.DynamicForm:ColorPickerInvalidHexValue");
+
+        formItems.First(x => x.Name == "Color").Value =
+            "#000"; // should not contain 0-9 (Color property regex: "^[^0-9]*$")
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
+
+        formItems.First(x => x.Name == "Color").Value = "#fff"; // not in available values
+
+        (await Should.ThrowAsync<BusinessException>(() => _dynamicFormValidator.ValidateValuesAsync(
+            formTemplate.FormItemTemplates, formItems))).Code.ShouldBe("EasyAbp.DynamicForm:InvalidFormItemValue");
+
+        formItems.First(x => x.Name == "Color").Value = "#FFAABBCC";
+
+        await Should.NotThrowAsync(() =>
+            _dynamicFormValidator.ValidateValuesAsync(formTemplate.FormItemTemplates, formItems));
     }
 
     [Fact]

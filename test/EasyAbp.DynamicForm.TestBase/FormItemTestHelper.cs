@@ -15,6 +15,10 @@ public static class FormItemTestHelper
             new("Gender", "Male"),
             new("Requirements", "Use annual leave,Urgent"),
             new("Images", "[\"https://my-fake-site1.com/1.png\", \"https://my-fake-site1.com/2.png\"]"),
+            new("Score", "100.1"),
+            new("VIP", "false"),
+            new("Color", "#FFAABBCC"),
+            new("Birthday", "2024-08-21"),
         };
     }
 }

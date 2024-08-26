@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Shared;
 using Volo.Abp;
 using Volo.Abp.DependencyInjection;
-using Volo.Abp.Json;
 
 namespace EasyAbp.DynamicForm.FormItemTypes.OptionButtons;
 
@@ -13,10 +12,6 @@ public class OptionButtonsFormItemProvider : FormItemProviderBase, IScopedDepend
     public static string Name { get; set; } = "OptionButtons";
     public static string LocalizationItemKey { get; set; } = "FormItemType.OptionButtons";
     public static string SelectionSeparator { get; set; } = ",";
-
-    public OptionButtonsFormItemProvider(IJsonSerializer jsonSerializer) : base(jsonSerializer)
-    {
-    }
 
     public override Task ValidateTemplateAsync(IFormItemMetadata metadata)
     {

@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Shared;
 using Volo.Abp;
 using Volo.Abp.DependencyInjection;
-using Volo.Abp.Json;
 
 namespace EasyAbp.DynamicForm.FormItemTypes.TextBox;
 
@@ -13,10 +12,6 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
 {
     public static string Name { get; set; } = "TextBox";
     public static string LocalizationItemKey { get; set; } = "FormItemType.TextBox";
-
-    public TextBoxFormItemProvider(IJsonSerializer jsonSerializer) : base(jsonSerializer)
-    {
-    }
 
     public override Task ValidateTemplateAsync(IFormItemMetadata metadata)
     {
@@ -33,11 +28,11 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
         {
             try
             {
-                var _ = Regex.Match(string.Empty, configurations.RegexPattern!);
+                _ = Regex.Match(string.Empty, configurations.RegexPattern!);
             }
             catch
             {
-                throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidRegexPattern)
+                throw new BusinessException(DynamicFormCoreErrorCodes.InvalidRegexPattern)
                     .WithData("item", metadata.Name);
             }
         }
@@ -55,16 +50,10 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
                 .WithData("item", metadata.Name);
         }
 
-        if (!isEmptyValue && metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(value))
-        {
-            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue)
-                .WithData("item", metadata.Name);
-        }
-
         var configurations = GetConfigurations<TextBoxFormItemConfigurations>(metadata);
 
-        if (configurations.MinLength.HasValue && !value.IsNullOrEmpty() && value!.Length < configurations.MinLength ||
-            (configurations.MaxLength.HasValue && value?.Length > configurations.MaxLength))
+        if (configurations.MinLength.HasValue && !isEmptyValue && value.Length < configurations.MinLength ||
+            (configurations.MaxLength.HasValue && !isEmptyValue && value.Length > configurations.MaxLength))
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.TextBoxInvalidValueLength)
                 .WithData("item", metadata.Name)
@@ -72,8 +61,14 @@ public class TextBoxFormItemProvider : FormItemProviderBase, IScopedDependency
                 .WithData("max", configurations.MaxLength.HasValue ? configurations.MaxLength.Value : "∞");
         }
 
-        if (!value.IsNullOrWhiteSpace() && !configurations.RegexPattern.IsNullOrWhiteSpace() &&
+        if (!isEmptyValue && !configurations.RegexPattern.IsNullOrWhiteSpace() &&
             !Regex.IsMatch(value!, configurations.RegexPattern!))
+        {
+            throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue)
+                .WithData("item", metadata.Name);
+        }
+
+        if (!isEmptyValue && metadata.AvailableValues.Any() && !metadata.AvailableValues.Contains(value))
         {
             throw new BusinessException(DynamicFormCoreErrorCodes.InvalidFormItemValue)
                 .WithData("item", metadata.Name);

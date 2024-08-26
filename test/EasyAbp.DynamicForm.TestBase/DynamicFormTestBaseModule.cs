@@ -26,13 +26,6 @@ public class DynamicFormTestBaseModule : AbpModule
             options.AddOrUpdateFormDefinition(new FormDefinition(
                 DynamicFormTestConsts.TestFormDefinitionName, DynamicFormTestConsts.TestFormDefinitionDisplayName));
         });
-
-        Configure<DynamicFormCoreOptions>(options =>
-        {
-            options.AddTextBoxFormItemType();
-            options.AddOptionButtonsFormItemType();
-            options.AddFileBoxFormItemType();
-        });
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)
