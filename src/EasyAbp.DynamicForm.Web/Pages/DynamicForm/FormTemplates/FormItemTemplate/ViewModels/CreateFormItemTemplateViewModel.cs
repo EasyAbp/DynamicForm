@@ -18,7 +18,7 @@ public class CreateFormItemTemplateViewModel
     [Display(Name = "FormItemTemplateType")]
     [SelectItems("FormItemTypes")]
     [Required]
-    [ReadOnlyInput]
+    [DisabledInput]
     public string Type { get; set; }
 
     [Display(Name = "FormItemTemplateOptional")]
