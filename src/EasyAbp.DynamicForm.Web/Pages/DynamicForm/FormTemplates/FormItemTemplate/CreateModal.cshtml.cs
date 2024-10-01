@@ -59,7 +59,7 @@ public class CreateModalModel : DynamicFormPageModel
             Type = ViewModel.Type,
             Optional = ViewModel.Optional,
             Configurations = ViewModel.Configurations,
-            AvailableValues = new AvailableValues(ViewModel.AvailableValues.Split(',')),
+            AvailableValues = new AvailableValues((ViewModel.AvailableValues ?? "").Split(',')),
             DisplayOrder = ViewModel.DisplayOrder,
             Disabled = ViewModel.Disabled
         };
