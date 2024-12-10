@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<RootNamespace>EasyAbp.DynamicForm.MainDemo</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\modules\src\EasyAbp.DynamicForm.Application.Contracts\EasyAbp.DynamicForm.Application.Contracts.csproj" />
+		<ProjectReference Include="..\EasyAbp.DynamicForm.MainDemo.Domain.Shared\EasyAbp.DynamicForm.MainDemo.Domain.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.ObjectExtending" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.TenantManagement.Application.Contracts" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.SettingManagement.Application.Contracts" Version="$(AbpVersion)" />
+
+		<PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+</Project>

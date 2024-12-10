@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29001.49
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Domain.Shared", "src\EasyAbp.DynamicForm.Domain.Shared\EasyAbp.DynamicForm.Domain.Shared.csproj", "{D64C1577-4929-4B60-939E-96DE1534891A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Domain.Shared", "modules\src\EasyAbp.DynamicForm.Domain.Shared\EasyAbp.DynamicForm.Domain.Shared.csproj", "{D64C1577-4929-4B60-939E-96DE1534891A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Domain", "src\EasyAbp.DynamicForm.Domain\EasyAbp.DynamicForm.Domain.csproj", "{F2840BC7-0188-4606-9126-DADD0F5ABF7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Domain", "modules\src\EasyAbp.DynamicForm.Domain\EasyAbp.DynamicForm.Domain.csproj", "{F2840BC7-0188-4606-9126-DADD0F5ABF7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Application.Contracts", "src\EasyAbp.DynamicForm.Application.Contracts\EasyAbp.DynamicForm.Application.Contracts.csproj", "{BD65D04F-08D5-40C1-8C24-77CA0BACB877}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Application.Contracts", "modules\src\EasyAbp.DynamicForm.Application.Contracts\EasyAbp.DynamicForm.Application.Contracts.csproj", "{BD65D04F-08D5-40C1-8C24-77CA0BACB877}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Application", "src\EasyAbp.DynamicForm.Application\EasyAbp.DynamicForm.Application.csproj", "{78040F9E-3501-4A40-82DF-00A597710F35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Application", "modules\src\EasyAbp.DynamicForm.Application\EasyAbp.DynamicForm.Application.csproj", "{78040F9E-3501-4A40-82DF-00A597710F35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{649A3FFA-182F-4E56-9717-E6A9A2BEC545}"
 EndProject
@@ -17,53 +17,133 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CCD2960C-2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{E400416D-2895-4512-9D17-90681EEC7E0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.EntityFrameworkCore", "src\EasyAbp.DynamicForm.EntityFrameworkCore\EasyAbp.DynamicForm.EntityFrameworkCore.csproj", "{0CE86223-D31D-4315-A1F5-87BA3EE1B844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.EntityFrameworkCore", "modules\src\EasyAbp.DynamicForm.EntityFrameworkCore\EasyAbp.DynamicForm.EntityFrameworkCore.csproj", "{0CE86223-D31D-4315-A1F5-87BA3EE1B844}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.MongoDB", "src\EasyAbp.DynamicForm.MongoDB\EasyAbp.DynamicForm.MongoDB.csproj", "{F1C58097-4C08-4D88-8976-6B3389391481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.MongoDB", "modules\src\EasyAbp.DynamicForm.MongoDB\EasyAbp.DynamicForm.MongoDB.csproj", "{F1C58097-4C08-4D88-8976-6B3389391481}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.HttpApi", "src\EasyAbp.DynamicForm.HttpApi\EasyAbp.DynamicForm.HttpApi.csproj", "{077AA5F8-8B61-420C-A6B5-0150A66FDB34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.HttpApi", "modules\src\EasyAbp.DynamicForm.HttpApi\EasyAbp.DynamicForm.HttpApi.csproj", "{077AA5F8-8B61-420C-A6B5-0150A66FDB34}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.HttpApi.Client", "src\EasyAbp.DynamicForm.HttpApi.Client\EasyAbp.DynamicForm.HttpApi.Client.csproj", "{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.HttpApi.Client", "modules\src\EasyAbp.DynamicForm.HttpApi.Client\EasyAbp.DynamicForm.HttpApi.Client.csproj", "{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.TestBase", "test\EasyAbp.DynamicForm.TestBase\EasyAbp.DynamicForm.TestBase.csproj", "{C5BB573D-3030-4BCB-88B7-F6A85C32766C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.TestBase", "modules\test\EasyAbp.DynamicForm.TestBase\EasyAbp.DynamicForm.TestBase.csproj", "{C5BB573D-3030-4BCB-88B7-F6A85C32766C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.EntityFrameworkCore.Tests", "test\EasyAbp.DynamicForm.EntityFrameworkCore.Tests\EasyAbp.DynamicForm.EntityFrameworkCore.Tests.csproj", "{527F645C-C1FC-406E-8479-81386C8ECF13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.EntityFrameworkCore.Tests", "modules\test\EasyAbp.DynamicForm.EntityFrameworkCore.Tests\EasyAbp.DynamicForm.EntityFrameworkCore.Tests.csproj", "{527F645C-C1FC-406E-8479-81386C8ECF13}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.MongoDB.Tests", "test\EasyAbp.DynamicForm.MongoDB.Tests\EasyAbp.DynamicForm.MongoDB.Tests.csproj", "{D0AD9179-125C-40B2-A8EE-CD4C1EE24BB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.MongoDB.Tests", "modules\test\EasyAbp.DynamicForm.MongoDB.Tests\EasyAbp.DynamicForm.MongoDB.Tests.csproj", "{D0AD9179-125C-40B2-A8EE-CD4C1EE24BB6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Domain.Tests", "test\EasyAbp.DynamicForm.Domain.Tests\EasyAbp.DynamicForm.Domain.Tests.csproj", "{E60895E5-79C4-447D-88B7-85CB5BA336A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Domain.Tests", "modules\test\EasyAbp.DynamicForm.Domain.Tests\EasyAbp.DynamicForm.Domain.Tests.csproj", "{E60895E5-79C4-447D-88B7-85CB5BA336A4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Application.Tests", "test\EasyAbp.DynamicForm.Application.Tests\EasyAbp.DynamicForm.Application.Tests.csproj", "{90CB5DC4-C040-45C7-8900-9688B26405BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Application.Tests", "modules\test\EasyAbp.DynamicForm.Application.Tests\EasyAbp.DynamicForm.Application.Tests.csproj", "{90CB5DC4-C040-45C7-8900-9688B26405BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.HttpApi.Host", "host\EasyAbp.DynamicForm.HttpApi.Host\EasyAbp.DynamicForm.HttpApi.Host.csproj", "{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Web", "modules\src\EasyAbp.DynamicForm.Web\EasyAbp.DynamicForm.Web.csproj", "{3B7B6317-1B85-4164-8E11-75574F80AE17}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Web", "src\EasyAbp.DynamicForm.Web\EasyAbp.DynamicForm.Web.csproj", "{3B7B6317-1B85-4164-8E11-75574F80AE17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.HttpApi.Client.ConsoleTestApp", "modules\test\EasyAbp.DynamicForm.HttpApi.Client.ConsoleTestApp\EasyAbp.DynamicForm.HttpApi.Client.ConsoleTestApp.csproj", "{1EDCD6D4-DF3A-4E3B-ABB6-C0D0B373EAB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.HttpApi.Client.ConsoleTestApp", "test\EasyAbp.DynamicForm.HttpApi.Client.ConsoleTestApp\EasyAbp.DynamicForm.HttpApi.Client.ConsoleTestApp.csproj", "{1EDCD6D4-DF3A-4E3B-ABB6-C0D0B373EAB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.MainDemo.HttpApi.Host", "demos\main\host\EasyAbp.DynamicForm.MainDemo.HttpApi.Host\EasyAbp.DynamicForm.MainDemo.HttpApi.Host.csproj", "{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Web.Host", "host\EasyAbp.DynamicForm.Web.Host\EasyAbp.DynamicForm.Web.Host.csproj", "{73513786-B6C6-4A21-89C5-0FBDD0A46107}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.MainDemo.Web.Host", "demos\main\host\EasyAbp.DynamicForm.MainDemo.Web.Host\EasyAbp.DynamicForm.MainDemo.Web.Host.csproj", "{73513786-B6C6-4A21-89C5-0FBDD0A46107}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.AuthServer", "host\EasyAbp.DynamicForm.AuthServer\EasyAbp.DynamicForm.AuthServer.csproj", "{690203F4-3CD5-4569-88D9-EE831EEA5F5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.MainDemo.AuthServer", "demos\main\host\EasyAbp.DynamicForm.MainDemo.AuthServer\EasyAbp.DynamicForm.MainDemo.AuthServer.csproj", "{690203F4-3CD5-4569-88D9-EE831EEA5F5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Host.Shared", "host\EasyAbp.DynamicForm.Host.Shared\EasyAbp.DynamicForm.Host.Shared.csproj", "{F6AC8D4A-EDD7-4514-8E8A-5BCB019864DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.UnifiedDemo.Web.Unified", "demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Web.Unified\EasyAbp.DynamicForm.UnifiedDemo.Web.Unified.csproj", "{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAbp.DynamicForm.Web.Unified", "host\EasyAbp.DynamicForm.Web.Unified\EasyAbp.DynamicForm.Web.Unified.csproj", "{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host", "demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host.csproj", "{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Blazor", "src\EasyAbp.DynamicForm.Blazor\EasyAbp.DynamicForm.Blazor.csproj", "{827FCC18-A22B-4175-82CD-1233F6DEE8FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.Blazor.Host", "demos\main\host\EasyAbp.DynamicForm.MainDemo.Blazor.Host\EasyAbp.DynamicForm.MainDemo.Blazor.Host.csproj", "{D7E0F672-F5E2-4338-AFF4-4E5091C55A62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Blazor.Host", "host\EasyAbp.DynamicForm.Blazor.Host\EasyAbp.DynamicForm.Blazor.Host.csproj", "{D7E0F672-F5E2-4338-AFF4-4E5091C55A62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Blazor", "modules\src\EasyAbp.DynamicForm.Blazor\EasyAbp.DynamicForm.Blazor.csproj", "{827FCC18-A22B-4175-82CD-1233F6DEE8FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Blazor.Server", "src\EasyAbp.DynamicForm.Blazor.Server\EasyAbp.DynamicForm.Blazor.Server.csproj", "{299BE52E-823F-408E-9C6D-7E2F81BA34FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Blazor.Server", "modules\src\EasyAbp.DynamicForm.Blazor.Server\EasyAbp.DynamicForm.Blazor.Server.csproj", "{299BE52E-823F-408E-9C6D-7E2F81BA34FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Blazor.WebAssembly", "src\EasyAbp.DynamicForm.Blazor.WebAssembly\EasyAbp.DynamicForm.Blazor.WebAssembly.csproj", "{F0EE5760-262D-456A-AA7C-E84F484A05F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Blazor.WebAssembly", "modules\src\EasyAbp.DynamicForm.Blazor.WebAssembly\EasyAbp.DynamicForm.Blazor.WebAssembly.csproj", "{F0EE5760-262D-456A-AA7C-E84F484A05F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Blazor.Server.Host", "host\EasyAbp.DynamicForm.Blazor.Server.Host\EasyAbp.DynamicForm.Blazor.Server.Host.csproj", "{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Installer", "modules\src\EasyAbp.DynamicForm.Installer\EasyAbp.DynamicForm.Installer.csproj", "{BE39FD00-745B-4049-8161-FC129817CBE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Installer", "src\EasyAbp.DynamicForm.Installer\EasyAbp.DynamicForm.Installer.csproj", "{BE39FD00-745B-4049-8161-FC129817CBE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Domain.Core", "modules\src\EasyAbp.DynamicForm.Domain.Core\EasyAbp.DynamicForm.Domain.Core.csproj", "{9D27C0EF-84BF-4955-8CD5-00D4FD088BC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.Domain.Core", "src\EasyAbp.DynamicForm.Domain.Core\EasyAbp.DynamicForm.Domain.Core.csproj", "{9D27C0EF-84BF-4955-8CD5-00D4FD088BC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.EntityFrameworkCore.Shared", "modules\src\EasyAbp.DynamicForm.EntityFrameworkCore.Shared\EasyAbp.DynamicForm.EntityFrameworkCore.Shared.csproj", "{1AF69F40-D4E9-4A8D-8509-913340CB9057}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.EntityFrameworkCore.Shared", "src\EasyAbp.DynamicForm.EntityFrameworkCore.Shared\EasyAbp.DynamicForm.EntityFrameworkCore.Shared.csproj", "{1AF69F40-D4E9-4A8D-8509-913340CB9057}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Solution Items", ".Solution Items", "{C9FCE61D-BE89-4934-9CF2-FFB624190544}"
+	ProjectSection(SolutionItems) = preProject
+		common.props = common.props
+		Directory.Build.props = Directory.Build.props
+		docker-compose.migrations.yml = docker-compose.migrations.yml
+		docker-compose.override.yml = docker-compose.override.yml
+		docker-compose.yml = docker-compose.yml
+		global.json = global.json
+		LICENSE = LICENSE
+		NuGet.Config = NuGet.Config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{EFEF3436-DC45-4F8D-A1E3-BEC88E10BC42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{FF85FE2A-7166-4A7F-8346-BD287392FBC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{947A223C-CB6D-4237-B4EB-0031DF00AAB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.Application", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.Application\EasyAbp.DynamicForm.UnifiedDemo.Application.csproj", "{D77539E9-3CC8-4624-ABD0-77A988DAF856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.Application.Contracts", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.Application.Contracts\EasyAbp.DynamicForm.UnifiedDemo.Application.Contracts.csproj", "{B13B0DDF-52E6-4E21-A1CF-3CEE4CA66D75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.Blazor", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.Blazor\EasyAbp.DynamicForm.UnifiedDemo.Blazor.csproj", "{2C8EE35E-2090-456A-B14B-925917326630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.csproj", "{DA047911-98C5-445B-9D64-4B45A12B7E57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.Blazor.WebAssembly", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.Blazor.WebAssembly\EasyAbp.DynamicForm.UnifiedDemo.Blazor.WebAssembly.csproj", "{C4D359B3-6556-4EEC-ACD4-988BF97B4710}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.DbMigrator", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.DbMigrator\EasyAbp.DynamicForm.UnifiedDemo.DbMigrator.csproj", "{3B33DA98-C8E0-44D1-A48D-980E512953F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.Domain", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.Domain\EasyAbp.DynamicForm.UnifiedDemo.Domain.csproj", "{3265FCC8-EEFE-410C-8276-BF7335ED2738}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.Domain.Shared", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.Domain.Shared\EasyAbp.DynamicForm.UnifiedDemo.Domain.Shared.csproj", "{C3E5ED9C-6AD8-44F6-BE46-33314B5BAA5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.EntityFrameworkCore", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.EntityFrameworkCore\EasyAbp.DynamicForm.UnifiedDemo.EntityFrameworkCore.csproj", "{AF56EF0E-05CE-4B3B-AAF2-E97997686C08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.HttpApi", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.HttpApi\EasyAbp.DynamicForm.UnifiedDemo.HttpApi.csproj", "{BEFB9D03-C33A-42A8-ADF8-E4CA0C09DE1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.HttpApi.Client", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.HttpApi.Client\EasyAbp.DynamicForm.UnifiedDemo.HttpApi.Client.csproj", "{9204471E-119C-49F5-B8F9-DEB48F8995C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.SqlServer.EntityFrameworkCore", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.SqlServer.EntityFrameworkCore\EasyAbp.DynamicForm.UnifiedDemo.SqlServer.EntityFrameworkCore.csproj", "{EEABB3B6-4B28-4576-BD54-9434C1EE148F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.Web", "demos\unified\src\EasyAbp.DynamicForm.UnifiedDemo.Web\EasyAbp.DynamicForm.UnifiedDemo.Web.csproj", "{75FF9821-20D0-4CF3-84EB-114695DA99DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unified", "unified", "{95D251AE-FA7C-4DB3-AB8C-4B462C92D828}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{061EA4AA-48FF-49EA-AD4F-6C4BA6479805}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{C2E3C47E-BC86-429F-A94D-DD811A0B5D9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.Host.Shared", "demos\main\host\EasyAbp.DynamicForm.MainDemo.Host.Shared\EasyAbp.DynamicForm.MainDemo.Host.Shared.csproj", "{30C528B0-281A-49AF-BB61-473DA9541B86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.UnifiedDemo.Host.Shared", "demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Host.Shared\EasyAbp.DynamicForm.UnifiedDemo.Host.Shared.csproj", "{C037ADF8-2F1E-49C3-9DA6-248F67E75A04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.Application", "demos\main\src\EasyAbp.DynamicForm.MainDemo.Application\EasyAbp.DynamicForm.MainDemo.Application.csproj", "{F8411676-79EC-4662-AC54-B3E0E13924C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.Application.Contracts", "demos\main\src\EasyAbp.DynamicForm.MainDemo.Application.Contracts\EasyAbp.DynamicForm.MainDemo.Application.Contracts.csproj", "{CFE178CC-E5BB-4F82-9C12-CE8E33D656D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.Blazor", "demos\main\src\EasyAbp.DynamicForm.MainDemo.Blazor\EasyAbp.DynamicForm.MainDemo.Blazor.csproj", "{361FE31F-AB3C-4B70-924A-EF4B93A72B86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.Blazor.Server", "demos\main\src\EasyAbp.DynamicForm.MainDemo.Blazor.Server\EasyAbp.DynamicForm.MainDemo.Blazor.Server.csproj", "{9863E1E1-8BB8-4D2E-99B1-65E1CEF29E7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.Blazor.WebAssembly", "demos\main\src\EasyAbp.DynamicForm.MainDemo.Blazor.WebAssembly\EasyAbp.DynamicForm.MainDemo.Blazor.WebAssembly.csproj", "{062A6CB5-89BC-4647-B9C0-ACF913B2F6AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.DbMigrator", "demos\main\src\EasyAbp.DynamicForm.MainDemo.DbMigrator\EasyAbp.DynamicForm.MainDemo.DbMigrator.csproj", "{F3ADFA96-B6DC-4887-BB25-BBC971EE2B36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.Domain", "demos\main\src\EasyAbp.DynamicForm.MainDemo.Domain\EasyAbp.DynamicForm.MainDemo.Domain.csproj", "{2848631E-BB54-4921-9E41-7C6128FD8729}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.Domain.Shared", "demos\main\src\EasyAbp.DynamicForm.MainDemo.Domain.Shared\EasyAbp.DynamicForm.MainDemo.Domain.Shared.csproj", "{189E1A99-64F5-477D-B07B-799B080E1EB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.EntityFrameworkCore", "demos\main\src\EasyAbp.DynamicForm.MainDemo.EntityFrameworkCore\EasyAbp.DynamicForm.MainDemo.EntityFrameworkCore.csproj", "{D9266D3E-E6F4-432D-87DB-09E559E6B417}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.HttpApi", "demos\main\src\EasyAbp.DynamicForm.MainDemo.HttpApi\EasyAbp.DynamicForm.MainDemo.HttpApi.csproj", "{E25B93F7-07F7-41D3-A0C5-E70C129344C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.HttpApi.Client", "demos\main\src\EasyAbp.DynamicForm.MainDemo.HttpApi.Client\EasyAbp.DynamicForm.MainDemo.HttpApi.Client.csproj", "{807582FF-F6C8-4F93-AED1-2A7EF4CD060C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.SqlServer.EntityFrameworkCore", "demos\main\src\EasyAbp.DynamicForm.MainDemo.SqlServer.EntityFrameworkCore\EasyAbp.DynamicForm.MainDemo.SqlServer.EntityFrameworkCore.csproj", "{4DBCA5B4-23D7-44F7-AF8D-DE163615E105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAbp.DynamicForm.MainDemo.Web", "demos\main\src\EasyAbp.DynamicForm.MainDemo.Web\EasyAbp.DynamicForm.MainDemo.Web.csproj", "{77F1AB45-60E7-4E0E-B97F-47B90372F57C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,10 +203,6 @@ Global
 		{90CB5DC4-C040-45C7-8900-9688B26405BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90CB5DC4-C040-45C7-8900-9688B26405BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90CB5DC4-C040-45C7-8900-9688B26405BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B7B6317-1B85-4164-8E11-75574F80AE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B7B6317-1B85-4164-8E11-75574F80AE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B7B6317-1B85-4164-8E11-75574F80AE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -135,6 +211,10 @@ Global
 		{1EDCD6D4-DF3A-4E3B-ABB6-C0D0B373EAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EDCD6D4-DF3A-4E3B-ABB6-C0D0B373EAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EDCD6D4-DF3A-4E3B-ABB6-C0D0B373EAB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73513786-B6C6-4A21-89C5-0FBDD0A46107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{73513786-B6C6-4A21-89C5-0FBDD0A46107}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73513786-B6C6-4A21-89C5-0FBDD0A46107}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -143,22 +223,22 @@ Global
 		{690203F4-3CD5-4569-88D9-EE831EEA5F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{690203F4-3CD5-4569-88D9-EE831EEA5F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{690203F4-3CD5-4569-88D9-EE831EEA5F5F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6AC8D4A-EDD7-4514-8E8A-5BCB019864DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6AC8D4A-EDD7-4514-8E8A-5BCB019864DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6AC8D4A-EDD7-4514-8E8A-5BCB019864DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6AC8D4A-EDD7-4514-8E8A-5BCB019864DB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D7E0F672-F5E2-4338-AFF4-4E5091C55A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7E0F672-F5E2-4338-AFF4-4E5091C55A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7E0F672-F5E2-4338-AFF4-4E5091C55A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7E0F672-F5E2-4338-AFF4-4E5091C55A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{299BE52E-823F-408E-9C6D-7E2F81BA34FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{299BE52E-823F-408E-9C6D-7E2F81BA34FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{299BE52E-823F-408E-9C6D-7E2F81BA34FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -167,10 +247,6 @@ Global
 		{F0EE5760-262D-456A-AA7C-E84F484A05F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0EE5760-262D-456A-AA7C-E84F484A05F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0EE5760-262D-456A-AA7C-E84F484A05F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE39FD00-745B-4049-8161-FC129817CBE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE39FD00-745B-4049-8161-FC129817CBE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE39FD00-745B-4049-8161-FC129817CBE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -183,6 +259,118 @@ Global
 		{1AF69F40-D4E9-4A8D-8509-913340CB9057}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AF69F40-D4E9-4A8D-8509-913340CB9057}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AF69F40-D4E9-4A8D-8509-913340CB9057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D77539E9-3CC8-4624-ABD0-77A988DAF856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77539E9-3CC8-4624-ABD0-77A988DAF856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77539E9-3CC8-4624-ABD0-77A988DAF856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77539E9-3CC8-4624-ABD0-77A988DAF856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B13B0DDF-52E6-4E21-A1CF-3CEE4CA66D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B13B0DDF-52E6-4E21-A1CF-3CEE4CA66D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B13B0DDF-52E6-4E21-A1CF-3CEE4CA66D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B13B0DDF-52E6-4E21-A1CF-3CEE4CA66D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8EE35E-2090-456A-B14B-925917326630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8EE35E-2090-456A-B14B-925917326630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8EE35E-2090-456A-B14B-925917326630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8EE35E-2090-456A-B14B-925917326630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA047911-98C5-445B-9D64-4B45A12B7E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA047911-98C5-445B-9D64-4B45A12B7E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA047911-98C5-445B-9D64-4B45A12B7E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA047911-98C5-445B-9D64-4B45A12B7E57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D359B3-6556-4EEC-ACD4-988BF97B4710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D359B3-6556-4EEC-ACD4-988BF97B4710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D359B3-6556-4EEC-ACD4-988BF97B4710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D359B3-6556-4EEC-ACD4-988BF97B4710}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B33DA98-C8E0-44D1-A48D-980E512953F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B33DA98-C8E0-44D1-A48D-980E512953F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B33DA98-C8E0-44D1-A48D-980E512953F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B33DA98-C8E0-44D1-A48D-980E512953F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3265FCC8-EEFE-410C-8276-BF7335ED2738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3265FCC8-EEFE-410C-8276-BF7335ED2738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3265FCC8-EEFE-410C-8276-BF7335ED2738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3265FCC8-EEFE-410C-8276-BF7335ED2738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3E5ED9C-6AD8-44F6-BE46-33314B5BAA5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E5ED9C-6AD8-44F6-BE46-33314B5BAA5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E5ED9C-6AD8-44F6-BE46-33314B5BAA5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E5ED9C-6AD8-44F6-BE46-33314B5BAA5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF56EF0E-05CE-4B3B-AAF2-E97997686C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF56EF0E-05CE-4B3B-AAF2-E97997686C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF56EF0E-05CE-4B3B-AAF2-E97997686C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF56EF0E-05CE-4B3B-AAF2-E97997686C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEFB9D03-C33A-42A8-ADF8-E4CA0C09DE1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEFB9D03-C33A-42A8-ADF8-E4CA0C09DE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEFB9D03-C33A-42A8-ADF8-E4CA0C09DE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEFB9D03-C33A-42A8-ADF8-E4CA0C09DE1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9204471E-119C-49F5-B8F9-DEB48F8995C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9204471E-119C-49F5-B8F9-DEB48F8995C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9204471E-119C-49F5-B8F9-DEB48F8995C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9204471E-119C-49F5-B8F9-DEB48F8995C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEABB3B6-4B28-4576-BD54-9434C1EE148F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEABB3B6-4B28-4576-BD54-9434C1EE148F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEABB3B6-4B28-4576-BD54-9434C1EE148F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEABB3B6-4B28-4576-BD54-9434C1EE148F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FF9821-20D0-4CF3-84EB-114695DA99DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FF9821-20D0-4CF3-84EB-114695DA99DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FF9821-20D0-4CF3-84EB-114695DA99DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FF9821-20D0-4CF3-84EB-114695DA99DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30C528B0-281A-49AF-BB61-473DA9541B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C528B0-281A-49AF-BB61-473DA9541B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C528B0-281A-49AF-BB61-473DA9541B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C528B0-281A-49AF-BB61-473DA9541B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C037ADF8-2F1E-49C3-9DA6-248F67E75A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C037ADF8-2F1E-49C3-9DA6-248F67E75A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C037ADF8-2F1E-49C3-9DA6-248F67E75A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C037ADF8-2F1E-49C3-9DA6-248F67E75A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8411676-79EC-4662-AC54-B3E0E13924C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8411676-79EC-4662-AC54-B3E0E13924C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8411676-79EC-4662-AC54-B3E0E13924C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8411676-79EC-4662-AC54-B3E0E13924C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE178CC-E5BB-4F82-9C12-CE8E33D656D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE178CC-E5BB-4F82-9C12-CE8E33D656D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE178CC-E5BB-4F82-9C12-CE8E33D656D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE178CC-E5BB-4F82-9C12-CE8E33D656D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361FE31F-AB3C-4B70-924A-EF4B93A72B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361FE31F-AB3C-4B70-924A-EF4B93A72B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361FE31F-AB3C-4B70-924A-EF4B93A72B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361FE31F-AB3C-4B70-924A-EF4B93A72B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9863E1E1-8BB8-4D2E-99B1-65E1CEF29E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9863E1E1-8BB8-4D2E-99B1-65E1CEF29E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9863E1E1-8BB8-4D2E-99B1-65E1CEF29E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9863E1E1-8BB8-4D2E-99B1-65E1CEF29E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{062A6CB5-89BC-4647-B9C0-ACF913B2F6AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{062A6CB5-89BC-4647-B9C0-ACF913B2F6AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{062A6CB5-89BC-4647-B9C0-ACF913B2F6AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{062A6CB5-89BC-4647-B9C0-ACF913B2F6AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3ADFA96-B6DC-4887-BB25-BBC971EE2B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3ADFA96-B6DC-4887-BB25-BBC971EE2B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3ADFA96-B6DC-4887-BB25-BBC971EE2B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3ADFA96-B6DC-4887-BB25-BBC971EE2B36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2848631E-BB54-4921-9E41-7C6128FD8729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2848631E-BB54-4921-9E41-7C6128FD8729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2848631E-BB54-4921-9E41-7C6128FD8729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2848631E-BB54-4921-9E41-7C6128FD8729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{189E1A99-64F5-477D-B07B-799B080E1EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{189E1A99-64F5-477D-B07B-799B080E1EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{189E1A99-64F5-477D-B07B-799B080E1EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{189E1A99-64F5-477D-B07B-799B080E1EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9266D3E-E6F4-432D-87DB-09E559E6B417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9266D3E-E6F4-432D-87DB-09E559E6B417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9266D3E-E6F4-432D-87DB-09E559E6B417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9266D3E-E6F4-432D-87DB-09E559E6B417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E25B93F7-07F7-41D3-A0C5-E70C129344C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E25B93F7-07F7-41D3-A0C5-E70C129344C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E25B93F7-07F7-41D3-A0C5-E70C129344C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E25B93F7-07F7-41D3-A0C5-E70C129344C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807582FF-F6C8-4F93-AED1-2A7EF4CD060C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807582FF-F6C8-4F93-AED1-2A7EF4CD060C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807582FF-F6C8-4F93-AED1-2A7EF4CD060C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807582FF-F6C8-4F93-AED1-2A7EF4CD060C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DBCA5B4-23D7-44F7-AF8D-DE163615E105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DBCA5B4-23D7-44F7-AF8D-DE163615E105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DBCA5B4-23D7-44F7-AF8D-DE163615E105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DBCA5B4-23D7-44F7-AF8D-DE163615E105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77F1AB45-60E7-4E0E-B97F-47B90372F57C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77F1AB45-60E7-4E0E-B97F-47B90372F57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77F1AB45-60E7-4E0E-B97F-47B90372F57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77F1AB45-60E7-4E0E-B97F-47B90372F57C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -192,6 +380,9 @@ Global
 		{F2840BC7-0188-4606-9126-DADD0F5ABF7A} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{BD65D04F-08D5-40C1-8C24-77CA0BACB877} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{78040F9E-3501-4A40-82DF-00A597710F35} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
+		{649A3FFA-182F-4E56-9717-E6A9A2BEC545} = {FF85FE2A-7166-4A7F-8346-BD287392FBC9}
+		{CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D} = {FF85FE2A-7166-4A7F-8346-BD287392FBC9}
+		{E400416D-2895-4512-9D17-90681EEC7E0A} = {95D251AE-FA7C-4DB3-AB8C-4B462C92D828}
 		{0CE86223-D31D-4315-A1F5-87BA3EE1B844} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{F1C58097-4C08-4D88-8976-6B3389391481} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{077AA5F8-8B61-420C-A6B5-0150A66FDB34} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
@@ -201,21 +392,53 @@ Global
 		{D0AD9179-125C-40B2-A8EE-CD4C1EE24BB6} = {CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D}
 		{E60895E5-79C4-447D-88B7-85CB5BA336A4} = {CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D}
 		{90CB5DC4-C040-45C7-8900-9688B26405BC} = {CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D}
-		{37B135B0-DAFE-4616-B25C-1BDF32FC44A2} = {E400416D-2895-4512-9D17-90681EEC7E0A}
 		{3B7B6317-1B85-4164-8E11-75574F80AE17} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{1EDCD6D4-DF3A-4E3B-ABB6-C0D0B373EAB8} = {CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D}
-		{73513786-B6C6-4A21-89C5-0FBDD0A46107} = {E400416D-2895-4512-9D17-90681EEC7E0A}
-		{690203F4-3CD5-4569-88D9-EE831EEA5F5F} = {E400416D-2895-4512-9D17-90681EEC7E0A}
-		{F6AC8D4A-EDD7-4514-8E8A-5BCB019864DB} = {E400416D-2895-4512-9D17-90681EEC7E0A}
+		{37B135B0-DAFE-4616-B25C-1BDF32FC44A2} = {C2E3C47E-BC86-429F-A94D-DD811A0B5D9F}
+		{73513786-B6C6-4A21-89C5-0FBDD0A46107} = {C2E3C47E-BC86-429F-A94D-DD811A0B5D9F}
+		{690203F4-3CD5-4569-88D9-EE831EEA5F5F} = {C2E3C47E-BC86-429F-A94D-DD811A0B5D9F}
 		{3D872C41-E226-45C8-89C1-9D3DBD7C73F2} = {E400416D-2895-4512-9D17-90681EEC7E0A}
+		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52} = {E400416D-2895-4512-9D17-90681EEC7E0A}
+		{D7E0F672-F5E2-4338-AFF4-4E5091C55A62} = {C2E3C47E-BC86-429F-A94D-DD811A0B5D9F}
 		{827FCC18-A22B-4175-82CD-1233F6DEE8FB} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
-		{D7E0F672-F5E2-4338-AFF4-4E5091C55A62} = {E400416D-2895-4512-9D17-90681EEC7E0A}
 		{299BE52E-823F-408E-9C6D-7E2F81BA34FF} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{F0EE5760-262D-456A-AA7C-E84F484A05F6} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
-		{FEA752A1-5B4E-49E9-B1F3-DDC25E41BB52} = {E400416D-2895-4512-9D17-90681EEC7E0A}
 		{BE39FD00-745B-4049-8161-FC129817CBE4} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{9D27C0EF-84BF-4955-8CD5-00D4FD088BC6} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{1AF69F40-D4E9-4A8D-8509-913340CB9057} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
+		{947A223C-CB6D-4237-B4EB-0031DF00AAB8} = {95D251AE-FA7C-4DB3-AB8C-4B462C92D828}
+		{D77539E9-3CC8-4624-ABD0-77A988DAF856} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{B13B0DDF-52E6-4E21-A1CF-3CEE4CA66D75} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{2C8EE35E-2090-456A-B14B-925917326630} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{DA047911-98C5-445B-9D64-4B45A12B7E57} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{C4D359B3-6556-4EEC-ACD4-988BF97B4710} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{3B33DA98-C8E0-44D1-A48D-980E512953F1} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{3265FCC8-EEFE-410C-8276-BF7335ED2738} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{C3E5ED9C-6AD8-44F6-BE46-33314B5BAA5E} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{AF56EF0E-05CE-4B3B-AAF2-E97997686C08} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{BEFB9D03-C33A-42A8-ADF8-E4CA0C09DE1B} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{9204471E-119C-49F5-B8F9-DEB48F8995C0} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{EEABB3B6-4B28-4576-BD54-9434C1EE148F} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{75FF9821-20D0-4CF3-84EB-114695DA99DB} = {947A223C-CB6D-4237-B4EB-0031DF00AAB8}
+		{95D251AE-FA7C-4DB3-AB8C-4B462C92D828} = {EFEF3436-DC45-4F8D-A1E3-BEC88E10BC42}
+		{061EA4AA-48FF-49EA-AD4F-6C4BA6479805} = {EFEF3436-DC45-4F8D-A1E3-BEC88E10BC42}
+		{C2E3C47E-BC86-429F-A94D-DD811A0B5D9F} = {061EA4AA-48FF-49EA-AD4F-6C4BA6479805}
+		{ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3} = {061EA4AA-48FF-49EA-AD4F-6C4BA6479805}
+		{30C528B0-281A-49AF-BB61-473DA9541B86} = {C2E3C47E-BC86-429F-A94D-DD811A0B5D9F}
+		{C037ADF8-2F1E-49C3-9DA6-248F67E75A04} = {E400416D-2895-4512-9D17-90681EEC7E0A}
+		{F8411676-79EC-4662-AC54-B3E0E13924C7} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{CFE178CC-E5BB-4F82-9C12-CE8E33D656D1} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{361FE31F-AB3C-4B70-924A-EF4B93A72B86} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{9863E1E1-8BB8-4D2E-99B1-65E1CEF29E7B} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{062A6CB5-89BC-4647-B9C0-ACF913B2F6AF} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{F3ADFA96-B6DC-4887-BB25-BBC971EE2B36} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{2848631E-BB54-4921-9E41-7C6128FD8729} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{189E1A99-64F5-477D-B07B-799B080E1EB2} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{D9266D3E-E6F4-432D-87DB-09E559E6B417} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{E25B93F7-07F7-41D3-A0C5-E70C129344C8} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{807582FF-F6C8-4F93-AED1-2A7EF4CD060C} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{4DBCA5B4-23D7-44F7-AF8D-DE163615E105} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
+		{77F1AB45-60E7-4E0E-B97F-47B90372F57C} = {ECE9875A-7ACC-45CF-BF42-D5A7DF19EDD3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4324B3B4-B60B-4E3C-91D8-59576B4E26DD}

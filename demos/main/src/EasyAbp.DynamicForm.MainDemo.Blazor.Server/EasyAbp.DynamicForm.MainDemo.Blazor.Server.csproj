@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<Import Project="..\..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\EasyAbp.DynamicForm.MainDemo.Blazor\EasyAbp.DynamicForm.MainDemo.Blazor.csproj" />
+	</ItemGroup>
+
+</Project>

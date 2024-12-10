@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<Import Project="..\..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Menus\**" />
+	  <Compile Remove="Pages\**" />
+	  <Content Remove="Menus\**" />
+	  <Content Remove="Pages\**" />
+	  <EmbeddedResource Remove="Menus\**" />
+	  <EmbeddedResource Remove="Pages\**" />
+	  <None Remove="Menus\**" />
+	  <None Remove="Pages\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Components.Web.Theming" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\modules\src\EasyAbp.DynamicForm.Blazor\EasyAbp.DynamicForm.Blazor.csproj" />
+		<ProjectReference Include="..\EasyAbp.DynamicForm.UnifiedDemo.Application.Contracts\EasyAbp.DynamicForm.UnifiedDemo.Application.Contracts.csproj" />
+	</ItemGroup>
+
+</Project>

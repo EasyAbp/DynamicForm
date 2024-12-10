@@ -1,0 +1,1056 @@
+2024-12-10 03:41:25.716 +03:00 [INF] Starting web host.
+2024-12-10 03:41:33.665 +03:00 [INF] Loaded ABP modules:
+2024-12-10 03:41:33.665 +03:00 [INF] - EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host.UnifiedDemoBlazorHostModule
+2024-12-10 03:41:33.665 +03:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.AbpAspNetCoreMvcUiLeptonXLiteThemeModule
+2024-12-10 03:41:33.665 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-12-10 03:41:33.665 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-12-10 03:41:33.665 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-12-10 03:41:33.665 +03:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-12-10 03:41:33.665 +03:00 [INF]             - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-12-10 03:41:33.665 +03:00 [INF]               - Volo.Abp.Auditing.AbpAuditingModule
+2024-12-10 03:41:33.665 +03:00 [INF]                 - Volo.Abp.Data.AbpDataModule
+2024-12-10 03:41:33.665 +03:00 [INF]                   - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-12-10 03:41:33.665 +03:00 [INF]                     - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-12-10 03:41:33.665 +03:00 [INF]                     - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-12-10 03:41:33.665 +03:00 [INF]                   - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-12-10 03:41:33.666 +03:00 [INF]                   - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.Json.AbpJsonModule
+2024-12-10 03:41:33.666 +03:00 [INF]                   - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-12-10 03:41:33.666 +03:00 [INF]                     - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-12-10 03:41:33.666 +03:00 [INF]                     - Volo.Abp.Timing.AbpTimingModule
+2024-12-10 03:41:33.666 +03:00 [INF]                       - Volo.Abp.Localization.AbpLocalizationModule
+2024-12-10 03:41:33.666 +03:00 [INF]                         - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-12-10 03:41:33.666 +03:00 [INF]                         - Volo.Abp.Settings.AbpSettingsModule
+2024-12-10 03:41:33.666 +03:00 [INF]                           - Volo.Abp.Security.AbpSecurityModule
+2024-12-10 03:41:33.666 +03:00 [INF]                         - Volo.Abp.Threading.AbpThreadingModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-12-10 03:41:33.666 +03:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-12-10 03:41:33.666 +03:00 [INF]               - Volo.Abp.Http.AbpHttpModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.Minify.AbpMinifyModule
+2024-12-10 03:41:33.666 +03:00 [INF]               - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-12-10 03:41:33.666 +03:00 [INF]               - Volo.Abp.Validation.AbpValidationModule
+2024-12-10 03:41:33.666 +03:00 [INF]               - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-12-10 03:41:33.666 +03:00 [INF]               - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-12-10 03:41:33.666 +03:00 [INF]             - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-12-10 03:41:33.666 +03:00 [INF]             - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-12-10 03:41:33.666 +03:00 [INF]               - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-12-10 03:41:33.666 +03:00 [INF]             - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-12-10 03:41:33.666 +03:00 [INF]               - Volo.Abp.UI.AbpUiModule
+2024-12-10 03:41:33.666 +03:00 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-12-10 03:41:33.666 +03:00 [INF]             - Volo.Abp.Application.AbpDddApplicationModule
+2024-12-10 03:41:33.666 +03:00 [INF]               - Volo.Abp.Domain.AbpDddDomainModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.EventBus.AbpEventBusModule
+2024-12-10 03:41:33.666 +03:00 [INF]                   - Volo.Abp.Guids.AbpGuidsModule
+2024-12-10 03:41:33.666 +03:00 [INF]                   - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-12-10 03:41:33.666 +03:00 [INF]                   - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.Caching.AbpCachingModule
+2024-12-10 03:41:33.666 +03:00 [INF]                   - Volo.Abp.Serialization.AbpSerializationModule
+2024-12-10 03:41:33.666 +03:00 [INF]                 - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-12-10 03:41:33.666 +03:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-12-10 03:41:33.666 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-12-10 03:41:33.666 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-12-10 03:41:33.666 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-12-10 03:41:33.666 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-12-10 03:41:33.666 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-12-10 03:41:33.666 +03:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-12-10 03:41:33.666 +03:00 [INF]     - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-12-10 03:41:33.666 +03:00 [INF]   - Volo.Abp.AspNetCore.Components.Server.BasicTheme.AbpAspNetCoreComponentsServerBasicThemeModule
+2024-12-10 03:41:33.666 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Web.BasicTheme.AbpAspNetCoreComponentsWebBasicThemeModule
+2024-12-10 03:41:33.666 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Web.Theming.AbpAspNetCoreComponentsWebThemingModule
+2024-12-10 03:41:33.666 +03:00 [INF]         - Volo.Abp.BlazoriseUI.AbpBlazoriseUIModule
+2024-12-10 03:41:33.666 +03:00 [INF]           - Volo.Abp.AspNetCore.Components.Web.AbpAspNetCoreComponentsWebModule
+2024-12-10 03:41:33.666 +03:00 [INF]             - Volo.Abp.AspNetCore.Components.AbpAspNetCoreComponentsModule
+2024-12-10 03:41:33.666 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Server.Theming.AbpAspNetCoreComponentsServerThemingModule
+2024-12-10 03:41:33.666 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Server.AbpAspNetCoreComponentsServerModule
+2024-12-10 03:41:33.666 +03:00 [INF]         - Volo.Abp.Http.Client.AbpHttpClientModule
+2024-12-10 03:41:33.666 +03:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2024-12-10 03:41:33.666 +03:00 [INF]           - Volo.Abp.RemoteServices.AbpRemoteServicesModule
+2024-12-10 03:41:33.666 +03:00 [INF]         - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-12-10 03:41:33.666 +03:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-12-10 03:41:33.666 +03:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-12-10 03:41:33.666 +03:00 [INF]   - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2024-12-10 03:41:33.667 +03:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-12-10 03:41:33.667 +03:00 [INF]   - Volo.Abp.Identity.Blazor.Server.AbpIdentityBlazorServerModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.Identity.Blazor.AbpIdentityBlazorModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-12-10 03:41:33.667 +03:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.PermissionManagement.Blazor.AbpPermissionManagementBlazorModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.PermissionManagement.Blazor.Server.AbpPermissionManagementBlazorServerModule
+2024-12-10 03:41:33.667 +03:00 [INF]   - Volo.Abp.TenantManagement.Blazor.Server.AbpTenantManagementBlazorServerModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.TenantManagement.Blazor.AbpTenantManagementBlazorModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.FeatureManagement.Blazor.AbpFeatureManagementBlazorModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2024-12-10 03:41:33.667 +03:00 [INF]           - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.SettingManagement.Blazor.AbpSettingManagementBlazorModule
+2024-12-10 03:41:33.667 +03:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-12-10 03:41:33.667 +03:00 [INF]             - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.FeatureManagement.Blazor.Server.AbpFeatureManagementBlazorServerModule
+2024-12-10 03:41:33.667 +03:00 [INF]   - Volo.Abp.SettingManagement.Blazor.Server.AbpSettingManagementBlazorServerModule
+2024-12-10 03:41:33.667 +03:00 [INF]   - EasyAbp.DynamicForm.UnifiedDemo.UnifiedDemoHttpApiModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - EasyAbp.DynamicForm.UnifiedDemo.UnifiedDemoApplicationContractsModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - EasyAbp.DynamicForm.UnifiedDemo.UnifiedDemoDomainSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - EasyAbp.DynamicForm.DynamicFormDomainSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - EasyAbp.DynamicForm.DynamicFormApplicationContractsModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.Account.AbpAccountHttpApiModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - EasyAbp.DynamicForm.DynamicFormHttpApiModule
+2024-12-10 03:41:33.667 +03:00 [INF]   - EasyAbp.DynamicForm.UnifiedDemo.EntityFrameworkCore.UnifiedDemoEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - EasyAbp.DynamicForm.UnifiedDemo.UnifiedDemoDomainModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.Emailing.AbpEmailingModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-12-10 03:41:33.667 +03:00 [INF]           - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-12-10 03:41:33.667 +03:00 [INF]             - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - EasyAbp.DynamicForm.EntityFrameworkCore.DynamicFormEntityFrameworkCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - EasyAbp.DynamicForm.DynamicFormDomainModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - EasyAbp.DynamicForm.DynamicFormDomainCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - EasyAbp.DynamicForm.EntityFrameworkCore.DynamicFormEntityFrameworkCoreSharedModule
+2024-12-10 03:41:33.667 +03:00 [INF]   - EasyAbp.DynamicForm.UnifiedDemo.UnifiedDemoApplicationModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.Account.AbpAccountApplicationModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-12-10 03:41:33.667 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - EasyAbp.DynamicForm.DynamicFormApplicationModule
+2024-12-10 03:41:33.667 +03:00 [INF]   - Volo.Abp.Account.Web.AbpAccountWebModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]   - Volo.Abp.Account.Web.AbpAccountWebOpenIddictModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - Volo.Abp.OpenIddict.AbpOpenIddictAspNetCoreModule
+2024-12-10 03:41:33.667 +03:00 [INF]   - EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.UnifiedDemoBlazorServerModule
+2024-12-10 03:41:33.667 +03:00 [INF]     - EasyAbp.DynamicForm.UnifiedDemo.Blazor.UnifiedDemoBlazorModule
+2024-12-10 03:41:33.667 +03:00 [INF]       - EasyAbp.DynamicForm.Blazor.DynamicFormBlazorModule
+2024-12-10 03:41:33.897 +03:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2024-12-10 03:41:35.420 +03:00 [INF] User profile is available. Using 'C:\Users\CelalAk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-10 03:41:36.022 +03:00 [INF] Initialized all ABP modules.
+2024-12-10 03:41:36.257 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/ - null null
+2024-12-10 03:41:36.479 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-10 03:41:36.480 +03:00 [INF] Hosting environment: Development
+2024-12-10 03:41:36.481 +03:00 [INF] Content root path: C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host
+2024-12-10 03:41:37.275 +03:00 [ERR] The 'wwwroot/libs' folder does not exist or empty!
+2024-12-10 03:41:37.369 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-10 03:41:37.369 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_vs/browserLink - null null
+2024-12-10 03:41:37.376 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/ - 500 null text/html 1126.7484ms
+2024-12-10 03:41:37.384 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_framework/aspnetcore-browser-refresh.js - 200 13836 application/javascript; charset=utf-8 14.6531ms
+2024-12-10 03:41:37.619 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_vs/browserLink - 200 null text/javascript; charset=UTF-8 249.6707ms
+2024-12-10 03:41:37.650 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/favicon.ico - null null
+2024-12-10 03:41:37.652 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/favicon.ico - 500 null text/html 2.67ms
+2024-12-10 03:43:13.294 +03:00 [INF] Starting web host.
+2024-12-10 03:43:20.619 +03:00 [INF] Loaded ABP modules:
+2024-12-10 03:43:20.621 +03:00 [INF] - EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host.UnifiedDemoBlazorHostModule
+2024-12-10 03:43:20.621 +03:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.AbpAspNetCoreMvcUiLeptonXLiteThemeModule
+2024-12-10 03:43:20.621 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2024-12-10 03:43:20.621 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2024-12-10 03:43:20.621 +03:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2024-12-10 03:43:20.621 +03:00 [INF]             - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2024-12-10 03:43:20.621 +03:00 [INF]               - Volo.Abp.Auditing.AbpAuditingModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.Data.AbpDataModule
+2024-12-10 03:43:20.621 +03:00 [INF]                   - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2024-12-10 03:43:20.621 +03:00 [INF]                     - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]                     - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]                   - Volo.Abp.Uow.AbpUnitOfWorkModule
+2024-12-10 03:43:20.621 +03:00 [INF]                   - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.Json.AbpJsonModule
+2024-12-10 03:43:20.621 +03:00 [INF]                   - Volo.Abp.Json.SystemTextJson.AbpJsonSystemTextJsonModule
+2024-12-10 03:43:20.621 +03:00 [INF]                     - Volo.Abp.Json.AbpJsonAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]                     - Volo.Abp.Timing.AbpTimingModule
+2024-12-10 03:43:20.621 +03:00 [INF]                       - Volo.Abp.Localization.AbpLocalizationModule
+2024-12-10 03:43:20.621 +03:00 [INF]                         - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2024-12-10 03:43:20.621 +03:00 [INF]                         - Volo.Abp.Settings.AbpSettingsModule
+2024-12-10 03:43:20.621 +03:00 [INF]                           - Volo.Abp.Security.AbpSecurityModule
+2024-12-10 03:43:20.621 +03:00 [INF]                         - Volo.Abp.Threading.AbpThreadingModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2024-12-10 03:43:20.621 +03:00 [INF]                   - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.Auditing.AbpAuditingContractsModule
+2024-12-10 03:43:20.621 +03:00 [INF]               - Volo.Abp.Http.AbpHttpModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.Http.AbpHttpAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.Minify.AbpMinifyModule
+2024-12-10 03:43:20.621 +03:00 [INF]               - Volo.Abp.Authorization.AbpAuthorizationModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]               - Volo.Abp.Validation.AbpValidationModule
+2024-12-10 03:43:20.621 +03:00 [INF]               - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2024-12-10 03:43:20.621 +03:00 [INF]               - Volo.Abp.AspNetCore.AbpAspNetCoreAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]             - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]             - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2024-12-10 03:43:20.621 +03:00 [INF]               - Volo.Abp.Application.AbpDddApplicationContractsModule
+2024-12-10 03:43:20.621 +03:00 [INF]             - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2024-12-10 03:43:20.621 +03:00 [INF]               - Volo.Abp.UI.AbpUiModule
+2024-12-10 03:43:20.621 +03:00 [INF]             - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2024-12-10 03:43:20.621 +03:00 [INF]             - Volo.Abp.Application.AbpDddApplicationModule
+2024-12-10 03:43:20.621 +03:00 [INF]               - Volo.Abp.Domain.AbpDddDomainModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.EventBus.AbpEventBusModule
+2024-12-10 03:43:20.621 +03:00 [INF]                   - Volo.Abp.Guids.AbpGuidsModule
+2024-12-10 03:43:20.621 +03:00 [INF]                   - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2024-12-10 03:43:20.621 +03:00 [INF]                   - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.Specifications.AbpSpecificationsModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.Caching.AbpCachingModule
+2024-12-10 03:43:20.621 +03:00 [INF]                   - Volo.Abp.Serialization.AbpSerializationModule
+2024-12-10 03:43:20.621 +03:00 [INF]                 - Volo.Abp.Domain.AbpDddDomainSharedModule
+2024-12-10 03:43:20.621 +03:00 [INF]               - Volo.Abp.Features.AbpFeaturesModule
+2024-12-10 03:43:20.621 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2024-12-10 03:43:20.621 +03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2024-12-10 03:43:20.621 +03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2024-12-10 03:43:20.621 +03:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2024-12-10 03:43:20.621 +03:00 [INF]     - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2024-12-10 03:43:20.621 +03:00 [INF]   - Volo.Abp.AspNetCore.Components.Server.BasicTheme.AbpAspNetCoreComponentsServerBasicThemeModule
+2024-12-10 03:43:20.621 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Web.BasicTheme.AbpAspNetCoreComponentsWebBasicThemeModule
+2024-12-10 03:43:20.621 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Web.Theming.AbpAspNetCoreComponentsWebThemingModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.BlazoriseUI.AbpBlazoriseUIModule
+2024-12-10 03:43:20.621 +03:00 [INF]           - Volo.Abp.AspNetCore.Components.Web.AbpAspNetCoreComponentsWebModule
+2024-12-10 03:43:20.621 +03:00 [INF]             - Volo.Abp.AspNetCore.Components.AbpAspNetCoreComponentsModule
+2024-12-10 03:43:20.621 +03:00 [INF]     - Volo.Abp.AspNetCore.Components.Server.Theming.AbpAspNetCoreComponentsServerThemingModule
+2024-12-10 03:43:20.621 +03:00 [INF]       - Volo.Abp.AspNetCore.Components.Server.AbpAspNetCoreComponentsServerModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.Http.Client.AbpHttpClientModule
+2024-12-10 03:43:20.621 +03:00 [INF]           - Volo.Abp.Castle.AbpCastleCoreModule
+2024-12-10 03:43:20.621 +03:00 [INF]           - Volo.Abp.RemoteServices.AbpRemoteServicesModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule
+2024-12-10 03:43:20.621 +03:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2024-12-10 03:43:20.621 +03:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2024-12-10 03:43:20.621 +03:00 [INF]   - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2024-12-10 03:43:20.621 +03:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2024-12-10 03:43:20.621 +03:00 [INF]   - Volo.Abp.Identity.Blazor.Server.AbpIdentityBlazorServerModule
+2024-12-10 03:43:20.621 +03:00 [INF]     - Volo.Abp.Identity.Blazor.AbpIdentityBlazorModule
+2024-12-10 03:43:20.621 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2024-12-10 03:43:20.621 +03:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.Users.AbpUsersAbstractionModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2024-12-10 03:43:20.621 +03:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2024-12-10 03:43:20.621 +03:00 [INF]       - Volo.Abp.PermissionManagement.Blazor.AbpPermissionManagementBlazorModule
+2024-12-10 03:43:20.621 +03:00 [INF]     - Volo.Abp.PermissionManagement.Blazor.Server.AbpPermissionManagementBlazorServerModule
+2024-12-10 03:43:20.621 +03:00 [INF]   - Volo.Abp.TenantManagement.Blazor.Server.AbpTenantManagementBlazorServerModule
+2024-12-10 03:43:20.621 +03:00 [INF]     - Volo.Abp.TenantManagement.Blazor.AbpTenantManagementBlazorModule
+2024-12-10 03:43:20.621 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2024-12-10 03:43:20.621 +03:00 [INF]       - Volo.Abp.FeatureManagement.Blazor.AbpFeatureManagementBlazorModule
+2024-12-10 03:43:20.621 +03:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2024-12-10 03:43:20.621 +03:00 [INF]           - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2024-12-10 03:43:20.622 +03:00 [INF]         - Volo.Abp.SettingManagement.Blazor.AbpSettingManagementBlazorModule
+2024-12-10 03:43:20.622 +03:00 [INF]           - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2024-12-10 03:43:20.622 +03:00 [INF]             - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.FeatureManagement.Blazor.Server.AbpFeatureManagementBlazorServerModule
+2024-12-10 03:43:20.622 +03:00 [INF]   - Volo.Abp.SettingManagement.Blazor.Server.AbpSettingManagementBlazorServerModule
+2024-12-10 03:43:20.622 +03:00 [INF]   - EasyAbp.DynamicForm.UnifiedDemo.UnifiedDemoHttpApiModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - EasyAbp.DynamicForm.UnifiedDemo.UnifiedDemoApplicationContractsModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - EasyAbp.DynamicForm.UnifiedDemo.UnifiedDemoDomainSharedModule
+2024-12-10 03:43:20.622 +03:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2024-12-10 03:43:20.622 +03:00 [INF]         - Volo.Abp.OpenIddict.AbpOpenIddictDomainSharedModule
+2024-12-10 03:43:20.622 +03:00 [INF]         - EasyAbp.DynamicForm.DynamicFormDomainSharedModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - EasyAbp.DynamicForm.DynamicFormApplicationContractsModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.Account.AbpAccountHttpApiModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - EasyAbp.DynamicForm.DynamicFormHttpApiModule
+2024-12-10 03:43:20.622 +03:00 [INF]   - EasyAbp.DynamicForm.UnifiedDemo.EntityFrameworkCore.UnifiedDemoEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2024-12-10 03:43:20.622 +03:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.OpenIddict.EntityFrameworkCore.AbpOpenIddictEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.OpenIddict.AbpOpenIddictDomainModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - EasyAbp.DynamicForm.UnifiedDemo.UnifiedDemoDomainModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.Emailing.AbpEmailingModule
+2024-12-10 03:43:20.622 +03:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2024-12-10 03:43:20.622 +03:00 [INF]         - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2024-12-10 03:43:20.622 +03:00 [INF]           - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2024-12-10 03:43:20.622 +03:00 [INF]             - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.PermissionManagement.OpenIddict.AbpPermissionManagementDomainOpenIddictModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - EasyAbp.DynamicForm.EntityFrameworkCore.DynamicFormEntityFrameworkCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - EasyAbp.DynamicForm.DynamicFormDomainModule
+2024-12-10 03:43:20.622 +03:00 [INF]         - EasyAbp.DynamicForm.DynamicFormDomainCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - EasyAbp.DynamicForm.EntityFrameworkCore.DynamicFormEntityFrameworkCoreSharedModule
+2024-12-10 03:43:20.622 +03:00 [INF]   - EasyAbp.DynamicForm.UnifiedDemo.UnifiedDemoApplicationModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.Account.AbpAccountApplicationModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2024-12-10 03:43:20.622 +03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - EasyAbp.DynamicForm.DynamicFormApplicationModule
+2024-12-10 03:43:20.622 +03:00 [INF]   - Volo.Abp.Account.Web.AbpAccountWebModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]   - Volo.Abp.Account.Web.AbpAccountWebOpenIddictModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - Volo.Abp.OpenIddict.AbpOpenIddictAspNetCoreModule
+2024-12-10 03:43:20.622 +03:00 [INF]   - EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.UnifiedDemoBlazorServerModule
+2024-12-10 03:43:20.622 +03:00 [INF]     - EasyAbp.DynamicForm.UnifiedDemo.Blazor.UnifiedDemoBlazorModule
+2024-12-10 03:43:20.622 +03:00 [INF]       - EasyAbp.DynamicForm.Blazor.DynamicFormBlazorModule
+2024-12-10 03:43:20.892 +03:00 [DBG] Started background worker: Volo.Abp.OpenIddict.Tokens.TokenCleanupBackgroundWorker
+2024-12-10 03:43:21.806 +03:00 [INF] User profile is available. Using 'C:\Users\CelalAk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-10 03:43:22.896 +03:00 [INF] Initialized all ABP modules.
+2024-12-10 03:43:23.177 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/ - null null
+2024-12-10 03:43:23.390 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-10 03:43:23.391 +03:00 [INF] Hosting environment: Development
+2024-12-10 03:43:23.391 +03:00 [INF] Content root path: C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host
+2024-12-10 03:43:31.775 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:31.789 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:31.791 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:31.793 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:31.794 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:31.808 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:31.809 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:31.810 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:31.811 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:31.824 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:31.826 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:31.826 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:31.827 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:32.301 +03:00 [INF] Executing endpoint '/_Host'
+2024-12-10 03:43:32.328 +03:00 [INF] Route matched with {page = "/_Host", area = "", action = "", controller = ""}. Executing page /_Host
+2024-12-10 03:43:32.330 +03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2024-12-10 03:43:32.353 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2024-12-10 03:43:32.354 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2024-12-10 03:43:32.435 +03:00 [DBG] Added bundle 'Blazor.BasicTheme.Global' to the page in 15.19 ms.
+2024-12-10 03:43:32.488 +03:00 [DBG] Added bundle 'Blazor.BasicTheme.Global' to the page in 5.12 ms.
+2024-12-10 03:43:32.564 +03:00 [INF] Executed page /_Host in 231.3788ms
+2024-12-10 03:43:32.565 +03:00 [INF] Executed endpoint '/_Host'
+2024-12-10 03:43:32.589 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Volo.Abp.BlazoriseUI/volo.abp.blazoriseui.css?_v=638647453560000000 - null null
+2024-12-10 03:43:32.596 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/@fortawesome/fontawesome-free/css/all.css?_v=638693410291183058 - null null
+2024-12-10 03:43:32.596 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host.styles.css?_v=638693860648476300 - null null
+2024-12-10 03:43:32.596 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/blazor-global-styles.css?_v=638693360887014224 - null null
+2024-12-10 03:43:32.596 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_framework/blazor.server.js?_v=638651410840000000 - null null
+2024-12-10 03:43:32.601 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Volo.Abp.AspNetCore.Components.Web.BasicTheme/libs/abp/css/theme.css?_v=638647453700000000 - null null
+2024-12-10 03:43:32.611 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/bootstrap/css/bootstrap.css?_v=638693410294923104 - null null
+2024-12-10 03:43:32.665 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/ - 200 null text/html; charset=utf-8 9489.5325ms
+2024-12-10 03:43:32.671 +03:00 [INF] Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+2024-12-10 03:43:32.699 +03:00 [INF] Sending file. Request path: '/EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host.styles.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\obj\Debug\net8.0\scopedcss\bundle\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host.styles.css'
+2024-12-10 03:43:32.699 +03:00 [INF] Sending file. Request path: '/_content/Volo.Abp.AspNetCore.Components.Web.BasicTheme/libs/abp/css/theme.css'. Physical path: 'C:\Users\CelalAk\.nuget\packages\volo.abp.aspnetcore.components.web.basictheme\8.3.2\staticwebassets\libs\abp\css\theme.css'
+2024-12-10 03:43:32.699 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise/blazorise.css?_v=638475575180000000 - null null
+2024-12-10 03:43:32.699 +03:00 [INF] Sending file. Request path: '/blazor-global-styles.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\blazor-global-styles.css'
+2024-12-10 03:43:32.699 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/js/abp.js?_v=638647453460000000 - null null
+2024-12-10 03:43:32.700 +03:00 [INF] Sending file. Request path: '/_content/Volo.Abp.BlazoriseUI/volo.abp.blazoriseui.css'. Physical path: 'C:\Users\CelalAk\.nuget\packages\volo.abp.blazoriseui\8.3.2\staticwebassets\volo.abp.blazoriseui.css'
+2024-12-10 03:43:32.700 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/@fortawesome/fontawesome-free/css/v4-shims.css?_v=638693410294182400 - null null
+2024-12-10 03:43:32.701 +03:00 [INF] Sending file. Request path: '/libs/@fortawesome/fontawesome-free/css/all.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\@fortawesome\fontawesome-free\css\all.css'
+2024-12-10 03:43:32.710 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Volo.Abp.BlazoriseUI/volo.abp.blazoriseui.css?_v=638647453560000000 - 200 1274 text/css 119.0166ms
+2024-12-10 03:43:32.710 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/blazor-global-styles.css?_v=638693360887014224 - 200 358 text/css 111.7113ms
+2024-12-10 03:43:32.710 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host.styles.css?_v=638693860648476300 - 200 145 text/css 118.7228ms
+2024-12-10 03:43:32.714 +03:00 [INF] Sending file. Request path: '/_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/js/abp.js'. Physical path: 'C:\Users\CelalAk\.nuget\packages\volo.abp.aspnetcore.components.web\8.3.2\staticwebassets\libs\abp\js\abp.js'
+2024-12-10 03:43:32.715 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/js/abp.js?_v=638647453460000000 - 200 8553 application/javascript 16.0066ms
+2024-12-10 03:43:32.714 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Volo.Abp.AspNetCore.Components.Web.BasicTheme/libs/abp/css/theme.css?_v=638647453700000000 - 200 3543 text/css 119.9614ms
+2024-12-10 03:43:32.719 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/css/abp.css?_v=638647453460000000 - null null
+2024-12-10 03:43:32.719 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise.Snackbar/blazorise.snackbar.css?_v=638460172760000000 - null null
+2024-12-10 03:43:32.719 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise.Bootstrap5/blazorise.bootstrap5.css?_v=638460979640000000 - null null
+2024-12-10 03:43:32.719 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/js/authentication-state-listener.js?_v=638647453460000000 - null null
+2024-12-10 03:43:32.719 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-10 03:43:32.719 +03:00 [INF] Sending file. Request path: '/_content/Blazorise/blazorise.css'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise\1.5.2\staticwebassets\blazorise.css'
+2024-12-10 03:43:32.731 +03:00 [INF] Sending file. Request path: '/_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/js/authentication-state-listener.js'. Physical path: 'C:\Users\CelalAk\.nuget\packages\volo.abp.aspnetcore.components.web\8.3.2\staticwebassets\libs\abp\js\authentication-state-listener.js'
+2024-12-10 03:43:32.734 +03:00 [INF] Sending file. Request path: '/_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/css/abp.css'. Physical path: 'C:\Users\CelalAk\.nuget\packages\volo.abp.aspnetcore.components.web\8.3.2\staticwebassets\libs\abp\css\abp.css'
+2024-12-10 03:43:32.736 +03:00 [INF] Sending file. Request path: '/libs/bootstrap/css/bootstrap.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\bootstrap\css\bootstrap.css'
+2024-12-10 03:43:32.736 +03:00 [INF] Sending file. Request path: '/_content/Blazorise.Snackbar/blazorise.snackbar.css'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise.snackbar\1.5.2\staticwebassets\blazorise.snackbar.css'
+2024-12-10 03:43:32.737 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/js/authentication-state-listener.js?_v=638647453460000000 - 200 453 application/javascript 16.5697ms
+2024-12-10 03:43:32.738 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise.Snackbar/blazorise.snackbar.css?_v=638460172760000000 - 200 11949 text/css 19.073ms
+2024-12-10 03:43:32.738 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/css/abp.css?_v=638647453460000000 - 200 1342 text/css 18.0521ms
+2024-12-10 03:43:32.738 +03:00 [INF] Sending file. Request path: '/libs/@fortawesome/fontawesome-free/css/v4-shims.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\@fortawesome\fontawesome-free\css\v4-shims.css'
+2024-12-10 03:43:32.739 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_vs/browserLink - null null
+2024-12-10 03:43:32.740 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/@fortawesome/fontawesome-free/css/all.css?_v=638693410291183058 - 200 132658 text/css 151.2334ms
+2024-12-10 03:43:32.741 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise/blazorise.css?_v=638475575180000000 - 200 67982 text/css 41.9291ms
+2024-12-10 03:43:32.742 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_framework/aspnetcore-browser-refresh.js - 200 13836 application/javascript; charset=utf-8 21.154ms
+2024-12-10 03:43:32.745 +03:00 [INF] Sending file. Request path: '/_content/Blazorise.Bootstrap5/blazorise.bootstrap5.css'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise.bootstrap5\1.5.2\staticwebassets\blazorise.bootstrap5.css'
+2024-12-10 03:43:32.748 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/@fortawesome/fontawesome-free/css/v4-shims.css?_v=638693410294182400 - 200 41574 text/css 48.1448ms
+2024-12-10 03:43:32.750 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/bootstrap/css/bootstrap.css?_v=638693410294923104 - 200 281046 text/css 140.2132ms
+2024-12-10 03:43:32.750 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_framework/blazor.server.js?_v=638651410840000000 - 200 151672 application/javascript 154.2803ms
+2024-12-10 03:43:32.750 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise.Bootstrap5/blazorise.bootstrap5.css?_v=638460979640000000 - 200 94667 text/css 31.5486ms
+2024-12-10 03:43:32.782 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_blazor/initializers - null null
+2024-12-10 03:43:32.789 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:32.790 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:32.790 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:32.791 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:32.791 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:32.793 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:32.794 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:32.795 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:32.795 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:32.795 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:32.796 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:32.796 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:32.796 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:32.802 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2024-12-10 03:43:32.810 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2024-12-10 03:43:32.810 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_blazor/initializers - 200 null application/json; charset=utf-8 28.5496ms
+2024-12-10 03:43:32.826 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44324/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-12-10 03:43:32.831 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:32.831 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:32.832 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:32.832 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:32.832 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:32.833 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:32.833 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:32.833 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:32.833 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:32.833 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:32.833 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:32.833 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:32.833 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:32.837 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2024-12-10 03:43:32.848 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_vs/browserLink - 200 null text/javascript; charset=UTF-8 109.0297ms
+2024-12-10 03:43:32.848 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2024-12-10 03:43:32.848 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44324/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 22.5125ms
+2024-12-10 03:43:32.858 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44324/_blazor?id=E0q2A1jtDzN9mZaA4RF2ng - null null
+2024-12-10 03:43:32.859 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:32.859 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:32.860 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:32.860 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:32.860 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:32.861 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:32.861 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:32.861 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:32.861 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:32.861 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:32.861 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:32.861 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:32.861 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:32.863 +03:00 [INF] Executing endpoint '/_blazor'
+2024-12-10 03:43:32.886 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/favicon.ico - null null
+2024-12-10 03:43:32.894 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\favicon.ico'
+2024-12-10 03:43:32.899 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/favicon.ico - 200 32038 image/x-icon 12.4975ms
+2024-12-10 03:43:33.550 +03:00 [INF] Authorization failed. These requirements were not met:
+PermissionRequirement: SettingManagement.Emailing
+2024-12-10 03:43:33.553 +03:00 [INF] Authorization failed. These requirements were not met:
+PermissionRequirement: SettingManagement.TimeZone
+2024-12-10 03:43:33.555 +03:00 [INF] Authorization failed. These requirements were not met:
+PermissionRequirement: FeatureManagement.ManageHostFeatures
+2024-12-10 03:43:33.732 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-12-10 03:43:33.902 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 - null null
+2024-12-10 03:43:33.911 +03:00 [INF] Sending file. Request path: '/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\@fortawesome\fontawesome-free\webfonts\fa-solid-900.woff2'
+2024-12-10 03:43:33.914 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 - 200 157192 font/woff2 12.9142ms
+2024-12-10 03:43:33.942 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise/utilities.js?v=1.5.2.0 - null null
+2024-12-10 03:43:33.964 +03:00 [INF] Sending file. Request path: '/_content/Blazorise/utilities.js'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise\1.5.2\staticwebassets\utilities.js'
+2024-12-10 03:43:33.964 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise/utilities.js?v=1.5.2.0 - 200 9511 application/javascript 22.0968ms
+2024-12-10 03:43:33.969 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise/vendors/jsencrypt.js?v=1.5.2.0 - null null
+2024-12-10 03:43:33.969 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise/vendors/sha512.js?v=1.5.2.0 - null null
+2024-12-10 03:43:33.986 +03:00 [INF] Sending file. Request path: '/_content/Blazorise/vendors/jsencrypt.js'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise\1.5.2\staticwebassets\vendors\jsencrypt.js'
+2024-12-10 03:43:33.990 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise/vendors/jsencrypt.js?v=1.5.2.0 - 200 55434 application/javascript 21.0923ms
+2024-12-10 03:43:33.998 +03:00 [INF] Sending file. Request path: '/_content/Blazorise/vendors/sha512.js'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise\1.5.2\staticwebassets\vendors\sha512.js'
+2024-12-10 03:43:33.998 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise/vendors/sha512.js?v=1.5.2.0 - 200 17899 application/javascript 29.4337ms
+2024-12-10 03:43:34.039 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise/button.js?v=1.5.2.0 - null null
+2024-12-10 03:43:34.045 +03:00 [INF] Sending file. Request path: '/_content/Blazorise/button.js'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise\1.5.2\staticwebassets\button.js'
+2024-12-10 03:43:34.047 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise/button.js?v=1.5.2.0 - 200 946 application/javascript 7.7208ms
+2024-12-10 03:43:39.176 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-12-10 03:43:39.227 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Account/Login - null null
+2024-12-10 03:43:39.316 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:39.317 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:39.317 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:39.317 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:39.317 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:39.318 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:39.318 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:39.318 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:39.318 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:39.318 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:39.318 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:39.318 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:39.319 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:39.323 +03:00 [INF] Executing endpoint '/Account/Login'
+2024-12-10 03:43:39.350 +03:00 [INF] Route matched with {page = "/Account/Login", area = "", action = "", controller = ""}. Executing page /Account/Login
+2024-12-10 03:43:39.350 +03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2024-12-10 03:43:41.027 +03:00 [INF] Executing handler method Volo.Abp.Account.Web.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2024-12-10 03:43:41.035 +03:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2024-12-10 03:43:41.528 +03:00 [DBG] Added bundle 'LeptonXLite.Global' to the page in 19.90 ms.
+2024-12-10 03:43:41.671 +03:00 [DBG] Added bundle 'LeptonXLite.Global' to the page in 17.14 ms.
+2024-12-10 03:43:41.692 +03:00 [DBG] Added bundle 'Volo.Abp.Account.Web.Pages.Account.LoginModel' to the page in 1.81 ms.
+2024-12-10 03:43:41.706 +03:00 [INF] Executed page /Account/Login in 2355.3431ms
+2024-12-10 03:43:41.708 +03:00 [INF] Executed endpoint '/Account/Login'
+2024-12-10 03:43:41.716 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44324/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundary3HQcdf0WTZbWnqD5 359
+2024-12-10 03:43:41.729 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Account/Login - 200 null text/html; charset=utf-8 2502.6739ms
+2024-12-10 03:43:41.730 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/css/bootstrap-dim.css?_v=638647827720000000 - null null
+2024-12-10 03:43:41.733 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:41.733 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:41.734 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:41.734 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:41.734 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:41.734 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/toastr/toastr.min.css?_v=638693410292975862 - null null
+2024-12-10 03:43:41.734 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:41.734 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:41.734 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:41.734 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:41.734 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:41.734 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:41.734 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:41.734 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:41.736 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2024-12-10 03:43:41.740 +03:00 [INF] Sending file. Request path: '/Themes/LeptonXLite/Global/side-menu/css/bootstrap-dim.css'. Physical path: 'N/A'
+2024-12-10 03:43:41.742 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/core/abp.css?_v=638693410290322549 - null null
+2024-12-10 03:43:41.752 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/datatables.net-bs5/css/dataTables.bootstrap5.css?_v=638693410290372566 - null null
+2024-12-10 03:43:41.752 +03:00 [INF] Sending file. Request path: '/libs/toastr/toastr.min.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\toastr\toastr.min.css'
+2024-12-10 03:43:41.753 +03:00 [INF] Sending file. Request path: '/libs/abp/core/abp.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\abp\core\abp.css'
+2024-12-10 03:43:41.753 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/toastr/toastr.min.css?_v=638693410292975862 - 200 6454 text/css 18.6429ms
+2024-12-10 03:43:41.753 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/core/abp.css?_v=638693410290322549 - 200 1331 text/css 10.8889ms
+2024-12-10 03:43:41.753 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/bootstrap-daterangepicker/daterangepicker.css?_v=638693410291037346 - null null
+2024-12-10 03:43:41.753 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/date-range-picker/date-range-picker-styles.css?_v=638647488640000000 - null null
+2024-12-10 03:43:41.761 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/date-range-picker/date-range-picker-styles.css'. Physical path: 'N/A'
+2024-12-10 03:43:41.764 +03:00 [INF] Sending file. Request path: '/libs/bootstrap-daterangepicker/daterangepicker.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\bootstrap-daterangepicker\daterangepicker.css'
+2024-12-10 03:43:41.763 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/date-range-picker/date-range-picker-styles.css?_v=638647488640000000 - 200 338 text/css 9.3747ms
+2024-12-10 03:43:41.764 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/bootstrap-daterangepicker/daterangepicker.css?_v=638693410291037346 - 200 8069 text/css 11.2315ms
+2024-12-10 03:43:41.764 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-styles.css?_v=638647488640000000 - null null
+2024-12-10 03:43:41.765 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/css/js-bundle.css?_v=638647827720000000 - null null
+2024-12-10 03:43:41.765 +03:00 [INF] Sending file. Request path: '/libs/datatables.net-bs5/css/dataTables.bootstrap5.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\datatables.net-bs5\css\dataTables.bootstrap5.css'
+2024-12-10 03:43:41.766 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/datatables.net-bs5/css/dataTables.bootstrap5.css?_v=638693410290372566 - 200 16943 text/css 13.6111ms
+2024-12-10 03:43:41.766 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/css/layout-bundle.css?_v=638647827720000000 - null null
+2024-12-10 03:43:41.768 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/libs/bootstrap-icons/font/bootstrap-icons.css?_v=638647827720000000 - null null
+2024-12-10 03:43:41.770 +03:00 [INF] Sending file. Request path: '/Themes/LeptonXLite/Global/side-menu/css/layout-bundle.css'. Physical path: 'N/A'
+2024-12-10 03:43:41.771 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/css/layout-bundle.css?_v=638647827720000000 - 200 25953 text/css 4.9196ms
+2024-12-10 03:43:41.772 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/core/abp.js?_v=638693410290793478 - null null
+2024-12-10 03:43:41.775 +03:00 [INF] Sending file. Request path: '/Themes/LeptonXLite/Global/side-menu/libs/bootstrap-icons/font/bootstrap-icons.css'. Physical path: 'N/A'
+2024-12-10 03:43:41.777 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/css/font-bundle.css?_v=638647827720000000 - null null
+2024-12-10 03:43:41.778 +03:00 [INF] Sending file. Request path: '/Themes/LeptonXLite/Global/side-menu/css/js-bundle.css'. Physical path: 'N/A'
+2024-12-10 03:43:41.778 +03:00 [INF] Sending file. Request path: '/libs/abp/core/abp.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\abp\core\abp.js'
+2024-12-10 03:43:41.779 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/jquery/jquery.js?_v=638693410299556450 - null null
+2024-12-10 03:43:41.780 +03:00 [INF] Sending file. Request path: '/Themes/LeptonXLite/Global/side-menu/css/font-bundle.css'. Physical path: 'N/A'
+2024-12-10 03:43:41.780 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css?_v=638693410292071346 - null null
+2024-12-10 03:43:41.780 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/css/font-bundle.css?_v=638647827720000000 - 200 48 text/css 2.9545ms
+2024-12-10 03:43:41.781 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/jquery/abp.jquery.js?_v=638693410290282525 - null null
+2024-12-10 03:43:41.784 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/css/js-bundle.css?_v=638647827720000000 - 200 29111 text/css 14.229ms
+2024-12-10 03:43:41.796 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/lodash/lodash.min.js?_v=638693410325904563 - null null
+2024-12-10 03:43:41.796 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/bootstrap/js/bootstrap.bundle.js?_v=638693410298210358 - null null
+2024-12-10 03:43:41.796 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/jquery-validation/jquery.validate.js?_v=638693410291608389 - null null
+2024-12-10 03:43:41.804 +03:00 [INF] Sending file. Request path: '/libs/abp/jquery/abp.jquery.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\abp\jquery\abp.jquery.js'
+2024-12-10 03:43:41.809 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-styles.css'. Physical path: 'N/A'
+2024-12-10 03:43:41.811 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-styles.css?_v=638647488640000000 - 200 266 text/css 46.7666ms
+2024-12-10 03:43:41.811 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/jquery/abp.jquery.js?_v=638693410290282525 - 200 13489 application/javascript 29.9701ms
+2024-12-10 03:43:41.813 +03:00 [INF] Sending file. Request path: '/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.css'
+2024-12-10 03:43:41.815 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/utils/abp-utils.umd.min.js?_v=638693410292020822 - null null
+2024-12-10 03:43:41.816 +03:00 [INF] Sending file. Request path: '/libs/jquery-validation/jquery.validate.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\jquery-validation\jquery.validate.js'
+2024-12-10 03:43:41.816 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/jquery-form/jquery.form.min.js?_v=638693410290817232 - null null
+2024-12-10 03:43:41.822 +03:00 [INF] Sending file. Request path: '/libs/bootstrap/js/bootstrap.bundle.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\bootstrap\js\bootstrap.bundle.js'
+2024-12-10 03:43:41.822 +03:00 [INF] Sending file. Request path: '/libs/abp/utils/abp-utils.umd.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\abp\utils\abp-utils.umd.min.js'
+2024-12-10 03:43:41.824 +03:00 [INF] Sending file. Request path: '/libs/jquery/jquery.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\jquery\jquery.js'
+2024-12-10 03:43:41.827 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/utils/abp-utils.umd.min.js?_v=638693410292020822 - 200 8256 application/javascript 12.0677ms
+2024-12-10 03:43:41.827 +03:00 [INF] Sending file. Request path: '/libs/lodash/lodash.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\lodash\lodash.min.js'
+2024-12-10 03:43:41.828 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/select2/js/select2.min.js?_v=638693410306082244 - null null
+2024-12-10 03:43:41.828 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/global-styles.css?_v=638693360887034248 - null null
+2024-12-10 03:43:41.832 +03:00 [INF] Sending file. Request path: '/libs/jquery-form/jquery.form.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\jquery-form\jquery.form.min.js'
+2024-12-10 03:43:41.832 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/jquery-form/jquery.form.min.js?_v=638693410290817232 - 200 17239 application/javascript 16.6016ms
+2024-12-10 03:43:41.833 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js?_v=638693410290362547 - null null
+2024-12-10 03:43:41.837 +03:00 [INF] Sending file. Request path: '/global-styles.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\global-styles.css'
+2024-12-10 03:43:41.846 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/css/abp-bundle.css?_v=638647827720000000 - null null
+2024-12-10 03:43:41.847 +03:00 [INF] Sending file. Request path: '/libs/select2/js/select2.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\select2\js\select2.min.js'
+2024-12-10 03:43:41.847 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/global-styles.css?_v=638693360887034248 - 200 13 text/css 18.3293ms
+2024-12-10 03:43:41.847 +03:00 [INF] Sending file. Request path: '/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'
+2024-12-10 03:43:41.847 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/select2/css/select2.min.css?_v=638693410290987355 - null null
+2024-12-10 03:43:41.847 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/datatables.net/js/dataTables.min.js?_v=638693410292482139 - null null
+2024-12-10 03:43:41.847 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js?_v=638693410290362547 - 200 19820 application/javascript 14.1701ms
+2024-12-10 03:43:41.847 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/datatables.net-bs5/js/dataTables.bootstrap5.js?_v=638693410291313059 - null null
+2024-12-10 03:43:41.857 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/luxon/abp.luxon.js?_v=638693410290343010 - null null
+2024-12-10 03:43:41.857 +03:00 [INF] Sending file. Request path: '/libs/select2/css/select2.min.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\select2\css\select2.min.css'
+2024-12-10 03:43:41.857 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/select2/css/select2.min.css?_v=638693410290987355 - 200 14966 text/css 10.9023ms
+2024-12-10 03:43:41.858 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/timeago/jquery.timeago.js?_v=638693410292657388 - null null
+2024-12-10 03:43:41.858 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/bootstrap-daterangepicker/daterangepicker.js?_v=638693410291578408 - null null
+2024-12-10 03:43:41.868 +03:00 [INF] Sending file. Request path: '/libs/abp/luxon/abp.luxon.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\abp\luxon\abp.luxon.js'
+2024-12-10 03:43:41.870 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/luxon/abp.luxon.js?_v=638693410290343010 - 200 1361 application/javascript 12.2155ms
+2024-12-10 03:43:41.871 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/bootstrap-datepicker/bootstrap-datepicker.min.css?_v=638693410291373048 - null null
+2024-12-10 03:43:41.872 +03:00 [INF] Sending file. Request path: '/Themes/LeptonXLite/Global/side-menu/css/abp-bundle.css'. Physical path: 'N/A'
+2024-12-10 03:43:41.872 +03:00 [INF] Sending file. Request path: '/libs/timeago/jquery.timeago.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\timeago\jquery.timeago.js'
+2024-12-10 03:43:41.872 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/css/abp-bundle.css?_v=638647827720000000 - 200 3379 text/css 27.2405ms
+2024-12-10 03:43:41.872 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/timeago/jquery.timeago.js?_v=638693410292657388 - 200 7404 application/javascript 14.4779ms
+2024-12-10 03:43:41.872 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/moment/moment.min.js?_v=638693410317555105 - null null
+2024-12-10 03:43:41.873 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/bootstrap-datepicker/bootstrap-datepicker.min.js?_v=638693410303842051 - null null
+2024-12-10 03:43:41.894 +03:00 [INF] Sending file. Request path: '/libs/bootstrap-datepicker/bootstrap-datepicker.min.css'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\bootstrap-datepicker\bootstrap-datepicker.min.css'
+2024-12-10 03:43:41.895 +03:00 [INF] Executed endpoint '/_blazor'
+2024-12-10 03:43:41.898 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44324/_blazor?id=E0q2A1jtDzN9mZaA4RF2ng - 101 null null 9040.6127ms
+2024-12-10 03:43:41.908 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/bootstrap-datepicker/bootstrap-datepicker.min.css?_v=638693410291373048 - 200 15733 text/css 35.6954ms
+2024-12-10 03:43:41.909 +03:00 [INF] Sending file. Request path: '/libs/datatables.net-bs5/js/dataTables.bootstrap5.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\datatables.net-bs5\js\dataTables.bootstrap5.js'
+2024-12-10 03:43:41.910 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/toastr/toastr.min.js?_v=638693410292352026 - null null
+2024-12-10 03:43:41.912 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/ui-extensions.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.917 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery-form/jquery-form-extensions.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.924 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/dom-event-handlers.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.925 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-extensions.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.925 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/ui-extensions.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.926 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/datatables.net-bs5/js/dataTables.bootstrap5.js?_v=638693410291313059 - 200 3553 application/javascript 78.8276ms
+2024-12-10 03:43:41.926 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery-form/jquery-form-extensions.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.929 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery-form/jquery-form-extensions.js?_v=638647488640000000 - 200 3605 application/javascript 9.811ms
+2024-12-10 03:43:41.929 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/ui-extensions.js?_v=638647488640000000 - 200 10589 application/javascript 16.3121ms
+2024-12-10 03:43:41.929 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/sweetalert2/abp-sweetalert2.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.930 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/luxon/luxon.min.js?_v=638693410297960473 - null null
+2024-12-10 03:43:41.930 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/date-range-picker/date-range-picker-extensions.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.930 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/dom-event-handlers.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.930 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/dom-event-handlers.js?_v=638647488640000000 - 200 9938 application/javascript 6.9669ms
+2024-12-10 03:43:41.919 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/jquery-extensions.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.930 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Pages/Abp/MultiTenancy/tenant-switch.js?_v=638647488720000000 - null null
+2024-12-10 03:43:41.938 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-extensions.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.942 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/sweetalert2/abp-sweetalert2.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.942 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-extensions.js?_v=638647488640000000 - 200 22773 application/javascript 16.3667ms
+2024-12-10 03:43:41.945 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/sweetalert2/abp-sweetalert2.js?_v=638647488640000000 - 200 3680 application/javascript 18.5257ms
+2024-12-10 03:43:41.944 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/widget-manager.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.945 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/date-range-picker/date-range-picker-extensions.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.946 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/modal-manager.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.946 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/date-range-picker/date-range-picker-extensions.js?_v=638647488640000000 - 200 29160 application/javascript 16.6578ms
+2024-12-10 03:43:41.946 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/toastr/abp-toastr.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.946 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/authentication-state/authentication-state-listener.js?_v=638647488640000000 - null null
+2024-12-10 03:43:41.946 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/scripts/leptonx-mvc-ui-initializer.js?_v=638647827720000000 - null null
+2024-12-10 03:43:41.949 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/js/lepton-x.bundle.min.js?_v=638647827720000000 - null null
+2024-12-10 03:43:41.949 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/authentication-state/authentication-state-listener.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.949 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/toastr/abp-toastr.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.949 +03:00 [INF] Sending file. Request path: '/Themes/LeptonXLite/Global/scripts/leptonx-mvc-ui-initializer.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.950 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/toastr/abp-toastr.js?_v=638647488640000000 - 200 951 application/javascript 3.4057ms
+2024-12-10 03:43:41.950 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/scripts/leptonx-mvc-ui-initializer.js?_v=638647827720000000 - 200 143 application/javascript 3.1532ms
+2024-12-10 03:43:41.950 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/authentication-state/authentication-state-listener.js?_v=638647488640000000 - 200 776 application/javascript 3.2372ms
+2024-12-10 03:43:41.950 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/jquery-extensions.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.950 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/widget-manager.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.950 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Abp/ApplicationLocalizationScript?cultureName=en - null null
+2024-12-10 03:43:41.950 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/select2/js/i18n/en.js?_v=638693410298210358 - null null
+2024-12-10 03:43:41.950 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Abp/ServiceProxyScript - null null
+2024-12-10 03:43:41.950 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/jquery-extensions.js?_v=638647488640000000 - 200 5965 application/javascript 34.0308ms
+2024-12-10 03:43:41.950 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/widget-manager.js?_v=638647488640000000 - 200 4790 application/javascript 26.6568ms
+2024-12-10 03:43:41.950 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Abp/ApplicationConfigurationScript - null null
+2024-12-10 03:43:41.950 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/timeago/locales/jquery.timeago.en.js?_v=638693410295608470 - null null
+2024-12-10 03:43:41.952 +03:00 [INF] Sending file. Request path: '/Pages/Abp/MultiTenancy/tenant-switch.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.953 +03:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/modal-manager.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.956 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/modal-manager.js?_v=638647488640000000 - 200 8329 application/javascript 9.7779ms
+2024-12-10 03:43:41.957 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:41.957 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:41.957 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/sweetalert2/sweetalert2.all.min.js?_v=638693410299406357 - null null
+2024-12-10 03:43:41.957 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js?_v=638693410290773033 - null null
+2024-12-10 03:43:41.958 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:41.958 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:41.959 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:41.960 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:41.960 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:41.960 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:41.960 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:41.960 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Pages/Abp/MultiTenancy/tenant-switch.js?_v=638647488720000000 - 200 414 application/javascript 29.9445ms
+2024-12-10 03:43:41.960 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:41.960 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:41.960 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:41.960 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:41.961 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_vs/browserLink - null null
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:41.961 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:41.961 +03:00 [INF] Sending file. Request path: '/Themes/LeptonXLite/Global/side-menu/js/lepton-x.bundle.min.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:41.961 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/js/lepton-x.bundle.min.js?_v=638647827720000000 - 200 31189 application/javascript 12.9571ms
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:41.961 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:41.961 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:41.961 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:41.961 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-10 03:43:41.964 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_framework/aspnetcore-browser-refresh.js - 200 13836 application/javascript; charset=utf-8 3.0424ms
+2024-12-10 03:43:41.965 +03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc)'
+2024-12-10 03:43:41.965 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/abp/core/abp.js?_v=638693410290793478 - 200 25156 application/javascript 193.1967ms
+2024-12-10 03:43:41.965 +03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc)'
+2024-12-10 03:43:41.965 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Pages/Account/Login.js?_v=638647493940000000 - null null
+2024-12-10 03:43:41.969 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/libs/bootstrap-icons/font/bootstrap-icons.css?_v=638647827720000000 - 200 74827 text/css 199.9222ms
+2024-12-10 03:43:41.970 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css?_v=638693410292071346 - 200 54850 text/css 202.9938ms
+2024-12-10 03:43:41.970 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/css/bootstrap-dim.css?_v=638647827720000000 - 200 265091 text/css 240.8911ms
+2024-12-10 03:43:41.970 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/jquery-validation/jquery.validate.js?_v=638693410291608389 - 200 52536 application/javascript 173.4493ms
+2024-12-10 03:43:41.970 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/lodash/lodash.min.js?_v=638693410325904563 - 200 73015 application/javascript 173.7795ms
+2024-12-10 03:43:41.970 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/select2/js/select2.min.js?_v=638693410306082244 - 200 70851 application/javascript 142.4198ms
+2024-12-10 03:43:41.970 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/bootstrap/js/bootstrap.bundle.js?_v=638693410298210358 - 200 207819 application/javascript 173.841ms
+2024-12-10 03:43:41.970 +03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc)'
+2024-12-10 03:43:41.971 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/jquery/jquery.js?_v=638693410299556450 - 200 285314 application/javascript 191.197ms
+2024-12-10 03:43:41.974 +03:00 [INF] Sending file. Request path: '/Pages/Account/Login.js'. Physical path: 'N/A'
+2024-12-10 03:43:41.975 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Pages/Account/Login.js?_v=638647493940000000 - 200 585 application/javascript 9.6992ms
+2024-12-10 03:43:41.984 +03:00 [INF] Sending file. Request path: '/libs/toastr/toastr.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\toastr\toastr.min.js'
+2024-12-10 03:43:41.984 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/toastr/toastr.min.js?_v=638693410292352026 - 200 5251 application/javascript 74.5492ms
+2024-12-10 03:43:41.995 +03:00 [INF] Sending file. Request path: '/libs/timeago/locales/jquery.timeago.en.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\timeago\locales\jquery.timeago.en.js'
+2024-12-10 03:43:41.995 +03:00 [INF] Sending file. Request path: '/libs/select2/js/i18n/en.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\select2\js\i18n\en.js'
+2024-12-10 03:43:41.996 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/select2/js/i18n/en.js?_v=638693410298210358 - 200 844 application/javascript 45.6316ms
+2024-12-10 03:43:41.996 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/timeago/locales/jquery.timeago.en.js?_v=638693410295608470 - 200 778 application/javascript 45.2698ms
+2024-12-10 03:43:41.998 +03:00 [INF] Sending file. Request path: '/libs/moment/moment.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\moment\moment.min.js'
+2024-12-10 03:43:41.999 +03:00 [INF] Sending file. Request path: '/libs/bootstrap-datepicker/bootstrap-datepicker.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\bootstrap-datepicker\bootstrap-datepicker.min.js'
+2024-12-10 03:43:42.000 +03:00 [INF] Sending file. Request path: '/libs/sweetalert2/sweetalert2.all.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\sweetalert2\sweetalert2.all.min.js'
+2024-12-10 03:43:42.003 +03:00 [INF] Sending file. Request path: '/libs/luxon/luxon.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\luxon\luxon.min.js'
+2024-12-10 03:43:42.003 +03:00 [INF] Sending file. Request path: '/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.concat.min.js'
+2024-12-10 03:43:42.005 +03:00 [INF] Sending file. Request path: '/libs/datatables.net/js/dataTables.min.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\datatables.net\js\dataTables.min.js'
+2024-12-10 03:43:42.005 +03:00 [INF] Sending file. Request path: '/libs/bootstrap-daterangepicker/daterangepicker.js'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\bootstrap-daterangepicker\daterangepicker.js'
+2024-12-10 03:43:42.034 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js?_v=638693410290773033 - 200 45483 application/javascript 77.3479ms
+2024-12-10 03:43:42.036 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/datatables.net/js/dataTables.min.js?_v=638693410292482139 - 200 93477 application/javascript 189.2918ms
+2024-12-10 03:43:42.037 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/bootstrap-datepicker/bootstrap-datepicker.min.js?_v=638693410303842051 - 200 33871 application/javascript 164.4635ms
+2024-12-10 03:43:42.034 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/moment/moment.min.js?_v=638693410317555105 - 200 58890 application/javascript 162.049ms
+2024-12-10 03:43:42.038 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/sweetalert2/sweetalert2.all.min.js?_v=638693410299406357 - 200 64223 application/javascript 80.603ms
+2024-12-10 03:43:42.038 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/luxon/luxon.min.js?_v=638693410297960473 - 200 79869 application/javascript 108.2734ms
+2024-12-10 03:43:42.038 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/bootstrap-daterangepicker/daterangepicker.js?_v=638693410291578408 - 200 67842 application/javascript 180.1548ms
+2024-12-10 03:43:42.046 +03:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationConfigurationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Get() on controller Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController (Volo.Abp.AspNetCore.Mvc).
+2024-12-10 03:43:42.046 +03:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationLocalizationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetAsync(Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationLocalizationRequestDto) on controller Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController (Volo.Abp.AspNetCore.Mvc).
+2024-12-10 03:43:42.047 +03:00 [INF] Route matched with {area = "Abp", action = "GetAll", controller = "AbpServiceProxyScript", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAll(Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel) on controller Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController (Volo.Abp.AspNetCore.Mvc).
+2024-12-10 03:43:42.050 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_vs/browserLink - 200 null text/javascript; charset=UTF-8 89.3778ms
+2024-12-10 03:43:42.188 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/libs/bootstrap-icons/font/fonts/bootstrap-icons.woff2?30af91bf14e37666a085fb8a161ff36d - null null
+2024-12-10 03:43:42.188 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2 - null null
+2024-12-10 03:43:42.245 +03:00 [INF] Sending file. Request path: '/Themes/LeptonXLite/Global/side-menu/libs/bootstrap-icons/font/fonts/bootstrap-icons.woff2'. Physical path: 'N/A'
+2024-12-10 03:43:42.347 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44324/libs/bootstrap/js/bootstrap.bundle.js.map - null null
+2024-12-10 03:43:42.349 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Themes/LeptonXLite/Global/side-menu/libs/bootstrap-icons/font/fonts/bootstrap-icons.woff2?30af91bf14e37666a085fb8a161ff36d - 200 92064 font/woff2 161.0586ms
+2024-12-10 03:43:42.350 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44324/libs/abp/utils/abp-utils.umd.min.js.map - null null
+2024-12-10 03:43:42.350 +03:00 [INF] Sending file. Request path: '/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\@fortawesome\fontawesome-free\webfonts\fa-regular-400.woff2'
+2024-12-10 03:43:42.446 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44324/libs/toastr/toastr.js.map - null null
+2024-12-10 03:43:42.477 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44324/libs/moment/moment.min.js.map - null null
+2024-12-10 03:43:42.480 +03:00 [INF] Sending file. Request path: '/libs/abp/utils/abp-utils.umd.min.js.map'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\abp\utils\abp-utils.umd.min.js.map'
+2024-12-10 03:43:42.517 +03:00 [INF] Sending file. Request path: '/libs/toastr/toastr.js.map'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\toastr\toastr.js.map'
+2024-12-10 03:43:42.518 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2 - 200 25464 font/woff2 329.5235ms
+2024-12-10 03:43:42.519 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44324/libs/toastr/toastr.js.map - 200 25633 text/plain 73.1375ms
+2024-12-10 03:43:42.519 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44324/libs/abp/utils/abp-utils.umd.min.js.map - 200 34305 text/plain 169.409ms
+2024-12-10 03:43:42.522 +03:00 [INF] Sending file. Request path: '/libs/bootstrap/js/bootstrap.bundle.js.map'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\bootstrap\js\bootstrap.bundle.js.map'
+2024-12-10 03:43:42.522 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:42.522 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:42.522 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:42.523 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:42.523 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:42.523 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:42.523 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:42.523 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:42.523 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:42.523 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:42.523 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:42.523 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:42.523 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:42.528 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44324/libs/moment/moment.min.js.map - 404 null null 82.7368ms
+2024-12-10 03:43:42.531 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44324/libs/moment/moment.min.js.map, Response status code: 404
+2024-12-10 03:43:42.616 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44324/libs/bootstrap/js/bootstrap.bundle.js.map - 200 444579 text/plain 270.1807ms
+2024-12-10 03:43:42.616 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/moment/moment.min.js.map - null null
+2024-12-10 03:43:42.658 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:42.659 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:42.659 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:42.659 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:42.659 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:42.694 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:42.694 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:42.694 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:42.694 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:42.694 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:42.694 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:42.694 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:42.696 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:42.989 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/moment/moment.min.js.map - 404 null null 372.7675ms
+2024-12-10 03:43:42.989 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44324/libs/moment/moment.min.js.map, Response status code: 404
+2024-12-10 03:43:43.347 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2024-12-10 03:43:43.348 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44324/_blazor/disconnect - 200 null null 1633.0625ms
+2024-12-10 03:43:43.537 +03:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2024-12-10 03:43:43.537 +03:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2024-12-10 03:43:43.537 +03:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2024-12-10 03:43:43.566 +03:00 [DBG] ActionApiDescriptionModel.Create: FormTemplate.GetAsyncById
+2024-12-10 03:43:43.580 +03:00 [DBG] ActionApiDescriptionModel.Create: FormTemplate.GetListAsyncByInput
+2024-12-10 03:43:43.582 +03:00 [DBG] ActionApiDescriptionModel.Create: FormTemplate.CreateAsyncByInput
+2024-12-10 03:43:43.582 +03:00 [DBG] ActionApiDescriptionModel.Create: FormTemplate.UpdateAsyncByIdAndInput
+2024-12-10 03:43:43.583 +03:00 [DBG] ActionApiDescriptionModel.Create: FormTemplate.DeleteAsyncById
+2024-12-10 03:43:43.584 +03:00 [DBG] ActionApiDescriptionModel.Create: FormTemplate.GetBaseInfoAsync
+2024-12-10 03:43:43.584 +03:00 [DBG] ActionApiDescriptionModel.Create: FormTemplate.CreateFormItemAsyncByIdAndInput
+2024-12-10 03:43:43.585 +03:00 [DBG] ActionApiDescriptionModel.Create: FormTemplate.UpdateFormItemAsyncByIdAndNameAndInput
+2024-12-10 03:43:43.585 +03:00 [DBG] ActionApiDescriptionModel.Create: FormTemplate.DeleteFormItemAsyncByIdAndName
+2024-12-10 03:43:43.586 +03:00 [DBG] ActionApiDescriptionModel.Create: Form.GetAsyncById
+2024-12-10 03:43:43.586 +03:00 [DBG] ActionApiDescriptionModel.Create: Form.GetListAsyncByInput
+2024-12-10 03:43:43.586 +03:00 [DBG] ActionApiDescriptionModel.Create: Form.CreateAsyncByInput
+2024-12-10 03:43:43.587 +03:00 [DBG] ActionApiDescriptionModel.Create: Form.UpdateAsyncByIdAndInput
+2024-12-10 03:43:43.587 +03:00 [DBG] ActionApiDescriptionModel.Create: Form.DeleteAsyncById
+2024-12-10 03:43:43.588 +03:00 [DBG] ActionApiDescriptionModel.Create: Form.UpdateFormItemAsyncByIdAndNameAndInput
+2024-12-10 03:43:43.589 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.RegisterAsyncByInput
+2024-12-10 03:43:43.589 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.SendPasswordResetCodeAsyncByInput
+2024-12-10 03:43:43.589 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.VerifyPasswordResetTokenAsyncByInput
+2024-12-10 03:43:43.589 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.ResetPasswordAsyncByInput
+2024-12-10 03:43:43.591 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.LoginByLogin
+2024-12-10 03:43:43.591 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.Logout
+2024-12-10 03:43:43.591 +03:00 [DBG] ActionApiDescriptionModel.Create: Account.CheckPasswordByLogin
+2024-12-10 03:43:43.592 +03:00 [DBG] ActionApiDescriptionModel.Create: DynamicClaims.RefreshAsync
+2024-12-10 03:43:43.592 +03:00 [DBG] ActionApiDescriptionModel.Create: Profile.GetAsync
+2024-12-10 03:43:43.593 +03:00 [DBG] ActionApiDescriptionModel.Create: Profile.UpdateAsyncByInput
+2024-12-10 03:43:43.593 +03:00 [DBG] ActionApiDescriptionModel.Create: Profile.ChangePasswordAsyncByInput
+2024-12-10 03:43:43.593 +03:00 [DBG] ActionApiDescriptionModel.Create: AbpTenant.FindTenantByNameAsyncByName
+2024-12-10 03:43:43.594 +03:00 [DBG] ActionApiDescriptionModel.Create: AbpTenant.FindTenantByIdAsyncById
+2024-12-10 03:43:43.594 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetAllListAsync
+2024-12-10 03:43:43.594 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetListAsyncByInput
+2024-12-10 03:43:43.595 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetAsyncById
+2024-12-10 03:43:43.595 +03:00 [DBG] Executing AbpApplicationConfigurationAppService.GetAsync()...
+2024-12-10 03:43:43.596 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.CreateAsyncByInput
+2024-12-10 03:43:43.596 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.UpdateAsyncByIdAndInput
+2024-12-10 03:43:43.597 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.DeleteAsyncById
+2024-12-10 03:43:43.597 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetAsyncById
+2024-12-10 03:43:43.598 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetListAsyncByInput
+2024-12-10 03:43:43.598 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.CreateAsyncByInput
+2024-12-10 03:43:43.599 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.UpdateAsyncByIdAndInput
+2024-12-10 03:43:43.599 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.DeleteAsyncById
+2024-12-10 03:43:43.599 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetRolesAsyncById
+2024-12-10 03:43:43.600 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetAssignableRolesAsync
+2024-12-10 03:43:43.600 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.UpdateRolesAsyncByIdAndInput
+2024-12-10 03:43:43.601 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.FindByUsernameAsyncByUserName
+2024-12-10 03:43:43.602 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.FindByEmailAsyncByEmail
+2024-12-10 03:43:43.603 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.FindByIdAsyncById
+2024-12-10 03:43:43.604 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.FindByUserNameAsyncByUserName
+2024-12-10 03:43:43.604 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.SearchAsyncByInput
+2024-12-10 03:43:43.604 +03:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.GetCountAsyncByInput
+2024-12-10 03:43:43.605 +03:00 [DBG] ActionApiDescriptionModel.Create: Permissions.GetAsyncByProviderNameAndProviderKey
+2024-12-10 03:43:43.605 +03:00 [DBG] ActionApiDescriptionModel.Create: Permissions.UpdateAsyncByProviderNameAndProviderKeyAndInput
+2024-12-10 03:43:43.606 +03:00 [DBG] ActionApiDescriptionModel.Create: EmailSettings.GetAsync
+2024-12-10 03:43:43.606 +03:00 [DBG] ActionApiDescriptionModel.Create: EmailSettings.UpdateAsyncByInput
+2024-12-10 03:43:43.607 +03:00 [DBG] ActionApiDescriptionModel.Create: EmailSettings.SendTestEmailAsyncByInput
+2024-12-10 03:43:43.607 +03:00 [DBG] ActionApiDescriptionModel.Create: TimeZoneSettings.GetAsync
+2024-12-10 03:43:43.607 +03:00 [DBG] ActionApiDescriptionModel.Create: TimeZoneSettings.GetTimezonesAsync
+2024-12-10 03:43:43.608 +03:00 [DBG] ActionApiDescriptionModel.Create: TimeZoneSettings.UpdateAsyncByTimezone
+2024-12-10 03:43:43.609 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetAsyncById
+2024-12-10 03:43:43.610 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetListAsyncByInput
+2024-12-10 03:43:43.611 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.CreateAsyncByInput
+2024-12-10 03:43:43.612 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.UpdateAsyncByIdAndInput
+2024-12-10 03:43:43.613 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.DeleteAsyncById
+2024-12-10 03:43:43.614 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetDefaultConnectionStringAsyncById
+2024-12-10 03:43:43.614 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.UpdateDefaultConnectionStringAsyncByIdAndDefaultConnectionString
+2024-12-10 03:43:43.615 +03:00 [DBG] ActionApiDescriptionModel.Create: Tenant.DeleteDefaultConnectionStringAsyncById
+2024-12-10 03:43:43.616 +03:00 [DBG] ActionApiDescriptionModel.Create: Features.GetAsyncByProviderNameAndProviderKey
+2024-12-10 03:43:43.617 +03:00 [DBG] ActionApiDescriptionModel.Create: Features.UpdateAsyncByProviderNameAndProviderKeyAndInput
+2024-12-10 03:43:43.617 +03:00 [DBG] ActionApiDescriptionModel.Create: Features.DeleteAsyncByProviderNameAndProviderKey
+2024-12-10 03:43:43.618 +03:00 [DBG] ActionApiDescriptionModel.Create: AbpApplicationConfiguration.GetAsyncByOptions
+2024-12-10 03:43:43.619 +03:00 [DBG] ActionApiDescriptionModel.Create: AbpApplicationLocalization.GetAsyncByInput
+2024-12-10 03:43:43.619 +03:00 [DBG] ActionApiDescriptionModel.Create: AbpApiDefinition.GetByModel
+2024-12-10 03:43:43.694 +03:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ContentResult in 133.7851ms.
+2024-12-10 03:43:43.719 +03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2024-12-10 03:43:43.723 +03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) in 1676.2148ms
+2024-12-10 03:43:43.727 +03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc)'
+2024-12-10 03:43:43.727 +03:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ContentResult in 189.9946ms.
+2024-12-10 03:43:43.728 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Abp/ServiceProxyScript - 200 19393 application/javascript 1777.6394ms
+2024-12-10 03:43:43.728 +03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2024-12-10 03:43:43.749 +03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc) in 1702.5757ms
+2024-12-10 03:43:43.749 +03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.Localization.AbpApplicationLocalizationScriptController.GetAsync (Volo.Abp.AspNetCore.Mvc)'
+2024-12-10 03:43:43.753 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Abp/ApplicationLocalizationScript?cultureName=en - 200 39513 application/javascript 1803.1274ms
+2024-12-10 03:43:44.205 +03:00 [DBG] Executed AbpApplicationConfigurationAppService.GetAsync().
+2024-12-10 03:43:44.234 +03:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ContentResult in 696.8239ms.
+2024-12-10 03:43:44.239 +03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2024-12-10 03:43:44.240 +03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) in 2194.2588ms
+2024-12-10 03:43:44.240 +03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc)'
+2024-12-10 03:43:44.242 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/Abp/ApplicationConfigurationScript - 200 7005 application/javascript 2291.6051ms
+2024-12-10 03:43:44.288 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/favicon.svg - null null
+2024-12-10 03:43:44.290 +03:00 [INF] Sending file. Request path: '/favicon.svg'. Physical path: 'N/A'
+2024-12-10 03:43:44.290 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/favicon.svg - 200 2827 image/svg+xml 2.0812ms
+2024-12-10 03:43:54.001 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44324/Account/Login - application/x-www-form-urlencoded 291
+2024-12-10 03:43:54.077 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:54.077 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:54.077 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:54.077 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:54.077 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:54.077 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:54.077 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+EvaluateValidatedTokens.
+2024-12-10 03:43:54.077 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromAuthorizationHeader.
+2024-12-10 03:43:54.084 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromBodyForm.
+2024-12-10 03:43:54.085 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ExtractAccessTokenFromQueryString.
+2024-12-10 03:43:54.085 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was successfully processed by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:54.085 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessAuthenticationContext was marked as rejected by OpenIddict.Validation.OpenIddictValidationHandlers+ValidateRequiredTokens.
+2024-12-10 03:43:54.085 +03:00 [DBG] AuthenticationScheme: OpenIddict.Validation.AspNetCore was not authenticated.
+2024-12-10 03:43:54.087 +03:00 [INF] Executing endpoint '/Account/Login'
+2024-12-10 03:43:54.088 +03:00 [INF] Route matched with {page = "/Account/Login", area = "", action = "", controller = ""}. Executing page /Account/Login
+2024-12-10 03:43:54.088 +03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2024-12-10 03:43:54.108 +03:00 [INF] Executing handler method Volo.Abp.Account.Web.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2024-12-10 03:43:55.141 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-12-10 03:43:55.347 +03:00 [DBG] Remove dynamic claims cache for user: 7df5c514-0e88-c696-86c4-3a16bf0dc99d
+2024-12-10 03:43:55.355 +03:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectResult.
+2024-12-10 03:43:55.361 +03:00 [INF] Executing RedirectResult, redirecting to /.
+2024-12-10 03:43:55.361 +03:00 [INF] Executed page /Account/Login in 1273.0397ms
+2024-12-10 03:43:55.361 +03:00 [INF] Executed endpoint '/Account/Login'
+2024-12-10 03:43:55.364 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44324/Account/Login - 302 null null 1362.9977ms
+2024-12-10 03:43:55.368 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/ - null null
+2024-12-10 03:43:55.400 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:55.400 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:55.400 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:55.400 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:55.400 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:55.416 +03:00 [INF] Executing endpoint '/_Host'
+2024-12-10 03:43:55.417 +03:00 [INF] Route matched with {page = "/_Host", area = "", action = "", controller = ""}. Executing page /_Host
+2024-12-10 03:43:55.417 +03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2024-12-10 03:43:55.417 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2024-12-10 03:43:55.417 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2024-12-10 03:43:55.420 +03:00 [DBG] Added bundle 'Blazor.BasicTheme.Global' to the page in 1.07 ms.
+2024-12-10 03:43:55.422 +03:00 [DBG] Added bundle 'Blazor.BasicTheme.Global' to the page in 0.35 ms.
+2024-12-10 03:43:55.423 +03:00 [INF] Executed page /_Host in 6.5079ms
+2024-12-10 03:43:55.423 +03:00 [INF] Executed endpoint '/_Host'
+2024-12-10 03:43:55.424 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/ - 200 null text/html; charset=utf-8 56.2244ms
+2024-12-10 03:43:55.436 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-10 03:43:55.437 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_framework/aspnetcore-browser-refresh.js - 200 13836 application/javascript; charset=utf-8 1.2024ms
+2024-12-10 03:43:55.437 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_vs/browserLink - null null
+2024-12-10 03:43:55.462 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_blazor/initializers - null null
+2024-12-10 03:43:55.462 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:55.463 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:55.463 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:55.463 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:55.463 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:55.479 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2024-12-10 03:43:55.481 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2024-12-10 03:43:55.483 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_blazor/initializers - 200 null application/json; charset=utf-8 21.5187ms
+2024-12-10 03:43:55.490 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44324/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-12-10 03:43:55.491 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:55.492 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:55.492 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:55.492 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:55.492 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:55.498 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.463ms
+2024-12-10 03:43:55.500 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2024-12-10 03:43:55.501 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2024-12-10 03:43:55.502 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44324/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 11.5984ms
+2024-12-10 03:43:55.578 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44324/_blazor?id=bQEjF09icSc7_T28dz-2Hw - null null
+2024-12-10 03:43:55.580 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:55.581 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:43:55.581 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:43:55.581 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:43:55.581 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:43:55.591 +03:00 [INF] Executing endpoint '/_blazor'
+2024-12-10 03:43:55.633 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:SettingManagement.Emailing
+2024-12-10 03:43:55.633 +03:00 [DBG] Not found in the cache: pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:SettingManagement.Emailing
+2024-12-10 03:43:55.639 +03:00 [DBG] Getting all granted permissions from the repository for this provider name,key: U,7df5c514-0e88-c696-86c4-3a16bf0dc99d
+2024-12-10 03:43:55.797 +03:00 [DBG] Setting the cache items. Count: 33
+2024-12-10 03:43:55.802 +03:00 [DBG] Finished setting the cache items. Count: 33
+2024-12-10 03:43:55.810 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:SettingManagement.Emailing
+2024-12-10 03:43:55.810 +03:00 [DBG] Not found in the cache: pn:R,pk:admin,n:SettingManagement.Emailing
+2024-12-10 03:43:55.810 +03:00 [DBG] Getting all granted permissions from the repository for this provider name,key: R,admin
+2024-12-10 03:43:55.848 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise/dropdown.js?v=1.5.2.0 - null null
+2024-12-10 03:43:55.862 +03:00 [INF] Sending file. Request path: '/_content/Blazorise/dropdown.js'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise\1.5.2\staticwebassets\dropdown.js'
+2024-12-10 03:43:55.863 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise/dropdown.js?v=1.5.2.0 - 200 1372 application/javascript 15.5287ms
+2024-12-10 03:43:55.869 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise/floatingUi.js?v=1.5.2.0 - null null
+2024-12-10 03:43:55.878 +03:00 [INF] Sending file. Request path: '/_content/Blazorise/floatingUi.js'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise\1.5.2\staticwebassets\floatingUi.js'
+2024-12-10 03:43:55.882 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise/floatingUi.js?v=1.5.2.0 - 200 1681 application/javascript 12.7713ms
+2024-12-10 03:43:55.887 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise/vendors/floating-ui.js?v=1.5.2.0 - null null
+2024-12-10 03:43:55.890 +03:00 [DBG] Setting the cache items. Count: 33
+2024-12-10 03:43:55.891 +03:00 [DBG] Finished setting the cache items. Count: 33
+2024-12-10 03:43:55.899 +03:00 [INF] Sending file. Request path: '/_content/Blazorise/vendors/floating-ui.js'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise\1.5.2\staticwebassets\vendors\floating-ui.js'
+2024-12-10 03:43:55.899 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise/vendors/floating-ui.js?v=1.5.2.0 - 200 10628 application/javascript 12.1501ms
+2024-12-10 03:43:55.905 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_content/Blazorise/vendors/floating-ui-core.js - null null
+2024-12-10 03:43:55.911 +03:00 [INF] Sending file. Request path: '/_content/Blazorise/vendors/floating-ui-core.js'. Physical path: 'C:\Users\CelalAk\.nuget\packages\blazorise\1.5.2\staticwebassets\vendors\floating-ui-core.js'
+2024-12-10 03:43:55.912 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_content/Blazorise/vendors/floating-ui-core.js - 200 15103 application/javascript 7.1085ms
+2024-12-10 03:43:55.929 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpIdentity.Roles,pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpIdentity.Users,pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpTenantManagement.Tenants
+2024-12-10 03:43:55.933 +03:00 [DBG] Found in the cache: pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpIdentity.Roles,pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpIdentity.Users,pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpTenantManagement.Tenants
+2024-12-10 03:43:55.933 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpTenantManagement.Tenants
+2024-12-10 03:43:55.934 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpTenantManagement.Tenants
+2024-12-10 03:44:04.863 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 - null null
+2024-12-10 03:44:04.870 +03:00 [INF] Sending file. Request path: '/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2'. Physical path: 'C:\Users\CelalAk\source\repos\EasyAbp.DynamicForm\demos\unified\host\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.Host\wwwroot\libs\@fortawesome\fontawesome-free\webfonts\fa-brands-400.woff2'
+2024-12-10 03:44:04.872 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/libs/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 - 200 118072 font/woff2 8.658ms
+2024-12-10 03:44:08.264 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/DynamicForm/FormTemplates/FormTemplate - null null
+2024-12-10 03:44:08.305 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:08.305 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:08.305 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:44:08.305 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:44:08.305 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:44:08.309 +03:00 [INF] Executing endpoint '/_Host'
+2024-12-10 03:44:08.309 +03:00 [INF] Route matched with {page = "/_Host", area = "", action = "", controller = ""}. Executing page /_Host
+2024-12-10 03:44:08.309 +03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2024-12-10 03:44:08.310 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2024-12-10 03:44:08.310 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2024-12-10 03:44:08.312 +03:00 [DBG] Added bundle 'Blazor.BasicTheme.Global' to the page in 0.92 ms.
+2024-12-10 03:44:08.313 +03:00 [DBG] Added bundle 'Blazor.BasicTheme.Global' to the page in 0.23 ms.
+2024-12-10 03:44:08.314 +03:00 [INF] Executed page /_Host in 4.1388ms
+2024-12-10 03:44:08.314 +03:00 [INF] Executed endpoint '/_Host'
+2024-12-10 03:44:08.314 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/DynamicForm/FormTemplates/FormTemplate - 200 null text/html; charset=utf-8 50.1098ms
+2024-12-10 03:44:08.327 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44324/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundary7v7MJ0QVTkPftLzt 359
+2024-12-10 03:44:08.329 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:08.329 +03:00 [INF] Executed endpoint '/_blazor'
+2024-12-10 03:44:08.329 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-10 03:44:08.329 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:08.330 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44324/_blazor?id=bQEjF09icSc7_T28dz-2Hw - 101 null null 12751.3345ms
+2024-12-10 03:44:08.330 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:44:08.330 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:44:08.330 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:44:08.330 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_vs/browserLink - null null
+2024-12-10 03:44:08.332 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_framework/aspnetcore-browser-refresh.js - 200 13836 application/javascript; charset=utf-8 3.3152ms
+2024-12-10 03:44:08.342 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44324/_blazor/initializers - null null
+2024-12-10 03:44:08.343 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:08.343 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:08.343 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:44:08.343 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:44:08.343 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:44:08.351 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2024-12-10 03:44:08.357 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2024-12-10 03:44:08.358 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2024-12-10 03:44:08.359 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_blazor/initializers - 200 null application/json; charset=utf-8 16.6125ms
+2024-12-10 03:44:08.365 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44324/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-12-10 03:44:08.366 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:08.430 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:08.431 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:44:08.431 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:44:08.431 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:44:08.541 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44324/_vs/browserLink - 200 null text/javascript; charset=UTF-8 212.1081ms
+2024-12-10 03:44:08.618 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2024-12-10 03:44:08.647 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2024-12-10 03:44:08.648 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44324/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 282.4821ms
+2024-12-10 03:44:08.677 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44324/_blazor?id=3XLLS7BdNChGzuUdN_JbCQ - null null
+2024-12-10 03:44:08.678 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:08.678 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:08.678 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:44:08.678 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:44:08.678 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:44:08.849 +03:00 [INF] Executing endpoint '/_blazor'
+2024-12-10 03:44:09.142 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:SettingManagement.Emailing
+2024-12-10 03:44:09.142 +03:00 [DBG] Found in the cache: pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:SettingManagement.Emailing
+2024-12-10 03:44:09.142 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:SettingManagement.Emailing
+2024-12-10 03:44:09.142 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:SettingManagement.Emailing
+2024-12-10 03:44:09.195 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpIdentity.Roles,pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpIdentity.Users,pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpTenantManagement.Tenants
+2024-12-10 03:44:09.195 +03:00 [DBG] Found in the cache: pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpIdentity.Roles,pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpIdentity.Users,pn:U,pk:7df5c514-0e88-c696-86c4-3a16bf0dc99d,n:AbpTenantManagement.Tenants
+2024-12-10 03:44:09.195 +03:00 [DBG] PermissionStore.GetCacheItemAsync: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpTenantManagement.Tenants
+2024-12-10 03:44:09.196 +03:00 [DBG] Found in the cache: pn:R,pk:admin,n:AbpIdentity.Roles,pn:R,pk:admin,n:AbpIdentity.Users,pn:R,pk:admin,n:AbpTenantManagement.Tenants
+2024-12-10 03:44:09.774 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2024-12-10 03:44:09.775 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44324/_blazor/disconnect - 200 null null 1448.3792ms
+2024-12-10 03:44:19.311 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44324/_blazor/disconnect - multipart/form-data; boundary=----WebKitFormBoundaryZTdaufTQeXVD1yBu 359
+2024-12-10 03:44:19.312 +03:00 [DBG] The event OpenIddict.Validation.OpenIddictValidationEvents+ProcessRequestContext was successfully processed by OpenIddict.Validation.AspNetCore.OpenIddictValidationAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:19.312 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ResolveRequestUri.
+2024-12-10 03:44:19.312 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.OpenIddictServerHandlers+InferEndpointType.
+2024-12-10 03:44:19.312 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateTransportSecurityRequirement.
+2024-12-10 03:44:19.312 +03:00 [DBG] The event OpenIddict.Server.OpenIddictServerEvents+ProcessRequestContext was successfully processed by OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreHandlers+ValidateHostHeader.
+2024-12-10 03:44:19.327 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2024-12-10 03:44:19.327 +03:00 [INF] Executed endpoint '/_blazor'
+2024-12-10 03:44:19.329 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44324/_blazor?id=3XLLS7BdNChGzuUdN_JbCQ - 101 null null 10651.8134ms

@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<Import Project="..\..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>EasyAbp.DynamicForm.UnifiedDemo</RootNamespace>
+		<PreserveCompilationReferences>true</PreserveCompilationReferences>
+		<UserSecretsId>EasyAbp.DynamicForm-c2d31439-b723-48e2-b061-5ebd7aeb6010</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
+		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+		<PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="$(AbpVersion)" />
+
+		<PackageReference Include="Volo.Abp.Autofac" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="3.3.2" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Swashbuckle" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\EasyAbp.DynamicForm.UnifiedDemo.HttpApi\EasyAbp.DynamicForm.UnifiedDemo.HttpApi.csproj" />
+		<ProjectReference Include="..\..\src\EasyAbp.DynamicForm.UnifiedDemo.Web\EasyAbp.DynamicForm.UnifiedDemo.Web.csproj" />
+		<ProjectReference Include="..\..\src\EasyAbp.DynamicForm.UnifiedDemo.Application\EasyAbp.DynamicForm.UnifiedDemo.Application.csproj" />
+		<ProjectReference Include="..\..\src\EasyAbp.DynamicForm.UnifiedDemo.EntityFrameworkCore\EasyAbp.DynamicForm.UnifiedDemo.EntityFrameworkCore.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="EntityFrameworkCore\**" />
+		<Compile Remove="Logs\**" />
+		<Compile Remove="Migrations\**" />
+		<Content Remove="EntityFrameworkCore\**" />
+		<Content Remove="Logs\**" />
+		<Content Remove="Migrations\**" />
+		<EmbeddedResource Remove="EntityFrameworkCore\**" />
+		<EmbeddedResource Remove="Logs\**" />
+		<EmbeddedResource Remove="Migrations\**" />
+		<None Remove="EntityFrameworkCore\**" />
+		<None Remove="Logs\**" />
+		<None Remove="Migrations\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="UnifiedDemoDataSeedContributor.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Pages\**\*.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Pages\**\*.css">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>
