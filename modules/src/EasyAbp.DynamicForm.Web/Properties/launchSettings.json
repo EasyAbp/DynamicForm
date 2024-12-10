@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "EasyAbp.DynamicForm.Web": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61148;http://localhost:61149"
+    }
+  }
+}

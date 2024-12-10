@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<Import Project="..\..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+		<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+		<MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+		<PreserveCompilationReferences>true</PreserveCompilationReferences>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Blazorise.Bootstrap5" Version="1.5.2" />
+		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.5.2" />
+		<PackageReference Include="Blazorise.Generator.Features" Version="1.5.2" />
+		<PackageReference Include="OpenIddict.Abstractions" Version="5.5.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
+		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="$(AbpVersion)" />
+
+		<!--<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="$(AbpVersion)" />-->
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="3.3.2" />
+
+		<PackageReference Include="Volo.Abp.Autofac" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Swashbuckle" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Components.Server.BasicTheme" Version="$(AbpVersion)" />
+
+		<PackageReference Include="Volo.Abp.Account.Web" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Account.Web.OpenIddict" Version="$(AbpVersion)" />
+
+		<PackageReference Include="Volo.Abp.Identity.Blazor.Server" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.TenantManagement.Blazor.Server" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.SettingManagement.Blazor.Server" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\EasyAbp.DynamicForm.UnifiedDemo.Application\EasyAbp.DynamicForm.UnifiedDemo.Application.csproj" />
+		<ProjectReference Include="..\..\src\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server\EasyAbp.DynamicForm.UnifiedDemo.Blazor.Server.csproj" />
+		<ProjectReference Include="..\..\src\EasyAbp.DynamicForm.UnifiedDemo.EntityFrameworkCore\EasyAbp.DynamicForm.UnifiedDemo.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\..\src\EasyAbp.DynamicForm.UnifiedDemo.HttpApi\EasyAbp.DynamicForm.UnifiedDemo.HttpApi.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="EntityFrameworkCore\**" />
+		<Compile Remove="Logs\**" />
+		<Compile Remove="Migrations\**" />
+		<Content Remove="EntityFrameworkCore\**" />
+		<Content Remove="Logs\**" />
+		<Content Remove="Migrations\**" />
+		<EmbeddedResource Remove="EntityFrameworkCore\**" />
+		<EmbeddedResource Remove="Logs\**" />
+		<EmbeddedResource Remove="Migrations\**" />
+		<None Remove="EntityFrameworkCore\**" />
+		<None Remove="Logs\**" />
+		<None Remove="Migrations\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="UnifiedDemoDataSeedContributor.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Pages\**\*.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Pages\**\*.css">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>
