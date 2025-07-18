@@ -11,8 +11,8 @@
 @inject IHtmlLocalizer<DynamicFormResource> L
 @inject IAuthorizationService Authorization
 @{
-    PageLayout.Content.Title = L["FormTemplate"].Value;
-    PageLayout.Content.BreadCrumb.Add(L["Menu:FormTemplate"].Value);
+    PageLayout.Content.Title = L["Menu:FormTemplate"].Value;
+    PageLayout.Content.BreadCrumb.Add(L["Menu:DynamicForm"].Value);
     PageLayout.Content.MenuItemName = DynamicFormMenus.FormTemplate;
 }
 
@@ -24,24 +24,18 @@
 {
     <abp-style src="/Pages/DynamicForm/FormTemplates/FormTemplate/index.css"/>
 }
-
+@section content_toolbar
+{
+    @if (await Authorization.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Create))
+    {
+        <abp-button id="NewFormTemplateButton"
+                    text="@L["CreateFormTemplate"].Value"
+                    icon="plus"
+                    size="Small"
+                    button-type="Primary" />
+    }
+}
 <abp-card>
-    <abp-card-header>
-        <abp-row>
-            <abp-column size-md="_6">
-                <abp-card-title>@L["FormTemplate"]</abp-card-title>
-            </abp-column>
-            <abp-column size-md="_6" class="text-end">
-			    @if (await Authorization.IsGrantedAsync(DynamicFormPermissions.FormTemplate.Create))
-                {
-                <abp-button id="NewFormTemplateButton"
-                            text="@L["CreateFormTemplate"].Value"
-                            icon="plus"
-                            button-type="Primary" />
-                }
-            </abp-column>
-        </abp-row>
-    </abp-card-header>
     <abp-card-body>
         <abp-row class="mb-3">
             <a abp-collapse-id="FormTemplateCollapse" class="text-secondary">@L["TableFilter"] </a>
