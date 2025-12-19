@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using EasyAbp.DynamicForm.Permissions;
 using EasyAbp.DynamicForm.Forms.Dtos;
 using EasyAbp.DynamicForm.FormTemplates;
+using EasyAbp.DynamicForm.Localization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Volo.Abp.Application.Dtos;
@@ -32,6 +33,9 @@ public class FormAppService : CrudAppService<Form, FormDto, Guid, FormGetListInp
         _formManager = formManager;
         _repository = repository;
         _formTemplateRepository = formTemplateRepository;
+
+        LocalizationResource = typeof(DynamicFormResource);
+        ObjectMapperContext = typeof(DynamicFormApplicationModule);
     }
 
     protected override async Task<IQueryable<Form>> CreateFilteredQueryAsync(FormGetListInput input)

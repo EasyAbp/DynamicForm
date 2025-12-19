@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using EasyAbp.DynamicForm.FormItemTypes;
 using EasyAbp.DynamicForm.Permissions;
 using EasyAbp.DynamicForm.FormTemplates.Dtos;
+using EasyAbp.DynamicForm.Localization;
 using EasyAbp.DynamicForm.Options;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
@@ -41,6 +42,9 @@ public class FormTemplateAppService : CrudAppService<FormTemplate, FormTemplateD
         _formItemProviderResolver = formItemProviderResolver;
         _formTemplateManager = formTemplateManager;
         _repository = repository;
+
+        LocalizationResource = typeof(DynamicFormResource);
+        ObjectMapperContext = typeof(DynamicFormApplicationModule);
     }
 
     protected override async Task<IQueryable<FormTemplate>> CreateFilteredQueryAsync(FormTemplateGetListInput input)

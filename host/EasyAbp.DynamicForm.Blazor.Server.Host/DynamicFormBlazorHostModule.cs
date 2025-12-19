@@ -241,8 +241,8 @@ public class DynamicFormBlazorHostModule : AbpModule
 
         app.UseHttpsRedirection();
         app.UseCorrelationId();
-        app.MapAbpStaticAssets();
         app.UseRouting();
+        app.MapAbpStaticAssets();
         app.UseAuthentication();
         app.UseAbpOpenIddictValidation();
 

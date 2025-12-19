@@ -64,7 +64,8 @@ $(function () {
             },
             {
                 title: l('FormCreationTime'),
-                data: "creationTime"
+                data: "creationTime",
+                dataFormat: 'datetime'
             },
             {
                 title: l('FormCreator'),
