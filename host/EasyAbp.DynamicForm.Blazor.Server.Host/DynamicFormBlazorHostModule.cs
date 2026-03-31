@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using EasyAbp.DynamicForm.Blazor.Server.Host.Menus;
 using EasyAbp.DynamicForm.EntityFrameworkCore;
 using EasyAbp.DynamicForm.Localization;

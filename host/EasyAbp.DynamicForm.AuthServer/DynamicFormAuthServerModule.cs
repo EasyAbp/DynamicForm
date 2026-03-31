@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using EasyAbp.DynamicForm.MultiTenancy;
 using StackExchange.Redis;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using OpenIddict.Validation.AspNetCore;
 using Volo.Abp;
 using Volo.Abp.Account;

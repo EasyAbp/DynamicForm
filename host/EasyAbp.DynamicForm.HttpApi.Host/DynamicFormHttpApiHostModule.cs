@@ -12,7 +12,7 @@ using EasyAbp.DynamicForm.EntityFrameworkCore;
 using EasyAbp.DynamicForm.MultiTenancy;
 using EasyAbp.DynamicForm.Options;
 using StackExchange.Redis;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy;
 using Volo.Abp.AspNetCore.Serilog;

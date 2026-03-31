@@ -8,7 +8,7 @@ using EasyAbp.DynamicForm.EntityFrameworkCore;
 using EasyAbp.DynamicForm.MultiTenancy;
 using EasyAbp.DynamicForm.Options;
 using EasyAbp.DynamicForm.Web;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Volo.Abp;
 using Volo.Abp.Account;
 using Volo.Abp.Account.Web;
