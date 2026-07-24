@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.AutoMapper;
+using Volo.Abp.Mapperly;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
 
@@ -9,16 +9,12 @@ namespace EasyAbp.DynamicForm;
     typeof(DynamicFormDomainModule),
     typeof(DynamicFormApplicationContractsModule),
     typeof(AbpDddApplicationModule),
-    typeof(AbpAutoMapperModule)
+    typeof(AbpMapperlyModule)
     )]
 public class DynamicFormApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddAutoMapperObjectMapper<DynamicFormApplicationModule>();
-        Configure<AbpAutoMapperOptions>(options =>
-        {
-            options.AddMaps<DynamicFormApplicationModule>(validate: true);
-        });
+        context.Services.AddMapperlyObjectMapper<DynamicFormApplicationModule>();
     }
 }
